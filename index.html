@@ -1,14 +1,62 @@
-```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kocica dla Pana</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kocica dla Pana</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #faf9f7;
+      color: #171717;
+
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 90px);
+      font-weight: 400;
+      letter-spacing: -3px;
+      text-align: center;
+
+      animation: appear 1.5s ease forwards;
+    }
+
+    h1 span {
+      font-style: italic;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Wkrótce się tu pojawię &lt;3</h1>
+
+  <h1>
+    Wkrótce <span>się pojawię.</span>
+  </h1>
+
 </body>
 </html>
-```
-

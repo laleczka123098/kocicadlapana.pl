@@ -7,230 +7,437 @@
 
     <title>kocicadlaPana ♡</title>
 
-    <!-- Ładna czcionka -->
+    <!-- Czcionki -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
-            font-family: "DM Sans", sans-serif;
 
             background:
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3), transparent 30%),
-                #f6c6d8;
+                radial-gradient(
+                    circle at 50% 0%,
+                    #7e263f 0%,
+                    #52182b 38%,
+                    #2a0b16 100%
+                );
 
-            color: #4a2938;
+            color: #fff4f6;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            padding: 40px 20px;
+            font-family: "Montserrat", sans-serif;
         }
 
-        .container {
-            width: 100%;
-            max-width: 700px;
+        .page {
+            width: min(900px, calc(100% - 40px));
+            margin: auto;
+            padding: 70px 0 50px;
+        }
+
+
+        /* =========================
+           NAGŁÓWEK
+        ========================= */
+
+        header {
             text-align: center;
+            margin-bottom: 65px;
         }
 
-        /* Nagłówek */
-        .welcome {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 600;
-            line-height: 1.2;
+        .small-text {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
 
-            margin-bottom: 15px;
+            color: #dba0ad;
 
-            animation: fadeDown 0.8s ease;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(42px, 8vw, 72px);
+            font-weight: 500;
+
+            line-height: 1;
+
+            color: #fff5f7;
+
+            text-shadow:
+                0 5px 30px rgba(0,0,0,.25);
         }
 
         .heart {
-            display: inline-block;
-            color: #d94f7b;
-
-            animation: heartbeat 1.8s infinite;
+            color: #e85b78;
+            font-size: .8em;
         }
 
         .subtitle {
-            font-size: 1rem;
-            color: #765263;
-            margin-bottom: 40px;
+            margin-top: 20px;
 
-            animation: fadeDown 1s ease;
+            font-size: 14px;
+            font-weight: 300;
+
+            color: #d9aab5;
         }
 
-        /* Przyciski */
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
 
-            animation: fadeUp 1s ease;
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .links {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 35px;
         }
 
-        .button {
+        .links a {
+            text-decoration: none;
+
+            color: #fff4f6;
+
+            border: 1px solid rgba(255,255,255,.16);
+
+            background: rgba(255,255,255,.07);
+
+            padding: 16px 10px;
+
+            border-radius: 12px;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition: .25s ease;
+        }
+
+        .links a:hover {
+            background: #a93252;
+
+            border-color: #d85a78;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.25);
+        }
+
+        .link-icon {
             display: block;
 
-            text-decoration: none;
-            color: #542c3d;
+            margin-bottom: 7px;
 
-            background: rgba(255, 255, 255, 0.62);
+            font-size: 18px;
+        }
 
-            border: 1px solid rgba(255, 255, 255, 0.7);
 
-            padding: 17px 25px;
+        /* =========================
+           OFERTY
+        ========================= */
+
+        .section-title {
+            text-align: center;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 38px;
+            font-weight: 500;
+
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            color: #e85b78;
+        }
+
+        .offers {
+            display: flex;
+            flex-direction: column;
+
+            gap: 22px;
+        }
+
+        .offer {
+            position: relative;
+
+            padding: 34px;
 
             border-radius: 18px;
 
-            font-size: 1rem;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.035)
+                );
+
+            border: 1px solid rgba(255,255,255,.13);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.2);
+        }
+
+        .offer-number {
+            color: #d85a78;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .offer h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
             font-weight: 500;
 
-            box-shadow: 0 8px 25px rgba(110, 50, 75, 0.08);
+            margin-bottom: 15px;
 
-            backdrop-filter: blur(10px);
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
+            color: #fff5f7;
         }
 
-        .button:hover {
-            transform: translateY(-4px);
+        .offer p {
+            color: #d8b4bd;
 
-            background: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
 
-            box-shadow: 0 14px 30px rgba(110, 50, 75, 0.15);
+            line-height: 1.9;
+
+            font-weight: 300;
         }
 
-        .button:active {
-            transform: translateY(-1px);
+        .offer p + p {
+            margin-top: 10px;
         }
 
-        .icon {
-            margin-right: 8px;
+        .contact-note {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 9px 14px;
+
+            border-radius: 20px;
+
+            background: rgba(216,90,120,.12);
+
+            border: 1px solid rgba(216,90,120,.2);
+
+            color: #e994a7;
+
+            font-size: 11px;
+
+            letter-spacing: .5px;
         }
 
-        /* Stopka */
+
+        /* =========================
+           STOPKA
+        ========================= */
+
         footer {
-            margin-top: 45px;
+            text-align: center;
 
-            font-size: 0.85rem;
-            color: #8b6474;
+            margin-top: 60px;
 
-            animation: fadeUp 1.2s ease;
+            color: #956270;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
         }
 
-        /* Animacje */
-        @keyframes fadeDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            .page {
+                width: min(100% - 25px, 900px);
+
+                padding-top: 45px;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+            .links {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
+            .offer {
+                padding: 25px;
             }
 
-            15% {
-                transform: scale(1.15);
-            }
-
-            30% {
-                transform: scale(1);
-            }
-
-            45% {
-                transform: scale(1.12);
+            .offer h3 {
+                font-size: 28px;
             }
         }
 
-        /* Telefon */
-        @media (max-width: 600px) {
-            body {
-                padding: 30px 18px;
-            }
-
-            .welcome {
-                font-size: 2.1rem;
-            }
-
-            .button {
-                padding: 16px 20px;
-            }
-        }
     </style>
 </head>
 
+
 <body>
 
-    <main class="container">
+    <main class="page">
 
-        <h1 class="welcome">
-            Dzień dobry, tu kocicadlaPana
-            <span class="heart">♡</span>
-        </h1>
 
-        <p class="subtitle">
-            Rozgość się ✨
-        </p>
+        <!-- =========================
+             POWITANIE
+        ========================= -->
 
-        <nav class="buttons">
+        <header>
 
-            <a href="about.html" class="button">
-                <span class="icon">🌸</span>
-                O mnie
-            </a>
+            <div class="small-text">
+                witaj ♡
+            </div>
 
-            <a href="projekty.html" class="button">
-                <span class="icon">🎀</span>
-                Moje projekty
-            </a>
+            <h1>
+                Dzień dobry,<br>
+                tu kocicadlaPana <span class="heart">♥</span>
+            </h1>
 
-            <a href="galeria.html" class="button">
-                <span class="icon">🌷</span>
-                Galeria
-            </a>
+            <p class="subtitle">
+                Rozgość się.
+            </p>
 
-            <a href="kontakt.html" class="button">
-                <span class="icon">💌</span>
-                Kontakt
-            </a>
 
-        </nav>
+            <!-- LINKI -->
+
+            <div class="links">
+
+                <!-- PODMIEŃ LINKI NA SWOJE -->
+
+                <a href="https://showup.tv/" target="_blank">
+                    <span class="link-icon">♡</span>
+                    ShowUp
+                </a>
+
+                <a href="https://wa.me/48123456789" target="_blank">
+                    <span class="link-icon">♡</span>
+                    WhatsApp
+                </a>
+
+                <a href="https://t.me/twoj_telegram" target="_blank">
+                    <span class="link-icon">♡</span>
+                    Telegram
+                </a>
+
+                <a href="mailto:twojmail@example.com">
+                    <span class="link-icon">♡</span>
+                    E-mail
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             OFERTY
+        ========================= -->
+
+        <section>
+
+            <h2 class="section-title">
+                Moja <span>oferta</span>
+            </h2>
+
+
+            <div class="offers">
+
+
+                <!-- OFERTA 1 -->
+
+                <article class="offer">
+
+                    <div class="offer-number">
+                        Oferta 01
+                    </div>
+
+                    <h3>
+                        Wymarzony film?
+                    </h3>
+
+                    <p>
+                        Masz ochotę na coś stworzonego specjalnie dla Ciebie?
+                        Napisz do mnie i opowiedz mi o swoim pomyśle.
+                    </p>
+
+                    <p>
+                        Przygotowuję indywidualne nagrania w wysokiej jakości.
+                        Szczegóły oraz cenę ustalimy prywatnie podczas kontaktu.
+                    </p>
+
+                    <span class="contact-note">
+                        ♥ Telegram / WhatsApp
+                    </span>
+
+                </article>
+
+
+
+                <!-- OFERTA 2 -->
+
+                <article class="offer">
+
+                    <div class="offer-number">
+                        Oferta 02
+                    </div>
+
+                    <h3>
+                        Personalizowane zamówienie
+                    </h3>
+
+                    <p>
+                        Szukasz czegoś bardziej osobistego?
+                        Chętnie przygotuję dla Ciebie indywidualne zamówienie
+                        wysyłkowe.
+                    </p>
+
+                    <p>
+                        Napisz do mnie, aby ustalić szczegóły zamówienia,
+                        dostępne możliwości oraz sposób wysyłki.
+                    </p>
+
+                    <span class="contact-note">
+                        ♥ Dyskretna wysyłka
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
 
         <footer>
-            ♡ miłego pobytu ♡
+            kocicadlaPana &nbsp; ♥ &nbsp; miłego pobytu
         </footer>
 
     </main>

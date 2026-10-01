@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>kocicadlaPana ♡</title>
+  <meta name="description" content="kocicadlaPana — zapoznaj się z moją stroną i ofertą.">
+  <title>kocicadlaPana — Witaj w moim świecie</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --rose-dark: #2a0715;
+      --rose: #65132f;
+      --rose-mid: #8f1d43;
+      --rose-light: #c64d70;
+      --pink: #f1a1b9;
+      --white: #fff8fb;
+      --muted: #ead4dc;
+      --glass: rgba(255, 255, 255, 0.09);
+      --glass-border: rgba(255, 255, 255, 0.16);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,12 +36,13 @@
 
     body {
       min-height: 100vh;
-      color: #f8e9eb;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(125, 18, 48, 0.35), transparent 35%),
-        radial-gradient(circle at 10% 80%, rgba(88, 8, 30, 0.25), transparent 30%),
-        #0b0709;
+      color: var(--white);
       font-family: "Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(198, 77, 112, 0.35), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(143, 29, 67, 0.42), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(198, 77, 112, 0.20), transparent 35%),
+        linear-gradient(135deg, #210511 0%, #4b0b23 45%, #250511 100%);
       overflow-x: hidden;
     }
 
@@ -39,124 +52,118 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(255,255,255,0.025) 50%,
-          transparent 100%
-        );
-      opacity: 0.5;
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
     }
 
-    .page {
-      width: min(1050px, 92%);
-      margin: auto;
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      opacity: 0;
+      animation: floatUp linear infinite;
+      filter: drop-shadow(0 0 10px rgba(241, 161, 185, 0.25));
+    }
 
-    .hero {
-      min-height: 100vh;
+    .heart:nth-child(1) { left: 8%; font-size: 20px; animation-duration: 13s; animation-delay: 1s; }
+    .heart:nth-child(2) { left: 22%; font-size: 14px; animation-duration: 16s; animation-delay: 5s; }
+    .heart:nth-child(3) { left: 43%; font-size: 24px; animation-duration: 14s; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 63%; font-size: 17px; animation-duration: 18s; animation-delay: 7s; }
+    .heart:nth-child(5) { left: 78%; font-size: 22px; animation-duration: 15s; animation-delay: 3s; }
+    .heart:nth-child(6) { left: 91%; font-size: 13px; animation-duration: 17s; animation-delay: 9s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(.8) rotate(0deg); opacity: 0; }
+      12% { opacity: .45; }
+      80% { opacity: .18; }
+      100% { transform: translateY(-110vh) scale(1.15) rotate(18deg); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 72vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 20px;
-      position: relative;
+      padding: 90px 0 50px;
     }
 
-    .hero-content {
-      max-width: 850px;
+    .hero {
+      max-width: 900px;
+      animation: fadeIn .9s ease both;
     }
 
-    .small-label {
-      font-size: 10px;
-      letter-spacing: 5px;
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--pink);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .28em;
       text-transform: uppercase;
-      color: #b87985;
-      margin-bottom: 28px;
     }
 
-    .hero h1 {
+    h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(55px, 9vw, 105px);
-      font-weight: 400;
-      line-height: 0.85;
-      letter-spacing: -3px;
-      color: #fff5f6;
-    }
-
-    .hero h1 span {
-      display: block;
-      font-style: italic;
-      color: #b83b5b;
-      margin-top: 14px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .94;
+      font-weight: 700;
+      letter-spacing: -.025em;
+      text-shadow: 0 8px 30px rgba(0,0,0,.28);
     }
 
     .hero-line {
-      width: 80px;
-      height: 1px;
-      background: #873047;
-      margin: 35px auto;
+      width: 100px;
+      height: 2px;
+      margin: 30px auto;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
     }
 
-    .hero-text {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      color: #d9bfc4;
-      font-style: italic;
+    .intro {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.9;
+      font-weight: 400;
     }
-
-    .scroll {
-      position: absolute;
-      bottom: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 9px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #76565e;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
 
     section {
-      padding: 100px 0;
+      padding: 55px 0;
     }
 
-    .section-heading {
+    .section-title {
+      margin-bottom: 28px;
       text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-heading .eyebrow {
-      font-size: 9px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: #a15a6a;
-      margin-bottom: 15px;
-    }
-
-    .section-heading h2 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(42px, 6vw, 70px);
-      font-weight: 400;
-      color: #fff0f2;
-      letter-spacing: -1px;
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      font-weight: 700;
     }
 
-    .section-heading h2 span {
-      color: #b83b5b;
-      font-style: italic;
+    .section-subtitle {
+      margin: -12px auto 30px;
+      max-width: 680px;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .95rem;
     }
-
-    /* =========================
-       CONTACT
-    ========================= */
 
     .contact-grid {
       display: grid;
@@ -164,499 +171,283 @@
       gap: 14px;
     }
 
-    .contact {
-      position: relative;
-      min-height: 125px;
-      padding: 25px;
-      text-decoration: none;
-      color: #f9e8eb;
-
+    .contact-card {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      background: linear-gradient(
-        145deg,
-        rgba(52, 16, 25, 0.9),
-        rgba(18, 8, 12, 0.95)
-      );
-
-      border: 1px solid rgba(183, 59, 91, 0.22);
-      transition: all 0.35s ease;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      min-height: 76px;
+      padding: 18px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 35px var(--shadow);
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
     }
 
-    .contact::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(184, 59, 91, 0.08),
-        transparent
-      );
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
+    .contact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,.14);
+      border-color: rgba(241,161,185,.5);
     }
-
-    .contact:hover {
-      transform: translateY(-7px);
-      border-color: rgba(184, 59, 91, 0.65);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    }
-
-    .contact:hover::before {
-      transform: translateX(100%);
-    }
-
-    .contact-number {
-      font-size: 9px;
-      color: #8f6871;
-      letter-spacing: 2px;
-    }
-
-    .contact-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
-    }
-
-    .contact-arrow {
-      position: absolute;
-      right: 22px;
-      bottom: 19px;
-      color: #b83b5b;
-      font-size: 18px;
-    }
-
-    /* =========================
-       OFFER
-    ========================= */
 
     .offers {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .offer {
       position: relative;
-      padding: 48px 50px;
+      min-height: 310px;
+      padding: 34px 28px;
+      border: 1px solid var(--glass-border);
+      border-radius: 26px;
       background:
-        linear-gradient(
-          110deg,
-          rgba(52, 14, 25, 0.88),
-          rgba(18, 8, 12, 0.95)
-        );
-      border: 1px solid rgba(184, 59, 91, 0.2);
+        linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045));
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 50px var(--shadow);
       overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .offer::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      top: -65px;
+      right: -55px;
+      border-radius: 50%;
+      background: rgba(241,161,185,.13);
     }
 
     .offer:hover {
-      border-color: rgba(184, 59, 91, 0.5);
-      transform: translateX(5px);
-    }
-
-    .offer::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      right: -90px;
-      top: -90px;
-      border-radius: 50%;
-      background: rgba(132, 25, 55, 0.13);
-      filter: blur(20px);
+      transform: translateY(-7px);
+      border-color: rgba(241,161,185,.4);
     }
 
     .offer-number {
-      font-size: 9px;
-      letter-spacing: 4px;
-      color: #8f5361;
-      margin-bottom: 16px;
+      color: var(--pink);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      margin-bottom: 22px;
     }
 
     .offer h3 {
+      margin-bottom: 17px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
-      font-weight: 400;
-      color: #fff0f2;
-      margin-bottom: 18px;
-    }
-
-    .offer h3 span {
-      color: #bd4664;
-      font-style: italic;
+      font-size: 1.85rem;
+      line-height: 1.05;
     }
 
     .offer p {
-      max-width: 700px;
-      color: #c7aeb3;
-      font-size: 14px;
-      line-height: 1.9;
-      font-weight: 300;
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.75;
     }
 
-    .offer .mini-line {
-      width: 45px;
-      height: 1px;
-      background: #92334d;
-      margin: 25px 0;
+    .price {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(198,77,112,.25);
+      border: 1px solid rgba(241,161,185,.2);
+      font-size: .82rem;
+      font-weight: 600;
     }
-
-    /* =========================
-       QUOTE
-    ========================= */
-
-    .quote {
-      padding: 90px 30px;
-      text-align: center;
-    }
-
-    .quote p {
-      max-width: 700px;
-      margin: auto;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.1;
-      color: #e7cdd2;
-      font-style: italic;
-    }
-
-    .quote span {
-      display: block;
-      margin-top: 25px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 9px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #7f5961;
-      font-style: normal;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
-      border-top: 1px solid rgba(184, 59, 91, 0.12);
-      padding: 40px 20px;
+      margin-top: 50px;
+      padding: 34px 0 42px;
       text-align: center;
-    }
-
-    footer p {
-      font-size: 9px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #63474e;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,248,251,.62);
+      font-size: .78rem;
+      letter-spacing: .04em;
     }
 
     footer strong {
-      color: #9d5364;
-      font-weight: 500;
+      display: block;
+      margin-top: 7px;
+      color: var(--pink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      letter-spacing: .03em;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    @media (max-width: 750px) {
-
-      .hero {
-        min-height: 90vh;
-        padding: 60px 15px;
-      }
-
-      .hero h1 {
-        font-size: 64px;
-      }
-
-      .hero-text {
-        font-size: 21px;
-      }
-
-      section {
-        padding: 75px 0;
+    @media (max-width: 800px) {
+      header {
+        min-height: 65vh;
+        padding-top: 70px;
       }
 
       .contact-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .contact {
-        min-height: 120px;
-      }
-
-      .contact-name {
-        font-size: 27px;
+      .offers {
+        grid-template-columns: 1fr;
       }
 
       .offer {
-        padding: 35px 28px;
-      }
-
-      .offer h3 {
-        font-size: 36px;
+        min-height: auto;
       }
     }
 
     @media (max-width: 480px) {
+      .container {
+        width: min(100% - 22px, 1080px);
+      }
 
-      .page {
-        width: 88%;
+      header {
+        padding: 65px 0 35px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact {
-        min-height: 105px;
+      .contact-card {
+        min-height: 64px;
       }
 
-      .hero h1 {
-        font-size: 54px;
-        letter-spacing: -2px;
+      section {
+        padding: 40px 0;
       }
 
-      .section-heading h2 {
-        font-size: 48px;
+      .offer {
+        padding: 28px 22px;
+        border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="floating-hearts" aria-hidden="true">
+    <span class="heart">♡</span>
+    <span class="heart">♥</span>
+    <span class="heart">♡</span>
+    <span class="heart">♥</span>
+    <span class="heart">♡</span>
+    <span class="heart">♥</span>
+  </div>
 
   <main>
+    <header>
+      <div class="container">
+        <div class="hero">
+          <span class="eyebrow">Witaj u mnie</span>
 
-    <!-- =========================
-         HERO
-    ========================= -->
+          <h1>Witaj w świecie<br>kocicydlaPana,<br>rozgość się.</h1>
 
-    <section class="hero">
-      <div class="hero-content">
+          <div class="hero-line"></div>
 
-        <div class="small-label">
-          witaj u mnie
+          <p class="intro">
+            Jestem młodą, seksowną Polką. Uwielbiam świntuszyć!
+            Lubię zarówno delikatne i subtelne klimaty, jak i te nieco ostrzejsze...
+            Zapoznaj się z moją stroną oraz ofertą i napisz do mnie.
+          </p>
         </div>
+      </div>
+    </header>
 
-        <h1>
-          Dzień dobry,
-          <span>kocicadlaPana ♡</span>
-        </h1>
-
-        <div class="hero-line"></div>
-
-        <p class="hero-text">
-          Rozgość się.
+    <section id="kontakt">
+      <div class="container">
+        <h2 class="section-title">Skontaktuj się ze mną</h2>
+        <p class="section-subtitle">
+          Wybierz wygodną dla siebie formę kontaktu.
         </p>
 
-      </div>
+        <div class="contact-grid">
+          <!-- Podmień poniższe adresy na swoje -->
+          <a class="contact-card" href="https://wa.me/48123456789" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
 
-      <div class="scroll">
-        przewiń ↓
+          <a class="contact-card" href="https://t.me/twoj_nick" target="_blank" rel="noopener noreferrer">
+            Telegram
+          </a>
+
+          <a class="contact-card" href="https://showup.tv/" target="_blank" rel="noopener noreferrer">
+            ShowUp
+          </a>
+
+          <a class="contact-card" href="mailto:kontakt@example.com">
+            E-mail
+          </a>
+        </div>
       </div>
     </section>
 
-
-    <div class="page">
-
-      <!-- =========================
-           CONTACT
-      ========================= -->
-
-      <section>
-
-        <div class="section-heading">
-          <div class="eyebrow">
-            gdzie mnie znaleźć
-          </div>
-
-          <h2>
-            TU MNIE <span>ZNAJDZIESZ</span>
-          </h2>
-        </div>
-
-
-        <div class="contact-grid">
-
-          <a
-            class="contact"
-            href="https://showup.tv/"
-            target="_blank"
-          >
-            <span class="contact-number">01</span>
-            <span class="contact-name">ShowUp</span>
-            <span class="contact-arrow">↗</span>
-          </a>
-
-
-          <a
-            class="contact"
-            href="https://wa.me/48123456789"
-            target="_blank"
-          >
-            <span class="contact-number">02</span>
-            <span class="contact-name">WhatsApp</span>
-            <span class="contact-arrow">↗</span>
-          </a>
-
-
-          <a
-            class="contact"
-            href="https://t.me/twoj_telegram"
-            target="_blank"
-          >
-            <span class="contact-number">03</span>
-            <span class="contact-name">Telegram</span>
-            <span class="contact-arrow">↗</span>
-          </a>
-
-
-          <a
-            class="contact"
-            href="mailto:twojmail@example.com"
-          >
-            <span class="contact-number">04</span>
-            <span class="contact-name">E-mail</span>
-            <span class="contact-arrow">↗</span>
-          </a>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           OFFER
-      ========================= -->
-
-      <section>
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            dla Ciebie
-          </div>
-
-          <h2>
-            CO <span>OFERUJĘ</span>
-          </h2>
-
-        </div>
-
-
-        <div class="offers">
-
-
-          <!-- POKAZY -->
-
-          <article class="offer">
-
-            <div class="offer-number">
-              01 / ONLINE
-            </div>
-
-            <h3>
-              Pokazy <span>online</span>
-            </h3>
-
-            <div class="mini-line"></div>
-
-            <p>
-              Wykonam dla Ciebie pokaz.
-              Skontaktuj się ze mną, wybierz najlepszy
-              kanał z powyższych i zabawmy się.
-            </p>
-
-          </article>
-
-
-          <!-- FILMY -->
-
-          <article class="offer">
-
-            <div class="offer-number">
-              02 / PERSONAL
-            </div>
-
-            <h3>
-              Chcesz <span>wymarzony film?</span>
-            </h3>
-
-            <div class="mini-line"></div>
-
-            <p>
-              Odezwij się. Nagram specjalnie dla Ciebie
-              personalizowany filmik. Filmy nagrywam
-              z twarzą i w wysokiej jakości.
-              Napisz do mnie na Telegramie albo WhatsAppie,
-              aby ustalić szczegóły oraz cenę.
-            </p>
-
-          </article>
-
-
-          <!-- ZAMÓWIENIA -->
-
-          <article class="offer">
-
-            <div class="offer-number">
-              03 / INDYWIDUALNIE
-            </div>
-
-            <h3>
-              Personalizowane <span>zamówienie</span>
-            </h3>
-
-            <div class="mini-line"></div>
-
-            <p>
-              Chcesz zamówić używane rzeczy lub przygotować
-              indywidualne zamówienie wysyłkowe?
-              Napisz do mnie i ustalimy wszystkie szczegóły
-              oraz sposób realizacji.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           QUOTE
-      ========================= -->
-
-      <section class="quote">
-
-        <p>
-          „Nie spiesz się.<br>
-          Zostań na chwilę.”
+    <section id="oferta">
+      <div class="container">
+        <h2 class="section-title">Moja oferta</h2>
+        <p class="section-subtitle">
+          Wszystko ustalamy indywidualnie — napisz do mnie, a omówimy szczegóły.
         </p>
 
-        <span>
-          kocicadlaPana ♡
-        </span>
+        <div class="offers">
+          <article class="offer">
+            <div class="offer-number">01</div>
+            <h3>Pokazy online</h3>
+            <p>
+              Kamerka — tylko Ty i ja. Skontaktuj się ze mną na ShowUp,
+              Telegramie bądź WhatsAppie, aby ustalić szczegóły.
+            </p>
+          </article>
 
-      </section>
+          <article class="offer">
+            <div class="offer-number">02</div>
+            <h3>Filmy oraz zdjęcia na życzenie</h3>
+            <p>
+              Przygotuję dla Ciebie materiały na życzenie — nagrywam
+              z widoczną twarzą i w bardzo dobrej jakości. Napisz mi
+              o swojej fantazji na e-mailu, Telegramie bądź WhatsAppie.
+            </p>
+            <span class="price">Cena filmu od 99 zł</span>
+          </article>
 
-    </div>
-
+          <article class="offer">
+            <div class="offer-number">03</div>
+            <h3>Używana bielizna i rzeczy na zamówienie</h3>
+            <p>
+              Przygotuję dla Ciebie spersonalizowaną przesyłkę.
+              Wysyłka jest bezpieczna — jedyną informacją, której
+              będę potrzebować, jest nazwa Twojego paczkomatu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-
   <footer>
-
-    <p>
-      © 2026 <strong>kocicadlaPana</strong> · all rights reserved
-    </p>
-
+    <div class="container">
+      Wszelkie prawa zastrzeżone © 2026
+      <strong>kocicadlaPana</strong>
+    </div>
   </footer>
-
 </body>
 </html>

@@ -4,49 +4,292 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KocicadlaPana</title>
+  <title>Kontakt | Twoja oferta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       min-height: 100vh;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+
+      background:
+        radial-gradient(circle at 20% 20%, rgba(190, 80, 130, .25), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(110, 60, 180, .22), transparent 30%),
+        linear-gradient(135deg, #120b16, #24101f 50%, #0d0a12);
+
+      overflow-x: hidden;
+    }
+
+    /* Delikatne światła w tle */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: .25;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background: #d45a9a;
+      top: -150px;
+      left: -100px;
+    }
+
+    body::after {
+      background: #7852d6;
+      bottom: -150px;
+      right: -100px;
+    }
+
+    .container {
+      width: min(920px, 92%);
+      margin: auto;
+      padding: 55px 0;
+    }
+
+    /* HEADER */
+
+    .hero {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .avatar {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 20px;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background: #faf9f7;
-      color: #171717;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d66ba5, #744bc2);
+      box-shadow:
+        0 0 35px rgba(213, 93, 157, .35),
+        inset 0 0 20px rgba(255,255,255,.12);
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-size: 43px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 90px);
-      font-weight: 400;
-      letter-spacing: -3px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 8vw, 65px);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #d9cbd6;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* LINKI */
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 35px;
+    }
+
+    .link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      padding: 18px 22px;
+
+      color: white;
+      text-decoration: none;
+
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+
+      background: rgba(255,255,255,.065);
+      backdrop-filter: blur(15px);
+
+      transition: .3s ease;
+      overflow: hidden;
+    }
+
+    .link::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: .5s;
+    }
+
+    .link:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.11);
+      box-shadow: 0 15px 35px rgba(0,0,0,.25);
+    }
+
+    .link:hover::before {
+      transform: translateX(100%);
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 13px;
+      background: rgba(255,255,255,.1);
+      font-size: 22px;
+    }
+
+    .link-text strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .link-text span {
+      color: #bcaebc;
+      font-size: 12px;
+    }
+
+    .arrow {
+      margin-left: auto;
+      color: #cda4c2;
+      font-size: 20px;
+    }
+
+    /* KARTY OFERT */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+
+      background: rgba(255,255,255,.065);
+      backdrop-filter: blur(18px);
+
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .card.featured {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(198, 85, 143, .18),
+          rgba(100, 55, 150, .12)
+        ),
+        rgba(255,255,255,.06);
+
+      border-color: rgba(218, 115, 171, .3);
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #d0c4ce;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .card-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 22px;
+      padding: 12px 20px;
+
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+
+      border-radius: 12px;
+      background: linear-gradient(135deg, #bd5b91, #7548ad);
+
+      transition: .3s;
+    }
+
+    .card-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(169, 73, 137, .3);
+    }
+
+    /* STOPKA */
+
+    footer {
       text-align: center;
-
-      animation: appear 1.5s ease forwards;
+      margin-top: 40px;
+      color: #8f808e;
+      font-size: 11px;
+      letter-spacing: 1px;
     }
 
-    h1 span {
-      font-style: italic;
-    }
+    /* MOBILE */
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
+    @media (max-width: 650px) {
+      .container {
+        padding: 35px 0;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .links,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 48px;
       }
     }
   </style>
@@ -54,9 +297,135 @@
 
 <body>
 
-  <h1>
-    Wkrótce <span>się pojawię.</span>
-  </h1>
+  <main class="container">
+
+    <!-- HEADER -->
+    <section class="hero">
+
+      <div class="avatar">
+        ✨
+      </div>
+
+      <h1>Witaj u mnie</h1>
+
+      <p class="subtitle">
+        Kontakt & wyjątkowe oferty
+      </p>
+
+    </section>
+
+
+    <!-- PRZYCISKI -->
+    <section class="links">
+
+      <a class="link" href="https://showup.tv/" target="_blank">
+        <div class="icon">📺</div>
+
+        <div class="link-text">
+          <strong>ShowUp.tv</strong>
+          <span>Znajdź mnie na ShowUp</span>
+        </div>
+
+        <div class="arrow">→</div>
+      </a>
+
+
+      <a class="link" href="https://t.me/TWOJ_TELEGRAM" target="_blank">
+        <div class="icon">💬</div>
+
+        <div class="link-text">
+          <strong>Telegram</strong>
+          <span>Napisz do mnie prywatnie</span>
+        </div>
+
+        <div class="arrow">→</div>
+      </a>
+
+
+      <a class="link" href="https://wa.me/48123456789" target="_blank">
+        <div class="icon">💚</div>
+
+        <div class="link-text">
+          <strong>WhatsApp</strong>
+          <span>Skontaktuj się ze mną</span>
+        </div>
+
+        <div class="arrow">→</div>
+      </a>
+
+
+      <a class="link" href="mailto:twojmail@example.com">
+        <div class="icon">✉️</div>
+
+        <div class="link-text">
+          <strong>E-mail</strong>
+          <span>Napisz wiadomość</span>
+        </div>
+
+        <div class="arrow">→</div>
+      </a>
+
+    </section>
+
+
+    <!-- OFERTY -->
+    <section class="cards">
+
+      <article class="card featured">
+
+        <div class="card-icon">🎬</div>
+
+        <h2>Film na życzenie</h2>
+
+        <p>
+          Marzysz o filmie na życzenie?
+          Skontaktuj się ze mną na Telegramie
+          lub WhatsAppie, aby ustalić szczegóły.
+          Oferuję również filmy z twarzą.
+        </p>
+
+        <a
+          class="card-button"
+          href="https://t.me/TWOJ_TELEGRAM"
+          target="_blank"
+        >
+          💌 Napisz na Telegramie
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-icon">📦</div>
+
+        <h2>Kolejna oferta</h2>
+
+        <p>
+          Używane majteczki, inna część mojej
+          garderoby? A może coś zupełnie innego,
+          co będę mogła spakować do koperty
+          i wysłać Ci za pomocą paczkomatu?
+        </p>
+
+        <a
+          class="card-button"
+          href="https://t.me/TWOJ_TELEGRAM"
+          target="_blank"
+        >
+          💬 Zapytaj o szczegóły
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <footer>
+      © 2026 • Wszystkie prawa zastrzeżone
+    </footer>
+
+  </main>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -45,11 +46,6 @@
       --border: rgba(255,185,205,.18);
     }
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     *,
     *::before,
     *::after {
@@ -66,14 +62,10 @@
 
     body {
       position: relative;
-
       width: 100%;
       min-height: 100vh;
-
       overflow-x: hidden;
-
       color: var(--white);
-
       font-family: "Montserrat", sans-serif;
 
       background:
@@ -82,19 +74,16 @@
           rgba(142,20,57,.42),
           transparent 45%
         ),
-
         radial-gradient(
           ellipse at 0% 40%,
           rgba(110,12,43,.32),
           transparent 38%
         ),
-
         radial-gradient(
           ellipse at 100% 70%,
           rgba(88,8,33,.36),
           transparent 40%
         ),
-
         linear-gradient(
           135deg,
           #030204 0%,
@@ -103,17 +92,10 @@
         );
     }
 
-
-    /* =========================================================
-       DELIKATNA TEKSTURA
-    ========================================================= */
-
     body::before {
       content: "";
-
       position: fixed;
       inset: 0;
-
       z-index: 0;
       pointer-events: none;
 
@@ -123,7 +105,6 @@
           rgba(255,255,255,.025),
           transparent 30%
         ),
-
         radial-gradient(
           circle at 75% 70%,
           rgba(255,170,195,.018),
@@ -131,17 +112,10 @@
         );
     }
 
-
-    /* =========================================================
-       WINIETA
-    ========================================================= */
-
     body::after {
       content: "";
-
       position: fixed;
       inset: 0;
-
       z-index: 30;
       pointer-events: none;
 
@@ -161,11 +135,9 @@
 
     .topbar {
       position: absolute;
-
       top: 0;
       left: 0;
       right: 0;
-
       z-index: 50;
 
       display: flex;
@@ -184,22 +156,17 @@
 
       display: flex;
       flex-direction: column;
-
       justify-content: center;
       align-items: center;
 
       gap: 5px;
 
-      border:
-        1px solid rgba(212,174,115,.28);
-
+      border: 1px solid rgba(212,174,115,.28);
       border-radius: 50%;
 
-      background:
-        rgba(10,3,7,.72);
+      background: rgba(10,3,7,.72);
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter: blur(12px);
 
       cursor: pointer;
     }
@@ -208,42 +175,32 @@
       width: 18px;
       height: 1px;
 
-      background:
-        var(--gold-light);
+      background: var(--gold-light);
 
-      transition:
-        .3s ease;
+      transition: .3s ease;
     }
 
     .menu-content {
       position: absolute;
-
       top: 58px;
       right: 0;
 
       width: 190px;
-
       padding: 10px;
 
-      border:
-        1px solid rgba(212,174,115,.22);
-
+      border: 1px solid rgba(212,174,115,.22);
       border-radius: 18px;
 
-      background:
-        rgba(12,3,8,.96);
+      background: rgba(12,3,8,.96);
 
-      backdrop-filter:
-        blur(18px);
+      backdrop-filter: blur(18px);
 
-      box-shadow:
-        0 20px 50px rgba(0,0,0,.55);
+      box-shadow: 0 20px 50px rgba(0,0,0,.55);
 
       opacity: 0;
       visibility: hidden;
 
-      transform:
-        translateY(-8px);
+      transform: translateY(-8px);
 
       transition:
         opacity .25s ease,
@@ -255,25 +212,20 @@
     .menu:focus-within .menu-content {
       opacity: 1;
       visibility: visible;
-
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
 
     .menu-content a {
       display: block;
-
       padding: 12px 14px;
 
       color: var(--white);
-
       text-decoration: none;
 
       border-radius: 10px;
 
       font-size: .78rem;
       font-weight: 600;
-
       letter-spacing: .04em;
 
       transition:
@@ -283,20 +235,17 @@
 
     .menu-content a:hover {
       color: var(--gold-light);
-
-      background:
-        rgba(255,255,255,.055);
+      background: rgba(255,255,255,.055);
     }
 
 
     /* =========================================================
-       ŚWIATŁA W TLE
+       ŚWIATŁA
     ========================================================= */
 
     .lights {
       position: fixed;
       inset: 0;
-
       z-index: 0;
 
       overflow: hidden;
@@ -305,11 +254,9 @@
 
     .light {
       position: absolute;
-
       border-radius: 50%;
 
       filter: blur(85px);
-
       opacity: .42;
 
       animation:
@@ -324,8 +271,7 @@
       top: -160px;
       left: -100px;
 
-      background:
-        rgba(145,20,60,.48);
+      background: rgba(145,20,60,.48);
     }
 
     .light.two {
@@ -335,8 +281,7 @@
       top: 25%;
       right: -130px;
 
-      background:
-        rgba(116,10,46,.50);
+      background: rgba(116,10,46,.50);
 
       animation-delay:
         -6s,
@@ -354,8 +299,7 @@
       bottom: -80px;
       left: 35%;
 
-      background:
-        rgba(168,30,73,.25);
+      background: rgba(168,30,73,.25);
 
       animation-delay:
         -10s,
@@ -373,11 +317,9 @@
       top: 35%;
       left: 48%;
 
-      background:
-        rgba(238,191,117,.12);
+      background: rgba(238,191,117,.12);
 
-      filter:
-        blur(65px);
+      filter: blur(65px);
 
       animation-duration:
         15s,
@@ -385,7 +327,6 @@
     }
 
     @keyframes lightMove {
-
       from {
         transform:
           translate3d(0,0,0)
@@ -397,11 +338,9 @@
           translate3d(35px,-25px,0)
           scale(1.10);
       }
-
     }
 
     @keyframes lightBreath {
-
       0%,
       100% {
         opacity: .30;
@@ -410,7 +349,6 @@
       50% {
         opacity: .50;
       }
-
     }
 
 
@@ -475,17 +413,13 @@
     .rose::before {
       left: 10px;
       top: 70px;
-
-      transform:
-        rotate(-35deg);
+      transform: rotate(-35deg);
     }
 
     .rose::after {
       right: 10px;
       top: 55px;
-
-      transform:
-        rotate(40deg);
+      transform: rotate(40deg);
     }
 
     .rose-center {
@@ -563,8 +497,7 @@
         rotate(27deg)
         scale(1.45);
 
-      animation-delay:
-        -5s;
+      animation-delay: -5s;
     }
 
     .rose-c {
@@ -577,8 +510,7 @@
 
       opacity: .11;
 
-      animation-delay:
-        -8s;
+      animation-delay: -8s;
     }
 
     .rose-d {
@@ -591,12 +523,10 @@
 
       opacity: .12;
 
-      animation-delay:
-        -11s;
+      animation-delay: -11s;
     }
 
     @keyframes roseFloat {
-
       from {
         transform:
           translate3d(0,0,0)
@@ -610,7 +540,6 @@
           rotate(5deg)
           scale(1.05);
       }
-
     }
 
 
@@ -625,17 +554,14 @@
       z-index: 5;
 
       overflow: hidden;
-
       pointer-events: none;
     }
 
     .heart {
       position: absolute;
-
       bottom: -50px;
 
-      color:
-        rgba(255,157,188,.48);
+      color: rgba(255,157,188,.48);
 
       font-family:
         Arial,
@@ -721,7 +647,6 @@
     }
 
     @keyframes heartFloat {
-
       0% {
         opacity: 0;
 
@@ -754,7 +679,6 @@
           rotate(-12deg)
           scale(1.08);
       }
-
     }
 
 
@@ -779,8 +703,7 @@
 
       border-radius: 50%;
 
-      background:
-        #f0d39b;
+      background: #f0d39b;
 
       box-shadow:
         0 0 6px #f0d39b,
@@ -828,7 +751,6 @@
     .s10 { left: 27%; top: 79%; animation-delay: 2.2s; }
 
     @keyframes sparkle {
-
       0%,
       100% {
         opacity: .08;
@@ -845,7 +767,6 @@
           scale(1.25)
           rotate(45deg);
       }
-
     }
 
 
@@ -965,147 +886,886 @@
 
 
     /* =========================================================
-       KOTKA — NOWY ELEMENT DEKORACYJNY
+       SEKSI ANIMOWANA KOTKA
     ========================================================= */
 
     .sexy-cat {
       position: absolute;
 
-      left: -135px;
+      left: -175px;
       top: 50%;
 
       width: 150px;
-      height: 230px;
+      height: 285px;
+
+      z-index: 8;
 
       transform:
         translateY(-50%);
 
-      z-index: 3;
-
       pointer-events: none;
 
-      opacity: .92;
-
-      filter:
-        drop-shadow(0 0 18px rgba(212,174,115,.18))
-        drop-shadow(0 15px 35px rgba(0,0,0,.35));
-
       animation:
-        catFloat 5.5s ease-in-out infinite;
+        catFloat 4.8s ease-in-out infinite;
     }
 
-    .sexy-cat svg {
+    .cat {
+      position: relative;
+
       width: 100%;
       height: 100%;
 
-      overflow: visible;
+      transform-origin:
+        50% 85%;
+
+      animation:
+        catBody 4.8s ease-in-out infinite;
     }
 
-    .cat-body {
-      fill:
-        rgba(5,3,6,.96);
+    /* głowa */
 
-      stroke:
-        var(--gold);
+    .cat-head {
+      position: absolute;
 
-      stroke-width:
-        1.15;
+      left: 49px;
+      top: 20px;
 
-      stroke-linejoin:
-        round;
+      width: 58px;
+      height: 62px;
+
+      border-radius:
+        48% 48% 45% 45%;
+
+      background:
+        radial-gradient(
+          circle at 40% 28%,
+          #34202a,
+          #10070c 62%,
+          #050306 100%
+        );
+
+      border:
+        1px solid rgba(212,174,115,.62);
+
+      box-shadow:
+        0 0 18px rgba(212,174,115,.10);
+      
+      z-index: 5;
+
+      animation:
+        headSway 4.8s ease-in-out infinite;
     }
 
-    .cat-detail {
-      fill: none;
+    /* uszy */
 
-      stroke:
-        rgba(240,211,155,.72);
+    .cat-ear {
+      position: absolute;
 
-      stroke-width:
-        1;
+      top: -19px;
 
-      stroke-linecap:
-        round;
+      width: 25px;
+      height: 33px;
 
-      stroke-linejoin:
-        round;
-    }
+      background:
+        linear-gradient(
+          145deg,
+          #12070c,
+          #321522
+        );
 
-    .cat-eye {
-      fill:
-        var(--gold-light);
+      border:
+        1px solid rgba(212,174,115,.55);
 
-      filter:
-        drop-shadow(
-          0 0 5px rgba(240,211,155,.75)
+      clip-path:
+        polygon(
+          50% 0,
+          100% 100%,
+          0 100%
         );
     }
 
-    .cat-tail {
-      fill: none;
+    .cat-ear::after {
+      content: "";
 
-      stroke:
-        var(--gold);
+      position: absolute;
 
-      stroke-width:
-        4;
+      left: 6px;
+      top: 8px;
 
-      stroke-linecap:
-        round;
+      width: 12px;
+      height: 17px;
 
-      stroke-dasharray:
-        180;
+      background:
+        rgba(165,46,82,.55);
 
-      stroke-dashoffset:
-        0;
+      clip-path:
+        polygon(
+          50% 0,
+          100% 100%,
+          0 100%
+        );
+    }
+
+    .cat-ear.left {
+      left: 4px;
+
+      transform:
+        rotate(-13deg);
 
       transform-origin:
-        72px 177px;
+        bottom center;
 
       animation:
-        catTail 4.5s ease-in-out infinite;
+        earLeft 3.8s ease-in-out infinite;
     }
 
-    .cat-glow {
-      fill:
-        rgba(212,174,115,.10);
+    .cat-ear.right {
+      right: 4px;
+
+      transform:
+        rotate(13deg);
+
+      transform-origin:
+        bottom center;
+
+      animation:
+        earRight 4.4s ease-in-out infinite;
+    }
+
+    /* włosy */
+
+    .cat-hair {
+      position: absolute;
+
+      left: 42px;
+      top: 15px;
+
+      width: 74px;
+      height: 86px;
+
+      z-index: 4;
+
+      pointer-events: none;
+    }
+
+    .cat-hair span {
+      position: absolute;
+
+      background:
+        linear-gradient(
+          110deg,
+          #08050a,
+          #29121b 45%,
+          #08050a
+        );
+
+      border:
+        1px solid rgba(212,174,115,.20);
+
+      border-top: none;
+
+      border-radius:
+        0 0 55% 55%;
+    }
+
+    .cat-hair .h1 {
+      left: 0;
+      top: 0;
+
+      width: 25px;
+      height: 76px;
+
+      transform:
+        rotate(13deg);
+    }
+
+    .cat-hair .h2 {
+      left: 16px;
+      top: -2px;
+
+      width: 27px;
+      height: 87px;
+
+      transform:
+        rotate(4deg);
+    }
+
+    .cat-hair .h3 {
+      left: 36px;
+      top: -2px;
+
+      width: 29px;
+      height: 94px;
+
+      transform:
+        rotate(-5deg);
+    }
+
+    .cat-hair .h4 {
+      left: 54px;
+      top: 4px;
+
+      width: 25px;
+      height: 79px;
+
+      transform:
+        rotate(-14deg);
+    }
+
+    /* twarz */
+
+    .cat-eye {
+      position: absolute;
+
+      top: 22px;
+
+      width: 7px;
+      height: 11px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--gold-light);
+
+      box-shadow:
+        0 0 8px rgba(240,211,155,.8);
+
+      transform-origin:
+        center;
+    }
+
+    .cat-eye.left {
+      left: 15px;
+    }
+
+    .cat-eye.right {
+      right: 15px;
+    }
+
+    .cat-eye::after {
+      content: "";
+
+      position: absolute;
+
+      left: 3px;
+      top: 1px;
+
+      width: 1px;
+      height: 9px;
+
+      background:
+        #210912;
+    }
+
+    .cat-face {
+      animation:
+        blink 5.5s ease-in-out infinite;
+    }
+
+    .cat-nose {
+      position: absolute;
+
+      left: 26px;
+      top: 39px;
+
+      width: 7px;
+      height: 5px;
+
+      border-radius:
+        50% 50% 45% 45%;
+
+      background:
+        var(--rose-light);
+
+      box-shadow:
+        0 0 5px rgba(237,142,172,.4);
+    }
+
+    .cat-mouth {
+      position: absolute;
+
+      left: 25px;
+      top: 44px;
+
+      width: 10px;
+      height: 7px;
+
+      border-bottom:
+        1px solid rgba(237,142,172,.75);
+
+      border-radius:
+        0 0 50% 50%;
+    }
+
+    /* szyja */
+
+    .cat-neck {
+      position: absolute;
+
+      left: 65px;
+      top: 78px;
+
+      width: 27px;
+      height: 25px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #0a0508,
+          #28111b,
+          #0a0508
+        );
+
+      border-left:
+        1px solid rgba(212,174,115,.25);
+
+      border-right:
+        1px solid rgba(212,174,115,.25);
+
+      z-index: 2;
+    }
+
+    /* ciało */
+
+    .cat-torso {
+      position: absolute;
+
+      left: 48px;
+      top: 91px;
+
+      width: 66px;
+      height: 122px;
+
+      z-index: 3;
+
+      background:
+        linear-gradient(
+          105deg,
+          #080509 0%,
+          #25111a 45%,
+          #0a0509 100%
+        );
+
+      border:
+        1px solid rgba(212,174,115,.48);
+
+      border-radius:
+        45% 45% 38% 38%;
+
+      transform-origin:
+        50% 25%;
+
+      animation:
+        torsoSway 4.8s ease-in-out infinite;
+    }
+
+    /* talia */
+
+    .cat-waist {
+      position: absolute;
+
+      left: 56px;
+      top: 143px;
+
+      width: 51px;
+      height: 56px;
+
+      z-index: 4;
+
+      border-radius:
+        40%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #080509,
+          #30131e,
+          #080509
+        );
+
+      border-left:
+        1px solid rgba(212,174,115,.32);
+
+      border-right:
+        1px solid rgba(212,174,115,.32);
+    }
+
+    /* sukienka */
+
+    .cat-dress {
+      position: absolute;
+
+      left: 38px;
+      top: 166px;
+
+      width: 88px;
+      height: 93px;
+
+      z-index: 5;
+
+      background:
+        linear-gradient(
+          110deg,
+          #080509,
+          #32101d 42%,
+          #12060c 70%,
+          #050306
+        );
+
+      clip-path:
+        polygon(
+          25% 0,
+          75% 0,
+          88% 32%,
+          100% 100%,
+          0 100%,
+          12% 32%
+        );
+
+      border:
+        1px solid rgba(212,174,115,.48);
 
       filter:
-        blur(10px);
+        drop-shadow(
+          0 12px 20px rgba(0,0,0,.55)
+        );
+
+      animation:
+        dressSway 4.8s ease-in-out infinite;
     }
 
-    @keyframes catFloat {
+    .cat-dress::before {
+      content: "";
 
+      position: absolute;
+
+      left: 39px;
+      top: 0;
+
+      width: 10px;
+      height: 92px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(212,174,115,.50),
+          rgba(212,174,115,.03)
+        );
+
+      transform:
+        rotate(4deg);
+    }
+
+    /* nogi */
+
+    .cat-leg {
+      position: absolute;
+
+      top: 218px;
+
+      width: 17px;
+      height: 58px;
+
+      z-index: 3;
+
+      border-radius:
+        10px 10px 5px 5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #090509,
+          #2a111b,
+          #080408
+        );
+
+      border:
+        1px solid rgba(212,174,115,.42);
+
+      transform-origin:
+        top center;
+    }
+
+    .cat-leg.left {
+      left: 52px;
+
+      transform:
+        rotate(5deg);
+
+      animation:
+        legLeft 4.8s ease-in-out infinite;
+    }
+
+    .cat-leg.right {
+      left: 92px;
+
+      transform:
+        rotate(-5deg);
+
+      animation:
+        legRight 4.8s ease-in-out infinite;
+    }
+
+    /* szpilki */
+
+    .cat-shoe {
+      position: absolute;
+
+      top: 265px;
+
+      width: 25px;
+      height: 10px;
+
+      z-index: 5;
+
+      border-radius:
+        70% 20% 20% 60%;
+
+      background:
+        linear-gradient(
+          110deg,
+          #12060b,
+          #5c1731
+        );
+
+      border:
+        1px solid rgba(212,174,115,.5);
+    }
+
+    .cat-shoe.left {
+      left: 43px;
+      transform: rotate(-8deg);
+    }
+
+    .cat-shoe.right {
+      left: 90px;
+      transform: rotate(8deg);
+    }
+
+    /* ręce */
+
+    .cat-arm {
+      position: absolute;
+
+      top: 101px;
+
+      width: 13px;
+      height: 88px;
+
+      z-index: 7;
+
+      border-radius:
+        10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #080509,
+          #30141f,
+          #090509
+        );
+
+      border:
+        1px solid rgba(212,174,115,.38);
+
+      transform-origin:
+        top center;
+    }
+
+    .cat-arm.left {
+      left: 43px;
+
+      transform:
+        rotate(17deg);
+
+      animation:
+        armLeft 4.8s ease-in-out infinite;
+    }
+
+    .cat-arm.right {
+      left: 106px;
+
+      transform:
+        rotate(-17deg);
+
+      animation:
+        armRight 4.8s ease-in-out infinite;
+    }
+
+    /* dłoń */
+
+    .cat-arm::after {
+      content: "";
+
+      position: absolute;
+
+      left: -2px;
+      bottom: -5px;
+
+      width: 17px;
+      height: 13px;
+
+      border-radius:
+        50%;
+
+      background:
+        #160a10;
+
+      border:
+        1px solid rgba(212,174,115,.35);
+    }
+
+    /* OGON */
+
+    .cat-tail-wrap {
+      position: absolute;
+
+      left: 103px;
+      top: 160px;
+
+      width: 70px;
+      height: 100px;
+
+      z-index: 1;
+
+      transform-origin:
+        0 20px;
+
+      animation:
+        tailMove 3.8s ease-in-out infinite;
+    }
+
+    .cat-tail-line {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 70px;
+      height: 85px;
+
+      border-right:
+        7px solid #160910;
+
+      border-top:
+        2px solid rgba(212,174,115,.58);
+
+      border-radius:
+        0 65% 65% 0;
+
+      transform:
+        rotate(16deg);
+    }
+
+    .cat-tail-tip {
+      position: absolute;
+
+      right: 0;
+      bottom: 8px;
+
+      width: 18px;
+      height: 18px;
+
+      border-radius:
+        50%;
+
+      background:
+        #13070d;
+
+      border:
+        1px solid rgba(212,174,115,.48);
+    }
+
+    /* ruchy */
+
+    @keyframes catFloat {
       0%,
       100% {
         transform:
           translateY(-50%)
+          translateX(0)
           rotate(-1deg);
       }
 
       50% {
         transform:
-          translateY(calc(-50% - 7px))
+          translateY(calc(-50% - 8px))
+          translateX(4px)
           rotate(1deg);
       }
-
     }
 
-    @keyframes catTail {
-
+    @keyframes catBody {
       0%,
       100% {
         transform:
-          rotate(-2deg);
+          rotate(0deg)
+          scaleX(1);
       }
 
       50% {
         transform:
-          rotate(8deg);
+          rotate(-1deg)
+          scaleX(1.015);
       }
-
     }
 
+    @keyframes headSway {
+      0%,
+      100% {
+        transform:
+          rotate(0deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          rotate(2deg)
+          translateY(-2px);
+      }
+    }
+
+    @keyframes torsoSway {
+      0%,
+      100% {
+        transform:
+          rotate(0deg);
+      }
+
+      50% {
+        transform:
+          rotate(-2deg);
+      }
+    }
+
+    @keyframes dressSway {
+      0%,
+      100% {
+        transform:
+          rotate(0deg);
+      }
+
+      50% {
+        transform:
+          rotate(1.8deg);
+      }
+    }
+
+    @keyframes legLeft {
+      0%,
+      100% {
+        transform:
+          rotate(5deg);
+      }
+
+      50% {
+        transform:
+          rotate(8deg)
+          translateY(2px);
+      }
+    }
+
+    @keyframes legRight {
+      0%,
+      100% {
+        transform:
+          rotate(-5deg);
+      }
+
+      50% {
+        transform:
+          rotate(-9deg)
+          translateY(-1px);
+      }
+    }
+
+    @keyframes armLeft {
+      0%,
+      100% {
+        transform:
+          rotate(17deg);
+      }
+
+      50% {
+        transform:
+          rotate(13deg);
+      }
+    }
+
+    @keyframes armRight {
+      0%,
+      100% {
+        transform:
+          rotate(-17deg);
+      }
+
+      50% {
+        transform:
+          rotate(-12deg);
+      }
+    }
+
+    @keyframes tailMove {
+      0%,
+      100% {
+        transform:
+          rotate(-4deg);
+      }
+
+      50% {
+        transform:
+          rotate(13deg);
+      }
+    }
+
+    @keyframes earLeft {
+      0%,
+      75%,
+      100% {
+        transform:
+          rotate(-13deg);
+      }
+
+      82% {
+        transform:
+          rotate(-4deg);
+      }
+    }
+
+    @keyframes earRight {
+      0%,
+      65%,
+      100% {
+        transform:
+          rotate(13deg);
+      }
+
+      72% {
+        transform:
+          rotate(21deg);
+      }
+    }
+
+    @keyframes blink {
+      0%,
+      45%,
+      49%,
+      100% {
+        transform:
+          scaleY(1);
+      }
+
+      47% {
+        transform:
+          scaleY(.08);
+      }
+    }
+
+
+    /* =========================================================
+       HERO TEKST
+    ========================================================= */
 
     .eyebrow {
       display: inline-block;
@@ -1115,7 +1775,6 @@
       color: var(--gold-light);
 
       font-size: .70rem;
-
       font-weight: 600;
 
       letter-spacing: .36em;
@@ -1782,11 +2441,10 @@
 
 
     /* =========================================================
-       ANIMACJE
+       ANIMACJE STRONY
     ========================================================= */
 
     @keyframes heroAppear {
-
       from {
         opacity: 0;
 
@@ -1802,11 +2460,9 @@
           translateY(0)
           scale(1);
       }
-
     }
 
     @keyframes heroGlow {
-
       0%,
       100% {
         opacity: .72;
@@ -1823,11 +2479,9 @@
           translate(-50%,-50%)
           scale(1.04);
       }
-
     }
 
     @keyframes frameBreath {
-
       0%,
       100% {
         opacity: .65;
@@ -1836,11 +2490,9 @@
       50% {
         opacity: 1;
       }
-
     }
 
     @keyframes goldBreath {
-
       0%,
       100% {
         text-shadow:
@@ -1851,11 +2503,9 @@
         text-shadow:
           0 0 25px rgba(240,211,155,.34);
       }
-
     }
 
     @keyframes goldTextGlow {
-
       0%,
       100% {
         filter:
@@ -1866,11 +2516,9 @@
         filter:
           brightness(1.10);
       }
-
     }
 
     @keyframes lineGlow {
-
       0%,
       100% {
         opacity: .62;
@@ -1879,7 +2527,6 @@
       50% {
         opacity: 1;
       }
-
     }
 
 
@@ -1911,15 +2558,12 @@
       }
 
       .sexy-cat {
-        left: -65px;
-        top: 50%;
+        left: -75px;
 
-        width: 105px;
-        height: 170px;
-
-        opacity: .65;
+        transform:
+          translateY(-50%)
+          scale(.72);
       }
-
     }
 
 
@@ -2032,15 +2676,17 @@
       }
 
       .sexy-cat {
-        left: -32px;
-        top: 24%;
+        left: -35px;
 
-        width: 72px;
-        height: 125px;
+        transform:
+          translateY(-50%)
+          scale(.48);
 
-        opacity: .48;
+        transform-origin:
+          center center;
+
+        opacity: .78;
       }
-
     }
 
 
@@ -2066,7 +2712,6 @@
         transition-duration:
           .01ms !important;
       }
-
     }
 
   </style>
@@ -2212,184 +2857,66 @@
         <div class="hero">
 
 
-          <!-- KOTKA -->
+          <!-- =================================================
+               ANIMOWANA SEKSI KOTKA
+          ================================================= -->
 
           <div class="sexy-cat" aria-hidden="true">
 
-            <svg
-              viewBox="0 0 150 230"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <div class="cat">
 
-              <ellipse
-                class="cat-glow"
-                cx="76"
-                cy="125"
-                rx="38"
-                ry="82"
-              />
-
-              <!-- OGON -->
-
-              <path
-                class="cat-tail"
-                d="
-                  M72 176
-                  C102 196, 137 187, 130 158
-                  C126 140, 106 143, 111 159
-                  C115 172, 128 169, 132 158
-                "
-              />
+              <div class="cat-tail-wrap">
+                <div class="cat-tail-line"></div>
+                <div class="cat-tail-tip"></div>
+              </div>
 
 
-              <!-- SYLWETKA -->
-
-              <path
-                class="cat-body"
-                d="
-                  M59 58
-
-                  C48 48, 47 34, 51 21
-                  L62 31
-
-                  C69 27, 78 27, 85 31
-
-                  L98 20
-                  C101 35, 98 49, 90 58
-
-                  C99 66, 103 80, 101 94
-
-                  C99 108, 92 118, 89 129
-
-                  C87 140, 91 153, 96 168
-
-                  L86 168
-
-                  C80 151, 76 143, 73 132
-
-                  C70 144, 67 155, 61 168
-
-                  L51 168
-
-                  C56 151, 59 139, 56 128
-
-                  C53 117, 45 106, 42 94
-
-                  C38 79, 44 67, 59 58
-
-                  Z
-                "
-              />
+              <div class="cat-hair">
+                <span class="h1"></span>
+                <span class="h2"></span>
+                <span class="h3"></span>
+                <span class="h4"></span>
+              </div>
 
 
-              <!-- SZYJA -->
+              <div class="cat-head">
 
-              <path
-                class="cat-detail"
-                d="
-                  M59 72
-                  C67 78, 82 78, 90 72
-                "
-              />
+                <div class="cat-ear left"></div>
+                <div class="cat-ear right"></div>
 
+                <div class="cat-face">
 
-              <!-- TALIA -->
+                  <div class="cat-eye left"></div>
+                  <div class="cat-eye right"></div>
 
-              <path
-                class="cat-detail"
-                d="
-                  M55 108
-                  C64 113, 80 113, 91 107
-                "
-              />
+                  <div class="cat-nose"></div>
+                  <div class="cat-mouth"></div>
+
+                </div>
+
+              </div>
 
 
-              <!-- OCZY -->
+              <div class="cat-neck"></div>
 
-              <ellipse
-                class="cat-eye"
-                cx="64"
-                cy="55"
-                rx="3"
-                ry="4"
-              />
+              <div class="cat-torso"></div>
 
-              <ellipse
-                class="cat-eye"
-                cx="83"
-                cy="55"
-                rx="3"
-                ry="4"
-              />
+              <div class="cat-waist"></div>
+
+              <div class="cat-dress"></div>
 
 
-              <!-- NOS -->
-
-              <path
-                class="cat-detail"
-                d="
-                  M71 62
-                  Q74 65 77 62
-                "
-              />
+              <div class="cat-arm left"></div>
+              <div class="cat-arm right"></div>
 
 
-              <!-- PYSZCZEK -->
+              <div class="cat-leg left"></div>
+              <div class="cat-leg right"></div>
 
-              <path
-                class="cat-detail"
-                d="
-                  M73 64
-                  Q69 69 64 68
+              <div class="cat-shoe left"></div>
+              <div class="cat-shoe right"></div>
 
-                  M75 64
-                  Q80 69 85 68
-                "
-              />
-
-
-              <!-- USZY -->
-
-              <path
-                class="cat-detail"
-                d="
-                  M53 25
-                  L61 34
-
-                  M97 24
-                  L88 34
-                "
-              />
-
-
-              <!-- PRZEDNIE ŁAPKI -->
-
-              <path
-                class="cat-detail"
-                d="
-                  M60 112
-                  C58 126, 57 137, 54 147
-
-                  M85 112
-                  C88 126, 89 137, 93 147
-                "
-              />
-
-
-              <!-- PAZURKI -->
-
-              <path
-                class="cat-detail"
-                d="
-                  M51 168
-                  Q54 172 58 168
-
-                  M86 168
-                  Q90 172 94 168
-                "
-              />
-
-            </svg>
+            </div>
 
           </div>
 
@@ -2465,7 +2992,6 @@
 
         <div class="contact-grid">
 
-
           <a
             class="contact-card"
             href="https://wa.me/48123456789"
@@ -2502,7 +3028,6 @@
           >
             E-mail
           </a>
-
 
         </div>
 
@@ -2542,8 +3067,6 @@
         <div class="offers">
 
 
-          <!-- OFERTA 01 -->
-
           <a
             class="offer-link"
             href="cennik.html"
@@ -2572,8 +3095,6 @@
 
           </a>
 
-
-          <!-- OFERTA 02 -->
 
           <a
             class="offer-link"
@@ -2608,8 +3129,6 @@
 
           </a>
 
-
-          <!-- OFERTA 03 -->
 
           <a
             class="offer-link"
@@ -2669,3 +3188,4 @@
 
 </body>
 </html>
+```

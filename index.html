@@ -1175,6 +1175,14 @@
         0 8px 35px rgba(0,0,0,.5);
     }
 
+    .section-title a {
+      color: inherit;
+
+      text-decoration: none;
+
+      cursor: pointer;
+    }
+
     .section-title span {
       color: var(--gold-light);
 
@@ -1182,6 +1190,14 @@
 
       text-shadow:
         0 0 22px rgba(212,174,115,.16);
+
+      transition:
+        text-shadow .4s ease;
+    }
+
+    .section-title a:hover span {
+      text-shadow:
+        0 0 30px rgba(240,211,155,.45);
     }
 
     .section-subtitle {
@@ -1350,6 +1366,14 @@
       gap: 22px;
     }
 
+    .offer-link {
+      display: block;
+
+      color: inherit;
+
+      text-decoration: none;
+    }
+
     .offer {
       position: relative;
 
@@ -1412,7 +1436,7 @@
         background .6s ease;
     }
 
-    .offer:hover {
+    .offer-link:hover .offer {
       transform:
         translateY(-9px);
 
@@ -1424,7 +1448,7 @@
         0 0 40px rgba(212,174,115,.12);
     }
 
-    .offer:hover::before {
+    .offer-link:hover .offer::before {
       transform:
         scale(1.15);
 
@@ -2145,7 +2169,11 @@
         <div class="section-heading">
 
           <h2 class="section-title">
-            Moja <span>oferta</span>
+
+            <a href="cennik.html">
+              Moja <span>oferta</span>
+            </a>
+
           </h2>
 
           <div class="heading-line"></div>
@@ -2163,75 +2191,102 @@
         <div class="offers">
 
 
-          <article class="offer">
+          <!-- OFERTA 01 -->
 
-            <div class="offer-number">
-              01
-            </div>
+          <a
+            class="offer-link"
+            href="cennik.html"
+          >
 
-            <h3>
-              Pokazy online
-            </h3>
+            <article class="offer">
 
-            <p>
+              <div class="offer-number">
+                01
+              </div>
 
-              Kamerka — tylko Ty i ja.
-              Skontaktuj się ze mną na ShowUp,
-              Telegramie bądź WhatsAppie,
-              aby ustalić szczegóły.
+              <h3>
+                Pokazy online
+              </h3>
 
-            </p>
+              <p>
 
-          </article>
+                Kamerka — tylko Ty i ja.
+                Skontaktuj się ze mną na ShowUp,
+                Telegramie bądź WhatsAppie,
+                aby ustalić szczegóły.
 
+              </p>
 
-          <article class="offer">
+            </article>
 
-            <div class="offer-number">
-              02
-            </div>
-
-            <h3>
-              Filmy oraz zdjęcia na życzenie
-            </h3>
-
-            <p>
-
-              Przygotuję dla Ciebie materiały
-              na życzenie — nagrywam z widoczną
-              twarzą i w bardzo dobrej jakości.
-              Napisz mi o swojej fantazji
-              na e-mailu, Telegramie bądź WhatsAppie.
-
-            </p>
-
-            <span class="price">
-              Cena filmu od 99 zł
-            </span>
-
-          </article>
+          </a>
 
 
-          <article class="offer">
+          <!-- OFERTA 02 -->
 
-            <div class="offer-number">
-              03
-            </div>
+          <a
+            class="offer-link"
+            href="cennik.html"
+          >
 
-            <h3>
-              Używana bielizna i rzeczy na zamówienie
-            </h3>
+            <article class="offer">
 
-            <p>
+              <div class="offer-number">
+                02
+              </div>
 
-              Przygotuję dla Ciebie spersonalizowaną
-              przesyłkę. Wysyłka jest bezpieczna —
-              jedyną informacją, której będę potrzebować,
-              jest nazwa Twojego paczkomatu.
+              <h3>
+                Filmy oraz zdjęcia na życzenie
+              </h3>
 
-            </p>
+              <p>
 
-          </article>
+                Przygotuję dla Ciebie materiały
+                na życzenie — nagrywam z widoczną
+                twarzą i w bardzo dobrej jakości.
+                Napisz mi o swojej fantazji
+                na e-mailu, Telegramie bądź WhatsAppie.
+
+              </p>
+
+              <span class="price">
+                Cena filmu od 99 zł
+              </span>
+
+            </article>
+
+          </a>
+
+
+          <!-- OFERTA 03 -->
+
+          <a
+            class="offer-link"
+            href="cennik.html"
+          >
+
+            <article class="offer">
+
+              <div class="offer-number">
+                03
+              </div>
+
+              <h3>
+                Używana bielizna i rzeczy na zamówienie
+              </h3>
+
+              <p>
+
+                Przygotuję dla Ciebie spersonalizowaną
+                przesyłkę. Wysyłka jest bezpieczna —
+                jedyną informacją, której będę potrzebować,
+                jest nazwa Twojego paczkomatu.
+
+              </p>
+
+            </article>
+
+          </a>
 
 
         </div>

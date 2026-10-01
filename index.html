@@ -1,447 +1,216 @@
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>kocicadlaPana ♡</title>
+<header>
 
-    <!-- Czcionki -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <div class="small-text">
+        witaj ♡
+    </div>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <h1>
+        Dzień dobry,<br>
+        tu kocicadlaPana <span class="heart">♥</span>
+    </h1>
 
-    <style>
+    <p class="subtitle">
+        Rozgość się.
+    </p>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- TU MNIE ZNAJDZIESZ -->
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <h2 class="find-me">
+        TU MNIE ZNAJDZIESZ
+    </h2>
 
-        body {
-            min-height: 100vh;
+    <div class="links">
 
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    #7e263f 0%,
-                    #52182b 38%,
-                    #2a0b16 100%
-                );
+        <!-- PODMIEŃ LINKI NA SWOJE -->
 
-            color: #fff4f6;
+        <a href="https://showup.tv/" target="_blank">
+            <span class="link-icon">♡</span>
+            ShowUp
+        </a>
 
-            font-family: "Montserrat", sans-serif;
-        }
+        <a href="https://wa.me/48123456789" target="_blank">
+            <span class="link-icon">♡</span>
+            WhatsApp
+        </a>
 
-        .page {
-            width: min(900px, calc(100% - 40px));
-            margin: auto;
-            padding: 70px 0 50px;
-        }
+        <a href="https://t.me/twoj_telegram" target="_blank">
+            <span class="link-icon">♡</span>
+            Telegram
+        </a>
 
+        <a href="mailto:twojmail@example.com">
+            <span class="link-icon">♡</span>
+            E-mail
+        </a>
 
-        /* =========================
-           NAGŁÓWEK
-        ========================= */
+    </div>
 
-        header {
-            text-align: center;
-            margin-bottom: 65px;
-        }
+</header>
 
-        .small-text {
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
 
-            color: #dba0ad;
+<section>
 
-            margin-bottom: 20px;
-        }
+    <h2 class="section-title">
+        CO OFERUJĘ
+    </h2>
 
-        h1 {
-            font-family: "Cormorant Garamond", serif;
 
-            font-size: clamp(42px, 8vw, 72px);
-            font-weight: 500;
+    <div class="offers">
 
-            line-height: 1;
 
-            color: #fff5f7;
+        <!-- POKAZY ONLINE -->
 
-            text-shadow:
-                0 5px 30px rgba(0,0,0,.25);
-        }
+        <article class="offer">
 
-        .heart {
-            color: #e85b78;
-            font-size: .8em;
-        }
-
-        .subtitle {
-            margin-top: 20px;
-
-            font-size: 14px;
-            font-weight: 300;
-
-            color: #d9aab5;
-        }
-
-
-        /* =========================
-           PRZYCISKI
-        ========================= */
-
-        .links {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 12px;
-
-            margin-top: 35px;
-        }
-
-        .links a {
-            text-decoration: none;
-
-            color: #fff4f6;
-
-            border: 1px solid rgba(255,255,255,.16);
-
-            background: rgba(255,255,255,.07);
-
-            padding: 16px 10px;
-
-            border-radius: 12px;
-
-            font-size: 13px;
-            font-weight: 500;
-
-            transition: .25s ease;
-        }
-
-        .links a:hover {
-            background: #a93252;
-
-            border-color: #d85a78;
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,.25);
-        }
-
-        .link-icon {
-            display: block;
-
-            margin-bottom: 7px;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           OFERTY
-        ========================= */
-
-        .section-title {
-            text-align: center;
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 38px;
-            font-weight: 500;
-
-            margin-bottom: 30px;
-        }
-
-        .section-title span {
-            color: #e85b78;
-        }
-
-        .offers {
-            display: flex;
-            flex-direction: column;
-
-            gap: 22px;
-        }
-
-        .offer {
-            position: relative;
-
-            padding: 34px;
-
-            border-radius: 18px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,.09),
-                    rgba(255,255,255,.035)
-                );
-
-            border: 1px solid rgba(255,255,255,.13);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.2);
-        }
-
-        .offer-number {
-            color: #d85a78;
-
-            font-size: 10px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 12px;
-        }
-
-        .offer h3 {
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 32px;
-            font-weight: 500;
-
-            margin-bottom: 15px;
-
-            color: #fff5f7;
-        }
-
-        .offer p {
-            color: #d8b4bd;
-
-            font-size: 14px;
-
-            line-height: 1.9;
-
-            font-weight: 300;
-        }
-
-        .offer p + p {
-            margin-top: 10px;
-        }
-
-        .contact-note {
-            display: inline-block;
-
-            margin-top: 20px;
-
-            padding: 9px 14px;
-
-            border-radius: 20px;
-
-            background: rgba(216,90,120,.12);
-
-            border: 1px solid rgba(216,90,120,.2);
-
-            color: #e994a7;
-
-            font-size: 11px;
-
-            letter-spacing: .5px;
-        }
-
-
-        /* =========================
-           STOPKA
-        ========================= */
-
-        footer {
-            text-align: center;
-
-            margin-top: 60px;
-
-            color: #956270;
-
-            font-size: 11px;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 650px) {
-
-            .page {
-                width: min(100% - 25px, 900px);
-
-                padding-top: 45px;
-            }
-
-            .links {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .offer {
-                padding: 25px;
-            }
-
-            .offer h3 {
-                font-size: 28px;
-            }
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-    <main class="page">
-
-
-        <!-- =========================
-             POWITANIE
-        ========================= -->
-
-        <header>
-
-            <div class="small-text">
-                witaj ♡
+            <div class="offer-number">
+                Oferta 01
             </div>
 
-            <h1>
-                Dzień dobry,<br>
-                tu kocicadlaPana <span class="heart">♥</span>
-            </h1>
+            <h3>
+                Pokazy online
+            </h3>
 
-            <p class="subtitle">
-                Rozgość się.
+            <p>
+                Wykonam dla Ciebie pokaz online.
+                Skontaktuj się ze mną, wybierz najlepszy
+                kanał z powyższych i zabawmy się.
             </p>
 
+            <span class="contact-note">
+                ♥ Wybierz swój kanał kontaktu
+            </span>
 
-            <!-- LINKI -->
+        </article>
 
-            <div class="links">
 
-                <!-- PODMIEŃ LINKI NA SWOJE -->
+        <!-- FILMIKI -->
 
-                <a href="https://showup.tv/" target="_blank">
-                    <span class="link-icon">♡</span>
-                    ShowUp
-                </a>
+        <article class="offer">
 
-                <a href="https://wa.me/48123456789" target="_blank">
-                    <span class="link-icon">♡</span>
-                    WhatsApp
-                </a>
-
-                <a href="https://t.me/twoj_telegram" target="_blank">
-                    <span class="link-icon">♡</span>
-                    Telegram
-                </a>
-
-                <a href="mailto:twojmail@example.com">
-                    <span class="link-icon">♡</span>
-                    E-mail
-                </a>
-
+            <div class="offer-number">
+                Oferta 02
             </div>
 
-        </header>
+            <h3>
+                Wymarzony film?
+            </h3>
+
+            <p>
+                Masz ochotę na coś stworzonego specjalnie dla Ciebie?
+                Napisz do mnie i opowiedz mi o swoim pomyśle.
+            </p>
+
+            <p>
+                Przygotowuję indywidualne nagrania w wysokiej jakości.
+                Szczegóły oraz cenę ustalimy prywatnie podczas kontaktu.
+            </p>
+
+            <span class="contact-note">
+                ♥ Telegram / WhatsApp
+            </span>
+
+        </article>
 
 
+        <!-- ZAMÓWIENIA -->
 
-        <!-- =========================
-             OFERTY
-        ========================= -->
+        <article class="offer">
 
-        <section>
-
-            <h2 class="section-title">
-                Moja <span>oferta</span>
-            </h2>
-
-
-            <div class="offers">
-
-
-                <!-- OFERTA 1 -->
-
-                <article class="offer">
-
-                    <div class="offer-number">
-                        Oferta 01
-                    </div>
-
-                    <h3>
-                        Wymarzony film?
-                    </h3>
-
-                    <p>
-                        Masz ochotę na coś stworzonego specjalnie dla Ciebie?
-                        Napisz do mnie i opowiedz mi o swoim pomyśle.
-                    </p>
-
-                    <p>
-                        Przygotowuję indywidualne nagrania w wysokiej jakości.
-                        Szczegóły oraz cenę ustalimy prywatnie podczas kontaktu.
-                    </p>
-
-                    <span class="contact-note">
-                        ♥ Telegram / WhatsApp
-                    </span>
-
-                </article>
-
-
-
-                <!-- OFERTA 2 -->
-
-                <article class="offer">
-
-                    <div class="offer-number">
-                        Oferta 02
-                    </div>
-
-                    <h3>
-                        Personalizowane zamówienie
-                    </h3>
-
-                    <p>
-                        Szukasz czegoś bardziej osobistego?
-                        Chętnie przygotuję dla Ciebie indywidualne zamówienie
-                        wysyłkowe.
-                    </p>
-
-                    <p>
-                        Napisz do mnie, aby ustalić szczegóły zamówienia,
-                        dostępne możliwości oraz sposób wysyłki.
-                    </p>
-
-                    <span class="contact-note">
-                        ♥ Dyskretna wysyłka
-                    </span>
-
-                </article>
-
-
+            <div class="offer-number">
+                Oferta 03
             </div>
 
-        </section>
+            <h3>
+                Personalizowane zamówienie
+            </h3>
+
+            <p>
+                Szukasz czegoś bardziej osobistego?
+                Chętnie przygotuję dla Ciebie indywidualne zamówienie
+                wysyłkowe.
+            </p>
+
+            <p>
+                Napisz do mnie, aby ustalić szczegóły zamówienia,
+                dostępne możliwości oraz sposób wysyłki.
+            </p>
+
+            <span class="contact-note">
+                ♥ Dyskretna wysyłka
+            </span>
+
+        </article>
 
 
+    </div>
 
-        <footer>
-            kocicadlaPana &nbsp; ♥ &nbsp; miłego pobytu
-        </footer>
-
-    </main>
-
-</body>
-</html>
+</section>
 ```
+
+I do CSS-a dodaj:
+
+```css
+/* =========================
+   TU MNIE ZNAJDZIESZ
+========================= */
+
+.find-me {
+    margin-top: 45px;
+    margin-bottom: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #e8a0ae;
+
+    text-align: center;
+}
+
+
+/* =========================
+   CO OFERUJĘ
+========================= */
+
+.section-title {
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 44px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 32px;
+
+    color: #e8a0ae;
+}
+```
+
+W ten sposób układ będzie:
+
+**Dzień dobry, tu kocicadlaPana ♥**
+*Rozgość się.*
+
+**TU MNIE ZNAJDZIESZ**
+
+`♡ ShowUp` `♡ WhatsApp` `♡ Telegram` `♡ E-mail`
+
+---
+
+**CO OFERUJĘ**
+
+**POKAZY ONLINE**
+Twój opis
+
+**WYMARZONY FILM?**
+Twój opis
+
+**PERSONALIZOWANE ZAMÓWIENIE**
+Twój opis
+
+I nagłówek **„CO OFERUJĘ”** będzie cały w jednym, subtelnym różowo-bordowym kolorze, zamiast tego wcześniejszego mieszania kolorów.

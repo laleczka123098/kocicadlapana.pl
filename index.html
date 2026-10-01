@@ -22,7 +22,7 @@
   <style>
 
     /* =========================================================
-       PALETA
+       KOLORY
     ========================================================= */
 
     :root {
@@ -61,12 +61,17 @@
     }
 
     html {
+      width: 100%;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     body {
+      position: relative;
+
+      width: 100%;
       min-height: 100vh;
+
       overflow-x: hidden;
 
       color: var(--white);
@@ -102,7 +107,7 @@
 
 
     /* =========================================================
-       SATYNOWE TŁO
+       DELIKATNA TEKSTURA — BEZ RUCHOMEGO PASKA
     ========================================================= */
 
     body::before {
@@ -114,36 +119,23 @@
       z-index: 0;
       pointer-events: none;
 
-      opacity: .75;
-
       background:
-        linear-gradient(
-          115deg,
-          transparent 15%,
-          rgba(255,190,210,.025) 35%,
-          rgba(255,255,255,.045) 48%,
-          rgba(255,190,210,.018) 53%,
-          transparent 72%
+        radial-gradient(
+          circle at 30% 20%,
+          rgba(255,255,255,.025),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 75% 70%,
+          rgba(255,170,195,.018),
+          transparent 35%
         );
-
-      background-size: 180% 180%;
-
-      animation: satin 14s ease-in-out infinite alternate;
-    }
-
-    @keyframes satin {
-      from {
-        transform: translateX(-12%);
-      }
-
-      to {
-        transform: translateX(12%);
-      }
     }
 
 
     /* =========================================================
-       CIEMNA WINIETA
+       WINIETA
     ========================================================= */
 
     body::after {
@@ -152,21 +144,21 @@
       position: fixed;
       inset: 0;
 
-      z-index: 20;
+      z-index: 30;
       pointer-events: none;
 
       background:
         radial-gradient(
           ellipse at center,
-          transparent 40%,
-          rgba(0,0,0,.28) 75%,
-          rgba(0,0,0,.78) 100%
+          transparent 42%,
+          rgba(0,0,0,.28) 76%,
+          rgba(0,0,0,.72) 100%
         );
     }
 
 
     /* =========================================================
-       AMBIENT LIGHT
+       ŚWIATŁA W TLE
     ========================================================= */
 
     .lights {
@@ -186,9 +178,10 @@
 
       filter: blur(85px);
 
-      opacity: .45;
+      opacity: .42;
 
-      animation: lightMove 16s ease-in-out infinite alternate;
+      animation:
+        lightMove 18s ease-in-out infinite alternate;
     }
 
     .light.one {
@@ -198,7 +191,8 @@
       top: -160px;
       left: -100px;
 
-      background: rgba(145,20,60,.48);
+      background:
+        rgba(145,20,60,.48);
     }
 
     .light.two {
@@ -208,10 +202,11 @@
       top: 25%;
       right: -130px;
 
-      background: rgba(116,10,46,.50);
+      background:
+        rgba(116,10,46,.50);
 
-      animation-delay: -5s;
-      animation-duration: 21s;
+      animation-delay: -6s;
+      animation-duration: 23s;
     }
 
     .light.three {
@@ -221,10 +216,11 @@
       bottom: -80px;
       left: 35%;
 
-      background: rgba(168,30,73,.26);
+      background:
+        rgba(168,30,73,.25);
 
-      animation-delay: -9s;
-      animation-duration: 18s;
+      animation-delay: -10s;
+      animation-duration: 20s;
     }
 
     .light.four {
@@ -234,26 +230,33 @@
       top: 35%;
       left: 48%;
 
-      background: rgba(255,131,170,.11);
+      background:
+        rgba(255,131,170,.11);
 
-      filter: blur(60px);
+      filter: blur(65px);
 
-      animation-duration: 12s;
+      animation-duration: 15s;
     }
 
     @keyframes lightMove {
+
       from {
-        transform: translate3d(0,0,0) scale(1);
+        transform:
+          translate3d(0,0,0)
+          scale(1);
       }
 
       to {
-        transform: translate3d(55px,-35px,0) scale(1.18);
+        transform:
+          translate3d(35px,-25px,0)
+          scale(1.10);
       }
+
     }
 
 
     /* =========================================================
-       KWIATY W TLE
+       RÓŻE W TLE
     ========================================================= */
 
     .flowers {
@@ -275,20 +278,13 @@
       opacity: .17;
 
       filter:
-        blur(.2px)
         drop-shadow(
           0 0 35px rgba(120,15,43,.45)
         );
 
-      transform-origin: center;
-
-      animation: roseFloat 12s ease-in-out infinite alternate;
+      animation:
+        roseFloat 14s ease-in-out infinite alternate;
     }
-
-    /*
-      Kwiat budowany CSS-em:
-      kilka płatków + środek.
-    */
 
     .rose::before,
     .rose::after {
@@ -321,14 +317,16 @@
       left: 10px;
       top: 70px;
 
-      transform: rotate(-35deg);
+      transform:
+        rotate(-35deg);
     }
 
     .rose::after {
       right: 10px;
       top: 55px;
 
-      transform: rotate(40deg);
+      transform:
+        rotate(40deg);
     }
 
     .rose-center {
@@ -393,41 +391,50 @@
       left: -125px;
       top: 10%;
 
-      transform: rotate(-18deg) scale(1.2);
+      transform:
+        rotate(-18deg)
+        scale(1.2);
     }
 
     .rose-b {
       right: -130px;
       top: 34%;
 
-      transform: rotate(27deg) scale(1.45);
+      transform:
+        rotate(27deg)
+        scale(1.45);
 
-      animation-delay: -4s;
+      animation-delay: -5s;
     }
 
     .rose-c {
       left: -100px;
       bottom: 3%;
 
-      transform: rotate(18deg) scale(.95);
+      transform:
+        rotate(18deg)
+        scale(.95);
 
-      opacity: .12;
+      opacity: .11;
 
-      animation-delay: -7s;
+      animation-delay: -8s;
     }
 
     .rose-d {
       right: -90px;
       bottom: -60px;
 
-      transform: rotate(-24deg) scale(1.1);
+      transform:
+        rotate(-24deg)
+        scale(1.1);
 
-      opacity: .13;
+      opacity: .12;
 
-      animation-delay: -10s;
+      animation-delay: -11s;
     }
 
     @keyframes roseFloat {
+
       from {
         transform:
           translate3d(0,0,0)
@@ -437,180 +444,304 @@
 
       to {
         transform:
-          translate3d(25px,-20px,0)
+          translate3d(22px,-16px,0)
           rotate(5deg)
-          scale(1.06);
+          scale(1.05);
       }
+
     }
 
 
     /* =========================================================
-       PŁATKI
+       SERDUSZKA ❤️
     ========================================================= */
 
-    .petals {
+    .hearts {
       position: fixed;
       inset: 0;
 
-      z-index: 3;
+      z-index: 5;
+
+      overflow: hidden;
 
       pointer-events: none;
-      overflow: hidden;
     }
 
-    .petal {
+    .heart {
       position: absolute;
 
-      width: 13px;
-      height: 7px;
+      bottom: -50px;
 
-      border-radius:
-        80% 20% 80% 20%;
+      color:
+        rgba(255,157,188,.48);
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(245,139,168,.72),
-          rgba(105,10,38,.35)
-        );
+      font-family:
+        Arial,
+        sans-serif;
 
-      box-shadow:
-        0 0 10px rgba(224,72,116,.25);
+      text-shadow:
+        0 0 7px rgba(255,135,171,.40),
+        0 0 20px rgba(209,54,105,.28);
 
       opacity: 0;
 
       animation:
-        petalFall linear infinite;
+        heartFloat linear infinite;
     }
 
-    .p1 {
-      left: 7%;
-      animation-duration: 13s;
+    .heart.small {
+      font-size: 12px;
+    }
+
+    .heart.medium {
+      font-size: 18px;
+    }
+
+    .heart.large {
+      font-size: 25px;
+
+      color:
+        rgba(237,125,161,.32);
+    }
+
+    .heart.h1 {
+      left: 5%;
+
+      animation-duration: 17s;
       animation-delay: 1s;
     }
 
-    .p2 {
-      left: 18%;
-      animation-duration: 17s;
-      animation-delay: 5s;
+    .heart.h2 {
+      left: 13%;
+
+      animation-duration: 22s;
+      animation-delay: 6s;
     }
 
-    .p3 {
-      left: 31%;
-      animation-duration: 15s;
-      animation-delay: 2s;
-    }
+    .heart.h3 {
+      left: 24%;
 
-    .p4 {
-      left: 47%;
-      animation-duration: 19s;
-      animation-delay: 8s;
-    }
-
-    .p5 {
-      left: 62%;
-      animation-duration: 14s;
-      animation-delay: 4s;
-    }
-
-    .p6 {
-      left: 76%;
       animation-duration: 18s;
-      animation-delay: 7s;
-    }
-
-    .p7 {
-      left: 91%;
-      animation-duration: 16s;
       animation-delay: 3s;
     }
 
-    @keyframes petalFall {
+    .heart.h4 {
+      left: 37%;
+
+      animation-duration: 24s;
+      animation-delay: 9s;
+    }
+
+    .heart.h5 {
+      left: 49%;
+
+      animation-duration: 19s;
+      animation-delay: 4s;
+    }
+
+    .heart.h6 {
+      left: 61%;
+
+      animation-duration: 23s;
+      animation-delay: 11s;
+    }
+
+    .heart.h7 {
+      left: 72%;
+
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+
+    .heart.h8 {
+      left: 83%;
+
+      animation-duration: 25s;
+      animation-delay: 7s;
+    }
+
+    .heart.h9 {
+      left: 94%;
+
+      animation-duration: 16s;
+      animation-delay: 12s;
+    }
+
+    @keyframes heartFloat {
+
       0% {
-        top: -10%;
         opacity: 0;
 
         transform:
-          translateX(0)
-          rotate(0deg);
+          translate3d(0,0,0)
+          rotate(-8deg)
+          scale(.65);
       }
 
       12% {
-        opacity: .65;
+        opacity: .52;
       }
 
       50% {
         transform:
-          translateX(60px)
-          rotate(180deg);
+          translate3d(24px,-50vh,0)
+          rotate(7deg)
+          scale(.95);
       }
 
-      85% {
-        opacity: .25;
+      78% {
+        opacity: .20;
       }
 
       100% {
-        top: 110%;
-
         opacity: 0;
 
         transform:
-          translateX(-50px)
-          rotate(360deg);
+          translate3d(-20px,-115vh,0)
+          rotate(-12deg)
+          scale(1.08);
       }
+
     }
 
 
     /* =========================================================
-       DROBNY PYŁ
+       ELEGANCKIE ŚWIATEŁKA
     ========================================================= */
 
-    .dust {
+    .sparkles {
       position: fixed;
       inset: 0;
 
-      z-index: 4;
+      z-index: 6;
 
       pointer-events: none;
     }
 
-    .dust span {
+    .spark {
       position: absolute;
 
-      width: 2px;
-      height: 2px;
+      width: 3px;
+      height: 3px;
 
       border-radius: 50%;
 
-      background: #ffdbe6;
+      background:
+        #ffdce7;
 
       box-shadow:
-        0 0 10px rgba(255,177,202,.9);
+        0 0 6px #ffdce7,
+        0 0 18px rgba(255,155,190,.70);
 
-      animation: dustBlink 4s ease-in-out infinite;
+      animation:
+        sparkle 4.5s ease-in-out infinite;
     }
 
-    .d1 { left: 9%; top: 18%; animation-delay: .2s; }
-    .d2 { left: 17%; top: 62%; animation-delay: 2s; }
-    .d3 { left: 29%; top: 14%; animation-delay: 1s; }
-    .d4 { left: 42%; top: 29%; animation-delay: 3s; }
-    .d5 { left: 56%; top: 10%; animation-delay: 1.8s; }
-    .d6 { left: 68%; top: 49%; animation-delay: .6s; }
-    .d7 { left: 79%; top: 22%; animation-delay: 2.8s; }
-    .d8 { left: 91%; top: 67%; animation-delay: 1.2s; }
-    .d9 { left: 51%; top: 82%; animation-delay: 3.5s; }
-    .d10 { left: 22%; top: 88%; animation-delay: 2.4s; }
+    .spark::before,
+    .spark::after {
+      content: "";
 
-    @keyframes dustBlink {
-      0%, 100% {
-        opacity: .05;
-        transform: scale(.5);
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%,-50%);
+
+      background:
+        rgba(255,222,232,.65);
+    }
+
+    .spark::before {
+      width: 1px;
+      height: 13px;
+    }
+
+    .spark::after {
+      width: 13px;
+      height: 1px;
+    }
+
+    .s1 {
+      left: 9%;
+      top: 19%;
+      animation-delay: .5s;
+    }
+
+    .s2 {
+      left: 21%;
+      top: 48%;
+      animation-delay: 2.5s;
+    }
+
+    .s3 {
+      left: 32%;
+      top: 24%;
+      animation-delay: 1.2s;
+    }
+
+    .s4 {
+      left: 46%;
+      top: 13%;
+      animation-delay: 3.5s;
+    }
+
+    .s5 {
+      left: 64%;
+      top: 27%;
+      animation-delay: 1.8s;
+    }
+
+    .s6 {
+      left: 80%;
+      top: 17%;
+      animation-delay: .8s;
+    }
+
+    .s7 {
+      left: 91%;
+      top: 43%;
+      animation-delay: 3s;
+    }
+
+    .s8 {
+      left: 76%;
+      top: 72%;
+      animation-delay: 1.5s;
+    }
+
+    .s9 {
+      left: 57%;
+      top: 85%;
+      animation-delay: 4s;
+    }
+
+    .s10 {
+      left: 27%;
+      top: 79%;
+      animation-delay: 2.2s;
+    }
+
+    @keyframes sparkle {
+
+      0%,
+      100% {
+        opacity: .08;
+
+        transform:
+          scale(.45)
+          rotate(45deg);
       }
 
       50% {
-        opacity: .9;
-        transform: scale(1.8);
+        opacity: .90;
+
+        transform:
+          scale(1.25)
+          rotate(45deg);
       }
+
     }
 
 
@@ -641,6 +772,7 @@
       min-height: 86vh;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -659,7 +791,7 @@
       margin: auto;
 
       animation:
-        heroAppear 1.3s ease both;
+        heroAppear 1.2s ease both;
     }
 
     .hero::before {
@@ -729,9 +861,11 @@
       color: var(--rose-light);
 
       font-size: .70rem;
+
       font-weight: 600;
 
       letter-spacing: .36em;
+
       text-transform: uppercase;
 
       text-shadow:
@@ -760,7 +894,8 @@
     }
 
     .eyebrow::after {
-      transform: scaleX(-1);
+      transform:
+        scaleX(-1);
     }
 
     h1 {
@@ -803,12 +938,11 @@
     }
 
     .hero-line {
-      position: relative;
-
       width: 230px;
       height: 1px;
 
-      margin: 40px auto 32px;
+      margin:
+        40px auto 32px;
 
       background:
         linear-gradient(
@@ -820,33 +954,6 @@
 
       box-shadow:
         0 0 16px rgba(235,116,151,.35);
-    }
-
-    .hero-line::before,
-    .hero-line::after {
-      content: "";
-
-      position: absolute;
-
-      top: 50%;
-
-      width: 7px;
-      height: 7px;
-
-      border:
-        1px solid rgba(255,189,209,.65);
-
-      transform:
-        translateY(-50%)
-        rotate(45deg);
-    }
-
-    .hero-line::before {
-      left: 35px;
-    }
-
-    .hero-line::after {
-      right: 35px;
     }
 
     .intro {
@@ -946,7 +1053,8 @@
     .section-subtitle {
       max-width: 650px;
 
-      margin: 17px auto 0;
+      margin:
+        17px auto 0;
 
       color: var(--muted);
 
@@ -955,17 +1063,12 @@
       line-height: 1.8;
     }
 
-
-    /* =========================================================
-       OZDOBNY ELEMENT POD NAGŁÓWKIEM
-       — już bez symboli, tylko CSS
-    ========================================================= */
-
     .heading-line {
       width: 150px;
       height: 1px;
 
-      margin: 22px auto 0;
+      margin:
+        22px auto 0;
 
       background:
         linear-gradient(
@@ -1013,6 +1116,7 @@
       text-decoration: none;
 
       font-size: .92rem;
+
       font-weight: 600;
 
       letter-spacing: .03em;
@@ -1044,49 +1148,31 @@
         box-shadow .4s ease;
     }
 
+    /* Tylko delikatna poświata — BEZ przesuwającego się paska */
+
     .contact-card::before {
       content: "";
 
       position: absolute;
 
-      left: -30%;
-      top: -100%;
+      width: 120px;
+      height: 120px;
 
-      width: 50%;
-      height: 300%;
+      left: -70px;
+      top: -70px;
 
-      transform: rotate(25deg);
+      border-radius: 50%;
 
       background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,255,255,.13),
-          transparent
-        );
+        rgba(237,142,172,.09);
 
-      transition:
-        left .7s ease;
-    }
-
-    .contact-card::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 5px;
-
-      border-radius: 18px;
-
-      border:
-        1px solid rgba(255,183,204,.035);
-
-      pointer-events: none;
+      filter:
+        blur(15px);
     }
 
     .contact-card:hover {
       transform:
-        translateY(-8px);
+        translateY(-7px);
 
       border-color:
         rgba(238,137,167,.45);
@@ -1094,10 +1180,6 @@
       box-shadow:
         0 28px 65px rgba(0,0,0,.48),
         0 0 35px rgba(159,28,71,.14);
-    }
-
-    .contact-card:hover::before {
-      left: 130%;
     }
 
 
@@ -1147,12 +1229,11 @@
       overflow: hidden;
 
       transition:
-        transform .45s ease,
-        border-color .45s ease,
-        box-shadow .45s ease;
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
     }
 
-    /* Bordowy refleks */
     .offer::before {
       content: "";
 
@@ -1176,36 +1257,9 @@
       filter: blur(5px);
     }
 
-    /* Satynowy pasek */
-    .offer::after {
-      content: "";
-
-      position: absolute;
-
-      left: -80%;
-      top: 0;
-
-      width: 55%;
-      height: 160%;
-
-      transform:
-        rotate(22deg);
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,255,255,.055),
-          transparent
-        );
-
-      transition:
-        left .8s ease;
-    }
-
     .offer:hover {
       transform:
-        translateY(-10px);
+        translateY(-9px);
 
       border-color:
         rgba(238,137,167,.42);
@@ -1213,10 +1267,6 @@
       box-shadow:
         0 35px 80px rgba(0,0,0,.52),
         0 0 40px rgba(158,26,70,.15);
-    }
-
-    .offer:hover::after {
-      left: 140%;
     }
 
     .offer-number {
@@ -1311,27 +1361,8 @@
         0 0 25px rgba(148,24,63,.12);
 
       font-size: .78rem;
+
       font-weight: 600;
-    }
-
-
-    /* =========================================================
-       DELIKATNA LINIA SEKCJI
-    ========================================================= */
-
-    .section-divider {
-      width: 100%;
-      height: 1px;
-
-      margin-top: 15px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(232,125,156,.20),
-          transparent
-        );
     }
 
 
@@ -1341,6 +1372,7 @@
 
     footer {
       position: relative;
+
       z-index: 10;
 
       margin-top: 45px;
@@ -1404,15 +1436,16 @@
 
 
     /* =========================================================
-       ANIMACJE
+       ANIMACJA HERO
     ========================================================= */
 
     @keyframes heroAppear {
+
       from {
         opacity: 0;
 
         transform:
-          translateY(30px)
+          translateY(28px)
           scale(.98);
       }
 
@@ -1423,6 +1456,7 @@
           translateY(0)
           scale(1);
       }
+
     }
 
 
@@ -1551,11 +1585,15 @@
         right: -190px;
       }
 
+      .heart.large {
+        font-size: 20px;
+      }
+
     }
 
 
     /* =========================================================
-       MNIEJ ANIMACJI
+       MNIEJ RUCHU
     ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
@@ -1568,8 +1606,12 @@
       *::before,
       *::after {
         animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
       }
 
     }
@@ -1596,7 +1638,7 @@
 
 
   <!-- =======================================================
-       DUŻE RÓŻE W TLE
+       RÓŻE
   ======================================================== -->
 
   <div class="flowers" aria-hidden="true">
@@ -1621,38 +1663,40 @@
 
 
   <!-- =======================================================
-       PŁATKI
+       SERDUSZKA
   ======================================================== -->
 
-  <div class="petals" aria-hidden="true">
+  <div class="hearts" aria-hidden="true">
 
-    <span class="petal p1"></span>
-    <span class="petal p2"></span>
-    <span class="petal p3"></span>
-    <span class="petal p4"></span>
-    <span class="petal p5"></span>
-    <span class="petal p6"></span>
-    <span class="petal p7"></span>
+    <span class="heart small h1">♡</span>
+    <span class="heart medium h2">♥</span>
+    <span class="heart small h3">♡</span>
+    <span class="heart large h4">♥</span>
+    <span class="heart small h5">♡</span>
+    <span class="heart medium h6">♥</span>
+    <span class="heart small h7">♡</span>
+    <span class="heart large h8">♥</span>
+    <span class="heart small h9">♡</span>
 
   </div>
 
 
   <!-- =======================================================
-       PYŁ / ŚWIATŁO
+       ŚWIATEŁKA
   ======================================================== -->
 
-  <div class="dust" aria-hidden="true">
+  <div class="sparkles" aria-hidden="true">
 
-    <span class="d1"></span>
-    <span class="d2"></span>
-    <span class="d3"></span>
-    <span class="d4"></span>
-    <span class="d5"></span>
-    <span class="d6"></span>
-    <span class="d7"></span>
-    <span class="d8"></span>
-    <span class="d9"></span>
-    <span class="d10"></span>
+    <span class="spark s1"></span>
+    <span class="spark s2"></span>
+    <span class="spark s3"></span>
+    <span class="spark s4"></span>
+    <span class="spark s5"></span>
+    <span class="spark s6"></span>
+    <span class="spark s7"></span>
+    <span class="spark s8"></span>
+    <span class="spark s9"></span>
+    <span class="spark s10"></span>
 
   </div>
 
@@ -1664,9 +1708,7 @@
   <main>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- HERO -->
 
     <header>
 
@@ -1720,9 +1762,7 @@
 
 
 
-    <!-- =====================================================
-         KONTAKT
-    ====================================================== -->
+    <!-- KONTAKT -->
 
     <section id="kontakt">
 
@@ -1795,9 +1835,7 @@
 
 
 
-    <!-- =====================================================
-         OFERTA
-    ====================================================== -->
+    <!-- OFERTA -->
 
     <section id="oferta">
 
@@ -1899,9 +1937,6 @@
 
         </div>
 
-
-        <div class="section-divider"></div>
-
       </div>
 
     </section>
@@ -1911,9 +1946,7 @@
 
 
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
+  <!-- FOOTER -->
 
   <footer>
 

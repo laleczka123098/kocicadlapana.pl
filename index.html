@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -24,281 +25,664 @@
       --shadow: rgba(0, 0, 0, 0.35);
     }
 
-    * {
+    /* =========================
+       RESET
+    ========================= */
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     body {
+      width: 100%;
+      max-width: 100%;
       min-height: 100vh;
+      overflow-x: hidden;
+
       color: var(--white);
       font-family: "Montserrat", sans-serif;
+
       background:
-        radial-gradient(circle at 15% 15%, rgba(198, 77, 112, 0.35), transparent 28%),
-        radial-gradient(circle at 85% 25%, rgba(143, 29, 67, 0.42), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(198, 77, 112, 0.20), transparent 35%),
-        linear-gradient(135deg, #210511 0%, #4b0b23 45%, #250511 100%);
-      overflow-x: hidden;
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(198, 77, 112, 0.35),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(143, 29, 67, 0.42),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(198, 77, 112, 0.20),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #210511 0%,
+          #4b0b23 45%,
+          #250511 100%
+        );
     }
+
+    /* Delikatna siatka w tle */
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: 0;
+
       pointer-events: none;
+
       background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
       background-size: 45px 45px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
+
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
     }
+
+    /* =========================
+       SERDUSZKA
+    ========================= */
 
     .floating-hearts {
       position: fixed;
       inset: 0;
+      z-index: 0;
+
       overflow: hidden;
       pointer-events: none;
-      z-index: 0;
     }
 
     .heart {
       position: absolute;
       bottom: -50px;
+
       opacity: 0;
+
       animation: floatUp linear infinite;
-      filter: drop-shadow(0 0 10px rgba(241, 161, 185, 0.25));
+
+      filter:
+        drop-shadow(
+          0 0 10px rgba(241, 161, 185, 0.25)
+        );
     }
 
-    .heart:nth-child(1) { left: 8%; font-size: 20px; animation-duration: 13s; animation-delay: 1s; }
-    .heart:nth-child(2) { left: 22%; font-size: 14px; animation-duration: 16s; animation-delay: 5s; }
-    .heart:nth-child(3) { left: 43%; font-size: 24px; animation-duration: 14s; animation-delay: 2s; }
-    .heart:nth-child(4) { left: 63%; font-size: 17px; animation-duration: 18s; animation-delay: 7s; }
-    .heart:nth-child(5) { left: 78%; font-size: 22px; animation-duration: 15s; animation-delay: 3s; }
-    .heart:nth-child(6) { left: 91%; font-size: 13px; animation-duration: 17s; animation-delay: 9s; }
+    .heart:nth-child(1) {
+      left: 8%;
+      font-size: 20px;
+      animation-duration: 13s;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(2) {
+      left: 22%;
+      font-size: 14px;
+      animation-duration: 16s;
+      animation-delay: 5s;
+    }
+
+    .heart:nth-child(3) {
+      left: 43%;
+      font-size: 24px;
+      animation-duration: 14s;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(4) {
+      left: 63%;
+      font-size: 17px;
+      animation-duration: 18s;
+      animation-delay: 7s;
+    }
+
+    .heart:nth-child(5) {
+      left: 78%;
+      font-size: 22px;
+      animation-duration: 15s;
+      animation-delay: 3s;
+    }
+
+    .heart:nth-child(6) {
+      left: 91%;
+      font-size: 13px;
+      animation-duration: 17s;
+      animation-delay: 9s;
+    }
 
     @keyframes floatUp {
-      0% { transform: translateY(0) scale(.8) rotate(0deg); opacity: 0; }
-      12% { opacity: .45; }
-      80% { opacity: .18; }
-      100% { transform: translateY(-110vh) scale(1.15) rotate(18deg); opacity: 0; }
+      0% {
+        transform:
+          translateY(0)
+          scale(.8)
+          rotate(0deg);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: .45;
+      }
+
+      80% {
+        opacity: .18;
+      }
+
+      100% {
+        transform:
+          translateY(-110vh)
+          scale(1.15)
+          rotate(18deg);
+        opacity: 0;
+      }
     }
+
+    /* =========================
+       GŁÓWNY KONTENER
+    ========================= */
 
     .container {
       position: relative;
       z-index: 1;
-      width: min(1080px, calc(100% - 32px));
+
+      width: min(
+        1080px,
+        calc(100% - 32px)
+      );
+
+      max-width: 1080px;
+
       margin: 0 auto;
     }
 
+    /* =========================
+       HERO
+    ========================= */
+
     header {
+      width: 100%;
+
       min-height: 72vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
-      padding: 90px 0 50px;
+
+      padding:
+        90px
+        0
+        50px;
     }
 
     .hero {
+      width: 100%;
       max-width: 900px;
-      animation: fadeIn .9s ease both;
+      margin: 0 auto;
+
+      animation:
+        fadeIn .9s ease both;
     }
 
     .eyebrow {
       display: inline-block;
+
+      max-width: 100%;
+
       margin-bottom: 18px;
+
       color: var(--pink);
+
       font-size: .78rem;
       font-weight: 600;
+
       letter-spacing: .28em;
       text-transform: uppercase;
     }
 
     h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3rem, 7vw, 6.5rem);
+      width: 100%;
+      max-width: 100%;
+
+      margin: 0 auto;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(
+          2.7rem,
+          8vw,
+          6.5rem
+        );
+
       line-height: .94;
+
       font-weight: 700;
+
       letter-spacing: -.025em;
-      text-shadow: 0 8px 30px rgba(0,0,0,.28);
+
+      text-shadow:
+        0 8px 30px rgba(0,0,0,.28);
+
+      /* Najważniejsza poprawka */
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     .hero-line {
       width: 100px;
+      max-width: 60%;
+
       height: 2px;
+
       margin: 30px auto;
-      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--pink),
+          transparent
+        );
     }
 
     .intro {
+      width: 100%;
       max-width: 760px;
+
       margin: 0 auto;
+
       color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.16rem);
+
+      font-size:
+        clamp(
+          .95rem,
+          2vw,
+          1.16rem
+        );
+
       line-height: 1.9;
+
       font-weight: 400;
+
+      overflow-wrap: break-word;
     }
 
+    /* =========================
+       SEKCJE
+    ========================= */
+
     section {
-      padding: 55px 0;
+      width: 100%;
+
+      padding:
+        55px
+        0;
     }
 
     .section-title {
+      width: 100%;
+      max-width: 100%;
+
       margin-bottom: 28px;
+
       text-align: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.1rem, 4vw, 3.3rem);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(
+          2.1rem,
+          5vw,
+          3.3rem
+        );
+
+      line-height: 1;
+
       font-weight: 700;
+
+      overflow-wrap: anywhere;
     }
 
     .section-subtitle {
-      margin: -12px auto 30px;
+      width: 100%;
       max-width: 680px;
+
+      margin:
+        -12px auto
+        30px;
+
       text-align: center;
+
       color: var(--muted);
+
       line-height: 1.7;
+
       font-size: .95rem;
     }
 
+    /* =========================
+       KONTAKT
+    ========================= */
+
     .contact-grid {
+      width: 100%;
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
       gap: 14px;
     }
 
     .contact-card {
+      min-width: 0;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       min-height: 76px;
+
       padding: 18px;
+
       color: var(--white);
+
       text-decoration: none;
+
       font-weight: 600;
-      border: 1px solid var(--glass-border);
+
+      text-align: center;
+
+      border:
+        1px solid
+        var(--glass-border);
+
       border-radius: 18px;
-      background: var(--glass);
+
+      background:
+        var(--glass);
+
       backdrop-filter: blur(12px);
-      box-shadow: 0 12px 35px var(--shadow);
-      transition: transform .25s ease, background .25s ease, border-color .25s ease;
+
+      box-shadow:
+        0 12px 35px
+        var(--shadow);
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
     }
 
     .contact-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,.14);
-      border-color: rgba(241,161,185,.5);
+      transform:
+        translateY(-5px);
+
+      background:
+        rgba(255,255,255,.14);
+
+      border-color:
+        rgba(241,161,185,.5);
     }
 
+    /* =========================
+       OFERTA
+    ========================= */
+
     .offers {
+      width: 100%;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
       gap: 20px;
     }
 
     .offer {
       position: relative;
+
+      min-width: 0;
+
       min-height: 310px;
-      padding: 34px 28px;
-      border: 1px solid var(--glass-border);
+
+      padding:
+        34px
+        28px;
+
+      border:
+        1px solid
+        var(--glass-border);
+
       border-radius: 26px;
+
       background:
-        linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045));
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.12),
+          rgba(255,255,255,.045)
+        );
+
       backdrop-filter: blur(14px);
-      box-shadow: 0 20px 50px var(--shadow);
+
+      box-shadow:
+        0 20px 50px
+        var(--shadow);
+
       overflow: hidden;
-      transition: transform .3s ease, border-color .3s ease;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
     }
 
     .offer::before {
       content: "";
+
       position: absolute;
+
       width: 130px;
       height: 130px;
+
       top: -65px;
       right: -55px;
+
       border-radius: 50%;
-      background: rgba(241,161,185,.13);
+
+      background:
+        rgba(241,161,185,.13);
     }
 
     .offer:hover {
-      transform: translateY(-7px);
-      border-color: rgba(241,161,185,.4);
+      transform:
+        translateY(-7px);
+
+      border-color:
+        rgba(241,161,185,.4);
     }
 
     .offer-number {
       color: var(--pink);
+
       font-size: .75rem;
+
       font-weight: 700;
+
       letter-spacing: .18em;
+
       margin-bottom: 22px;
     }
 
     .offer h3 {
       margin-bottom: 17px;
-      font-family: "Cormorant Garamond", serif;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
       font-size: 1.85rem;
+
       line-height: 1.05;
+
+      overflow-wrap: anywhere;
     }
 
     .offer p {
       color: var(--muted);
+
       font-size: .94rem;
+
       line-height: 1.75;
+
+      overflow-wrap: break-word;
     }
 
     .price {
       display: inline-block;
+
+      max-width: 100%;
+
       margin-top: 20px;
-      padding: 8px 13px;
+
+      padding:
+        8px
+        13px;
+
       border-radius: 999px;
+
       color: var(--white);
-      background: rgba(198,77,112,.25);
-      border: 1px solid rgba(241,161,185,.2);
+
+      background:
+        rgba(198,77,112,.25);
+
+      border:
+        1px solid
+        rgba(241,161,185,.2);
+
       font-size: .82rem;
+
       font-weight: 600;
     }
 
+    /* =========================
+       STOPKA
+    ========================= */
+
     footer {
+      width: 100%;
+
       margin-top: 50px;
-      padding: 34px 0 42px;
+
+      padding:
+        34px
+        0
+        42px;
+
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,.1);
-      color: rgba(255,248,251,.62);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+      color:
+        rgba(255,248,251,.62);
+
       font-size: .78rem;
+
       letter-spacing: .04em;
     }
 
     footer strong {
       display: block;
+
       margin-top: 7px;
+
       color: var(--pink);
-      font-family: "Cormorant Garamond", serif;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
       font-size: 1.25rem;
+
       letter-spacing: .03em;
     }
 
+    /* =========================
+       ANIMACJA WEJŚCIA
+    ========================= */
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform:
+          translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0);
+      }
     }
 
+    /* =========================
+       TABLET
+    ========================= */
+
     @media (max-width: 800px) {
+
       header {
         min-height: 65vh;
-        padding-top: 70px;
+
+        padding:
+          70px
+          0
+          45px;
       }
 
       .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
       }
 
       .offers {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
       .offer {
@@ -306,46 +690,206 @@
       }
     }
 
-    @media (max-width: 480px) {
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 600px) {
+
       .container {
-        width: min(100% - 22px, 1080px);
+        width:
+          calc(100% - 28px);
+
+        max-width: none;
       }
 
       header {
-        padding: 65px 0 35px;
+        min-height: auto;
+
+        padding:
+          70px
+          0
+          45px;
+      }
+
+      .hero {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .eyebrow {
+        font-size: .68rem;
+        letter-spacing: .20em;
+
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        width: 100%;
+
+        font-size:
+          clamp(
+            2.6rem,
+            13vw,
+            4.3rem
+          );
+
+        line-height: .94;
+
+        letter-spacing:
+          -.02em;
+
+        overflow-wrap: anywhere;
+      }
+
+      .hero-line {
+        margin:
+          24px
+          auto;
+      }
+
+      .intro {
+        font-size: .92rem;
+        line-height: 1.75;
+      }
+
+      section {
+        padding:
+          40px
+          0;
+      }
+
+      .section-title {
+        font-size:
+          clamp(
+            2rem,
+            10vw,
+            3rem
+          );
+
+        line-height: 1.05;
+      }
+
+      .section-subtitle {
+        font-size: .88rem;
+        line-height: 1.65;
       }
 
       .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
+
+        gap: 10px;
       }
 
       .contact-card {
         min-height: 64px;
       }
 
-      section {
-        padding: 40px 0;
+      .offers {
+        grid-template-columns:
+          1fr;
+
+        gap: 14px;
       }
 
       .offer {
-        padding: 28px 22px;
+        padding:
+          28px
+          22px;
+
         border-radius: 22px;
+      }
+
+      .offer h3 {
+        font-size:
+          clamp(
+            1.65rem,
+            8vw,
+            2rem
+          );
+      }
+
+      .offer p {
+        font-size: .9rem;
+      }
+
+      footer {
+        margin-top: 30px;
+        padding:
+          28px
+          0
+          35px;
       }
     }
 
+    /* =========================
+       BARDZO MAŁE TELEFONY
+    ========================= */
+
+    @media (max-width: 360px) {
+
+      .container {
+        width:
+          calc(100% - 22px);
+      }
+
+      header {
+        padding-top: 55px;
+      }
+
+      h1 {
+        font-size:
+          2.55rem;
+      }
+
+      .intro {
+        font-size: .88rem;
+      }
+
+      .offer {
+        padding:
+          25px
+          19px;
+      }
+    }
+
+    /* =========================
+       REDUKCJA ANIMACJI
+    ========================= */
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="floating-hearts" aria-hidden="true">
+
+  <!-- =========================
+       ANIMOWANE SERDUSZKA
+  ========================= -->
+
+  <div
+    class="floating-hearts"
+    aria-hidden="true"
+  >
     <span class="heart">♡</span>
     <span class="heart">♥</span>
     <span class="heart">♡</span>
@@ -354,100 +898,95 @@
     <span class="heart">♥</span>
   </div>
 
+
   <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <header>
       <div class="container">
-        <div class="hero">
-          <span class="eyebrow">Witaj u mnie</span>
 
-          <h1>Witaj w świecie<br>kocicydlaPana,<br>rozgość się.</h1>
+        <div class="hero">
+
+          <span class="eyebrow">
+            Witaj u mnie
+          </span>
+
+          <h1>
+            Witaj w świecie<br>
+            kocicydlaPana,<br>
+            rozgość się.
+          </h1>
 
           <div class="hero-line"></div>
 
           <p class="intro">
-            Jestem młodą, seksowną Polką. Uwielbiam świntuszyć!
-            Lubię zarówno delikatne i subtelne klimaty, jak i te nieco ostrzejsze...
-            Zapoznaj się z moją stroną oraz ofertą i napisz do mnie.
+            Jestem młodą, seksowną Polką.
+            Uwielbiam świntuszyć!
+            Lubię zarówno delikatne i subtelne klimaty,
+            jak i te nieco ostrzejsze...
+            Zapoznaj się z moją stroną oraz ofertą
+            i napisz do mnie.
           </p>
+
         </div>
+
       </div>
     </header>
 
+
+    <!-- =========================
+         KONTAKT
+    ========================= -->
+
     <section id="kontakt">
+
       <div class="container">
-        <h2 class="section-title">Skontaktuj się ze mną</h2>
+
+        <h2 class="section-title">
+          Skontaktuj się ze mną
+        </h2>
+
         <p class="section-subtitle">
           Wybierz wygodną dla siebie formę kontaktu.
         </p>
 
         <div class="contact-grid">
-          <!-- Podmień poniższe adresy na swoje -->
-          <a class="contact-card" href="https://wa.me/48123456789" target="_blank" rel="noopener noreferrer">
+
+          <!-- PODMIEŃ LINKI NA SWOJE -->
+
+          <a
+            class="contact-card"
+            href="https://wa.me/48123456789"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             WhatsApp
           </a>
 
-          <a class="contact-card" href="https://t.me/twoj_nick" target="_blank" rel="noopener noreferrer">
+          <a
+            class="contact-card"
+            href="https://t.me/twoj_nick"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Telegram
           </a>
 
-          <a class="contact-card" href="https://showup.tv/" target="_blank" rel="noopener noreferrer">
+          <a
+            class="contact-card"
+            href="https://showup.tv/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             ShowUp
           </a>
 
-          <a class="contact-card" href="mailto:kontakt@example.com">
-            E-mail
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="oferta">
-      <div class="container">
-        <h2 class="section-title">Moja oferta</h2>
-        <p class="section-subtitle">
-          Wszystko ustalamy indywidualnie — napisz do mnie, a omówimy szczegóły.
-        </p>
-
-        <div class="offers">
-          <article class="offer">
-            <div class="offer-number">01</div>
-            <h3>Pokazy online</h3>
-            <p>
-              Kamerka — tylko Ty i ja. Skontaktuj się ze mną na ShowUp,
-              Telegramie bądź WhatsAppie, aby ustalić szczegóły.
-            </p>
-          </article>
-
-          <article class="offer">
-            <div class="offer-number">02</div>
-            <h3>Filmy oraz zdjęcia na życzenie</h3>
-            <p>
-              Przygotuję dla Ciebie materiały na życzenie — nagrywam
-              z widoczną twarzą i w bardzo dobrej jakości. Napisz mi
-              o swojej fantazji na e-mailu, Telegramie bądź WhatsAppie.
-            </p>
-            <span class="price">Cena filmu od 99 zł</span>
-          </article>
-
-          <article class="offer">
-            <div class="offer-number">03</div>
-            <h3>Używana bielizna i rzeczy na zamówienie</h3>
-            <p>
-              Przygotuję dla Ciebie spersonalizowaną przesyłkę.
-              Wysyłka jest bezpieczna — jedyną informacją, której
-              będę potrzebować, jest nazwa Twojego paczkomatu.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      Wszelkie prawa zastrzeżone © 2026
-      <strong>kocicadlaPana</strong>
-    </div>
-  </footer>
-</body>
-</html>
+          <a
+            class="contact-card"
+            href="mailto:kontakt@example.com"
+          >
+            E
+```

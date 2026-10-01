@@ -1,216 +1,662 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<header>
+  <title>kocicadlaPana ♡</title>
 
-    <div class="small-text">
-        witaj ♡
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #f8e9eb;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(125, 18, 48, 0.35), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(88, 8, 30, 0.25), transparent 30%),
+        #0b0709;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,0.025) 50%,
+          transparent 100%
+        );
+      opacity: 0.5;
+    }
+
+    .page {
+      width: min(1050px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-label {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #b87985;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(55px, 9vw, 105px);
+      font-weight: 400;
+      line-height: 0.85;
+      letter-spacing: -3px;
+      color: #fff5f6;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-style: italic;
+      color: #b83b5b;
+      margin-top: 14px;
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 1px;
+      background: #873047;
+      margin: 35px auto;
+    }
+
+    .hero-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      color: #d9bfc4;
+      font-style: italic;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #76565e;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading .eyebrow {
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #a15a6a;
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 6vw, 70px);
+      font-weight: 400;
+      color: #fff0f2;
+      letter-spacing: -1px;
+    }
+
+    .section-heading h2 span {
+      color: #b83b5b;
+      font-style: italic;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .contact {
+      position: relative;
+      min-height: 125px;
+      padding: 25px;
+      text-decoration: none;
+      color: #f9e8eb;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: linear-gradient(
+        145deg,
+        rgba(52, 16, 25, 0.9),
+        rgba(18, 8, 12, 0.95)
+      );
+
+      border: 1px solid rgba(183, 59, 91, 0.22);
+      transition: all 0.35s ease;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(184, 59, 91, 0.08),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .contact:hover {
+      transform: translateY(-7px);
+      border-color: rgba(184, 59, 91, 0.65);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact:hover::before {
+      transform: translateX(100%);
+    }
+
+    .contact-number {
+      font-size: 9px;
+      color: #8f6871;
+      letter-spacing: 2px;
+    }
+
+    .contact-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+    }
+
+    .contact-arrow {
+      position: absolute;
+      right: 22px;
+      bottom: 19px;
+      color: #b83b5b;
+      font-size: 18px;
+    }
+
+    /* =========================
+       OFFER
+    ========================= */
+
+    .offers {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .offer {
+      position: relative;
+      padding: 48px 50px;
+      background:
+        linear-gradient(
+          110deg,
+          rgba(52, 14, 25, 0.88),
+          rgba(18, 8, 12, 0.95)
+        );
+      border: 1px solid rgba(184, 59, 91, 0.2);
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .offer:hover {
+      border-color: rgba(184, 59, 91, 0.5);
+      transform: translateX(5px);
+    }
+
+    .offer::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: rgba(132, 25, 55, 0.13);
+      filter: blur(20px);
+    }
+
+    .offer-number {
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #8f5361;
+      margin-bottom: 16px;
+    }
+
+    .offer h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: #fff0f2;
+      margin-bottom: 18px;
+    }
+
+    .offer h3 span {
+      color: #bd4664;
+      font-style: italic;
+    }
+
+    .offer p {
+      max-width: 700px;
+      color: #c7aeb3;
+      font-size: 14px;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    .offer .mini-line {
+      width: 45px;
+      height: 1px;
+      background: #92334d;
+      margin: 25px 0;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+      padding: 90px 30px;
+      text-align: center;
+    }
+
+    .quote p {
+      max-width: 700px;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      color: #e7cdd2;
+      font-style: italic;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 25px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #7f5961;
+      font-style: normal;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid rgba(184, 59, 91, 0.12);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #63474e;
+    }
+
+    footer strong {
+      color: #9d5364;
+      font-weight: 500;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      .hero {
+        min-height: 90vh;
+        padding: 60px 15px;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+      }
+
+      .hero-text {
+        font-size: 21px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact {
+        min-height: 120px;
+      }
+
+      .contact-name {
+        font-size: 27px;
+      }
+
+      .offer {
+        padding: 35px 28px;
+      }
+
+      .offer h3 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .page {
+        width: 88%;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        min-height: 105px;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
+      }
+
+      .section-heading h2 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="small-label">
+          witaj u mnie
+        </div>
+
+        <h1>
+          Dzień dobry,
+          <span>kocicadlaPana ♡</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-text">
+          Rozgość się.
+        </p>
+
+      </div>
+
+      <div class="scroll">
+        przewiń ↓
+      </div>
+    </section>
+
+
+    <div class="page">
+
+      <!-- =========================
+           CONTACT
+      ========================= -->
+
+      <section>
+
+        <div class="section-heading">
+          <div class="eyebrow">
+            gdzie mnie znaleźć
+          </div>
+
+          <h2>
+            TU MNIE <span>ZNAJDZIESZ</span>
+          </h2>
+        </div>
+
+
+        <div class="contact-grid">
+
+          <a
+            class="contact"
+            href="https://showup.tv/"
+            target="_blank"
+          >
+            <span class="contact-number">01</span>
+            <span class="contact-name">ShowUp</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+
+          <a
+            class="contact"
+            href="https://wa.me/48123456789"
+            target="_blank"
+          >
+            <span class="contact-number">02</span>
+            <span class="contact-name">WhatsApp</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+
+          <a
+            class="contact"
+            href="https://t.me/twoj_telegram"
+            target="_blank"
+          >
+            <span class="contact-number">03</span>
+            <span class="contact-name">Telegram</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+
+          <a
+            class="contact"
+            href="mailto:twojmail@example.com"
+          >
+            <span class="contact-number">04</span>
+            <span class="contact-name">E-mail</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           OFFER
+      ========================= -->
+
+      <section>
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            dla Ciebie
+          </div>
+
+          <h2>
+            CO <span>OFERUJĘ</span>
+          </h2>
+
+        </div>
+
+
+        <div class="offers">
+
+
+          <!-- POKAZY -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              01 / ONLINE
+            </div>
+
+            <h3>
+              Pokazy <span>online</span>
+            </h3>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Wykonam dla Ciebie pokaz.
+              Skontaktuj się ze mną, wybierz najlepszy
+              kanał z powyższych i zabawmy się.
+            </p>
+
+          </article>
+
+
+          <!-- FILMY -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              02 / PERSONAL
+            </div>
+
+            <h3>
+              Chcesz <span>wymarzony film?</span>
+            </h3>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Odezwij się. Nagram specjalnie dla Ciebie
+              personalizowany filmik. Filmy nagrywam
+              z twarzą i w wysokiej jakości.
+              Napisz do mnie na Telegramie albo WhatsAppie,
+              aby ustalić szczegóły oraz cenę.
+            </p>
+
+          </article>
+
+
+          <!-- ZAMÓWIENIA -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              03 / INDYWIDUALNIE
+            </div>
+
+            <h3>
+              Personalizowane <span>zamówienie</span>
+            </h3>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Chcesz zamówić używane rzeczy lub przygotować
+              indywidualne zamówienie wysyłkowe?
+              Napisz do mnie i ustalimy wszystkie szczegóły
+              oraz sposób realizacji.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           QUOTE
+      ========================= -->
+
+      <section class="quote">
+
+        <p>
+          „Nie spiesz się.<br>
+          Zostań na chwilę.”
+        </p>
+
+        <span>
+          kocicadlaPana ♡
+        </span>
+
+      </section>
+
     </div>
 
-    <h1>
-        Dzień dobry,<br>
-        tu kocicadlaPana <span class="heart">♥</span>
-    </h1>
+  </main>
 
-    <p class="subtitle">
-        Rozgość się.
+
+  <footer>
+
+    <p>
+      © 2026 <strong>kocicadlaPana</strong> · all rights reserved
     </p>
 
-    <!-- TU MNIE ZNAJDZIESZ -->
+  </footer>
 
-    <h2 class="find-me">
-        TU MNIE ZNAJDZIESZ
-    </h2>
-
-    <div class="links">
-
-        <!-- PODMIEŃ LINKI NA SWOJE -->
-
-        <a href="https://showup.tv/" target="_blank">
-            <span class="link-icon">♡</span>
-            ShowUp
-        </a>
-
-        <a href="https://wa.me/48123456789" target="_blank">
-            <span class="link-icon">♡</span>
-            WhatsApp
-        </a>
-
-        <a href="https://t.me/twoj_telegram" target="_blank">
-            <span class="link-icon">♡</span>
-            Telegram
-        </a>
-
-        <a href="mailto:twojmail@example.com">
-            <span class="link-icon">♡</span>
-            E-mail
-        </a>
-
-    </div>
-
-</header>
-
-
-<section>
-
-    <h2 class="section-title">
-        CO OFERUJĘ
-    </h2>
-
-
-    <div class="offers">
-
-
-        <!-- POKAZY ONLINE -->
-
-        <article class="offer">
-
-            <div class="offer-number">
-                Oferta 01
-            </div>
-
-            <h3>
-                Pokazy online
-            </h3>
-
-            <p>
-                Wykonam dla Ciebie pokaz online.
-                Skontaktuj się ze mną, wybierz najlepszy
-                kanał z powyższych i zabawmy się.
-            </p>
-
-            <span class="contact-note">
-                ♥ Wybierz swój kanał kontaktu
-            </span>
-
-        </article>
-
-
-        <!-- FILMIKI -->
-
-        <article class="offer">
-
-            <div class="offer-number">
-                Oferta 02
-            </div>
-
-            <h3>
-                Wymarzony film?
-            </h3>
-
-            <p>
-                Masz ochotę na coś stworzonego specjalnie dla Ciebie?
-                Napisz do mnie i opowiedz mi o swoim pomyśle.
-            </p>
-
-            <p>
-                Przygotowuję indywidualne nagrania w wysokiej jakości.
-                Szczegóły oraz cenę ustalimy prywatnie podczas kontaktu.
-            </p>
-
-            <span class="contact-note">
-                ♥ Telegram / WhatsApp
-            </span>
-
-        </article>
-
-
-        <!-- ZAMÓWIENIA -->
-
-        <article class="offer">
-
-            <div class="offer-number">
-                Oferta 03
-            </div>
-
-            <h3>
-                Personalizowane zamówienie
-            </h3>
-
-            <p>
-                Szukasz czegoś bardziej osobistego?
-                Chętnie przygotuję dla Ciebie indywidualne zamówienie
-                wysyłkowe.
-            </p>
-
-            <p>
-                Napisz do mnie, aby ustalić szczegóły zamówienia,
-                dostępne możliwości oraz sposób wysyłki.
-            </p>
-
-            <span class="contact-note">
-                ♥ Dyskretna wysyłka
-            </span>
-
-        </article>
-
-
-    </div>
-
-</section>
-```
-
-I do CSS-a dodaj:
-
-```css
-/* =========================
-   TU MNIE ZNAJDZIESZ
-========================= */
-
-.find-me {
-    margin-top: 45px;
-    margin-bottom: 18px;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 26px;
-    font-weight: 500;
-
-    letter-spacing: 3px;
-
-    color: #e8a0ae;
-
-    text-align: center;
-}
-
-
-/* =========================
-   CO OFERUJĘ
-========================= */
-
-.section-title {
-    text-align: center;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 44px;
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 32px;
-
-    color: #e8a0ae;
-}
-```
-
-W ten sposób układ będzie:
-
-**Dzień dobry, tu kocicadlaPana ♥**
-*Rozgość się.*
-
-**TU MNIE ZNAJDZIESZ**
-
-`♡ ShowUp` `♡ WhatsApp` `♡ Telegram` `♡ E-mail`
-
----
-
-**CO OFERUJĘ**
-
-**POKAZY ONLINE**
-Twój opis
-
-**WYMARZONY FILM?**
-Twój opis
-
-**PERSONALIZOWANE ZAMÓWIENIE**
-Twój opis
-
-I nagłówek **„CO OFERUJĘ”** będzie cały w jednym, subtelnym różowo-bordowym kolorze, zamiast tego wcześniejszego mieszania kolorów.
+</body>
+</html>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="kocicadlaPana — cennik"
+  >
+
+  <title>kocicadlaPana — Cennik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --black: #050306;
+      --black-2: #0d0509;
+
+      --burgundy: #25040f;
+      --wine: #48091d;
+      --wine-2: #67132e;
+
+      --rose: #a52e52;
+      --rose-light: #ed8eac;
+      --pink: #ffc3d5;
+
+      --gold: #cda078;
+      --gold-light: #e3bd91;
+
+      --white: #fff8fb;
+      --muted: #e6ccd5;
+
+      --border: rgba(255,185,205,.16);
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      color: var(--white);
+
+      font-family: "Montserrat", sans-serif;
+
+      background:
+        radial-gradient(
+          ellipse at 50% -15%,
+          rgba(126,18,52,.40),
+          transparent 45%
+        ),
+
+        radial-gradient(
+          ellipse at 0% 45%,
+          rgba(91,10,36,.25),
+          transparent 38%
+        ),
+
+        radial-gradient(
+          ellipse at 100% 80%,
+          rgba(74,7,30,.28),
+          transparent 42%
+        ),
+
+        linear-gradient(
+          135deg,
+          #030204 0%,
+          #17040b 48%,
+          #070307 100%
+        );
+    }
+
+
+    /* =========================
+       DELIKATNA POŚWIATA
+    ========================= */
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      z-index: 0;
+
+      background:
+        radial-gradient(
+          circle at 30% 20%,
+          rgba(255,255,255,.018),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 75% 75%,
+          rgba(255,170,195,.012),
+          transparent 35%
+        );
+    }
+
+
+    /* =========================
+       SERDUSZKA
+    ========================= */
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -40px;
+
+      color: rgba(255,157,188,.30);
+
+      font-family: Arial, sans-serif;
+
+      text-shadow:
+        0 0 8px rgba(255,135,171,.25);
+
+      opacity: 0;
+
+      animation: heartFloat linear infinite;
+    }
+
+    .heart.small {
+      font-size: 12px;
+    }
+
+    .heart.medium {
+      font-size: 18px;
+    }
+
+    .heart.large {
+      font-size: 24px;
+    }
+
+    .h1 {
+      left: 8%;
+      animation-duration: 19s;
+      animation-delay: 2s;
+    }
+
+    .h2 {
+      left: 23%;
+      animation-duration: 24s;
+      animation-delay: 7s;
+    }
+
+    .h3 {
+      left: 43%;
+      animation-duration: 21s;
+      animation-delay: 1s;
+    }
+
+    .h4 {
+      left: 64%;
+      animation-duration: 26s;
+      animation-delay: 10s;
+    }
+
+    .h5 {
+      left: 82%;
+      animation-duration: 20s;
+      animation-delay: 5s;
+    }
+
+    @keyframes heartFloat {
+
+      0% {
+        opacity: 0;
+
+        transform:
+          translateY(0)
+          rotate(-8deg)
+          scale(.7);
+      }
+
+      15% {
+        opacity: .45;
+      }
+
+      55% {
+        transform:
+          translate(20px,-50vh)
+          rotate(7deg)
+          scale(1);
+      }
+
+      100% {
+        opacity: 0;
+
+        transform:
+          translate(-15px,-115vh)
+          rotate(-10deg)
+          scale(1.05);
+      }
+    }
+
+
+    /* =========================
+       GŁÓWNY KONTENER
+    ========================= */
+
+    .container {
+      position: relative;
+      z-index: 10;
+
+      width: min(1050px, calc(100% - 30px));
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .topbar {
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 25px 0;
+    }
+
+    .brand {
+      color: var(--white);
+
+      text-decoration: none;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 1.55rem;
+      font-weight: 600;
+
+      letter-spacing: .02em;
+    }
+
+    .brand span {
+      color: var(--rose-light);
+      font-style: italic;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu-button {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+
+      border:
+        1px solid rgba(255,185,205,.18);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.045);
+
+      cursor: pointer;
+
+      transition:
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .menu-button:hover {
+      border-color:
+        rgba(227,189,145,.45);
+
+      background:
+        rgba(255,255,255,.075);
+    }
+
+    .menu-button span {
+      width: 18px;
+      height: 1px;
+
+      background:
+        var(--gold-light);
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease;
+    }
+
+    .menu-content {
+      position: absolute;
+
+      top: 60px;
+      right: 0;
+
+      width: 190px;
+
+      padding: 10px;
+
+      border:
+        1px solid rgba(255,185,205,.16);
+
+      border-radius: 18px;
+
+      background:
+        rgba(15,4,9,.96);
+
+      backdrop-filter:
+        blur(18px);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.55);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform:
+        translateY(-8px);
+
+      transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+    }
+
+    .menu:hover .menu-content,
+    .menu:focus-within .menu-content {
+      opacity: 1;
+      visibility: visible;
+
+      transform:
+        translateY(0);
+    }
+
+    .menu-content a {
+      display: block;
+
+      padding: 12px 14px;
+
+      color: var(--white);
+
+      text-decoration: none;
+
+      border-radius: 12px;
+
+      font-size: .78rem;
+      font-weight: 600;
+
+      letter-spacing: .04em;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .menu-content a:hover {
+      color: var(--gold-light);
+
+      background:
+        rgba(255,255,255,.055);
+    }
+
+
+    /* =========================
+       NAGŁÓWEK
+    ========================= */
+
+    header {
+      position: relative;
+
+      padding:
+        85px 0 65px;
+
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: block;
+
+      margin-bottom: 20px;
+
+      color: var(--rose-light);
+
+      font-size: .68rem;
+      font-weight: 600;
+
+      letter-spacing: .34em;
+
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(
+          3.2rem,
+          8vw,
+          6.5rem
+        );
+
+      font-weight: 600;
+
+      line-height: .9;
+
+      letter-spacing: -.025em;
+
+      text-shadow:
+        0 15px 45px rgba(0,0,0,.55);
+    }
+
+    h1 span {
+      color: var(--pink);
+
+      font-style: italic;
+    }
+
+    .heading-line {
+      width: 150px;
+      height: 1px;
+
+      margin:
+        30px auto 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+
+      opacity: .75;
+    }
+
+    .intro {
+      max-width: 600px;
+
+      margin:
+        22px auto 0;
+
+      color: var(--muted);
+
+      font-size: .88rem;
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       CENNIK
+    ========================= */
+
+    .pricing {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap: 20px;
+
+      padding-bottom: 80px;
+    }
+
+    .price-card {
+      position: relative;
+
+      padding:
+        32px 30px 30px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.075),
+          rgba(255,255,255,.022)
+        );
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.055);
+
+      backdrop-filter:
+        blur(18px);
+
+      overflow: hidden;
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease;
+    }
+
+    .price-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(205,160,120,.35);
+    }
+
+    .price-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      top: -110px;
+      right: -80px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(151,27,66,.15);
+
+      filter: blur(20px);
+
+      pointer-events: none;
+    }
+
+    .number {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 12px;
+
+      color: var(--gold-light);
+
+      font-size: .65rem;
+      font-weight: 700;
+
+      letter-spacing: .28em;
+    }
+
+    .price-card h2 {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 23px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
+
+      font-weight: 600;
+
+      line-height: 1;
+    }
+
+    .price-list {
+      position: relative;
+      z-index: 2;
+
+      list-style: none;
+    }
+
+    .price-list li {
+      padding:
+        15px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+      color: var(--muted);
+
+      font-size: .84rem;
+
+      line-height: 1.65;
+    }
+
+    .price-list li:last-child {
+      border-bottom: none;
+    }
+
+    .price {
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--pink);
+
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .note {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 18px;
+
+      color:
+        rgba(230,204,213,.68);
+
+      font-size: .72rem;
+
+      line-height: 1.7;
+
+      font-style: italic;
+    }
+
+    .shipping {
+      grid-column:
+        1 / -1;
+    }
+
+
+    /* =========================
+       POWRÓT
+    ========================= */
+
+    .back {
+      padding:
+        10px 0 80px;
+
+      text-align: center;
+    }
+
+    .back a {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding:
+        0 25px;
+
+      border:
+        1px solid rgba(205,160,120,.28);
+
+      border-radius: 999px;
+
+      color: var(--gold-light);
+
+      text-decoration: none;
+
+      font-size: .75rem;
+      font-weight: 600;
+
+      letter-spacing: .08em;
+
+      background:
+        rgba(255,255,255,.035);
+
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+    }
+
+    .back a:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(205,160,120,.55);
+
+      background:
+        rgba(255,255,255,.065);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding:
+        35px 0 50px;
+
+      border-top:
+        1px solid rgba(255,184,204,.07);
+
+      text-align: center;
+
+      color:
+        rgba(255,248,251,.45);
+
+      font-size: .7rem;
+
+      letter-spacing: .05em;
+    }
+
+    footer strong {
+      display: block;
+
+      margin-top: 9px;
+
+      color: var(--rose-light);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 1.35rem;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .shipping {
+        grid-column: auto;
+      }
+
+      header {
+        padding:
+          65px 0 50px;
+      }
+
+      .price-card {
+        padding:
+          28px 23px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .container {
+        width:
+          calc(100% - 22px);
+      }
+
+      .brand {
+        font-size: 1.35rem;
+      }
+
+      .menu-button {
+        width: 44px;
+        height: 44px;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            3rem,
+            16vw,
+            4.5rem
+          );
+      }
+
+      .intro {
+        font-size: .82rem;
+      }
+
+    }
+
+
+    /* =========================
+       MNIEJ RUCHU
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- SERDUSZKA -->
+
+  <div class="hearts" aria-hidden="true">
+
+    <span class="heart small h1">♡</span>
+    <span class="heart medium h2">♥</span>
+    <span class="heart small h3">♡</span>
+    <span class="heart large h4">♥</span>
+    <span class="heart small h5">♡</span>
+
+  </div>
+
+
+  <main>
+
+
+    <!-- GÓRNE MENU -->
+
+    <div class="container">
+
+      <div class="topbar">
+
+        <a
+          class="brand"
+          href="index.html"
+        >
+          kocica<span>dlaPana</span>
+        </a>
+
+
+        <div class="menu">
+
+          <button
+            class="menu-button"
+            aria-label="Otwórz menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+          <nav class="menu-content">
+
+            <a href="index.html">
+              Strona główna
+            </a>
+
+            <a href="index.html#oferta">
+              Oferta
+            </a>
+
+            <a href="cennik.html">
+              Cennik
+            </a>
+
+            <a href="index.html#kontakt">
+              Kontakt
+            </a>
+
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- NAGŁÓWEK -->
+
+    <header>
+
+      <div class="container">
+
+        <span class="eyebrow">
+          Szczegóły i ceny
+        </span>
+
+        <h1>
+          Mój <span>cennik</span>
+        </h1>
+
+        <div class="heading-line"></div>
+
+        <p class="intro">
+          Poniżej znajdziesz podstawowy cennik.
+          W przypadku bardziej indywidualnych zamówień
+          szczegóły oraz cenę ustalamy w wiadomości prywatnej.
+        </p>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- CENNIK -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="pricing">
+
+
+          <!-- 01 -->
+
+          <article class="price-card">
+
+            <div class="number">
+              01
+            </div>
+
+            <h2>
+              Pokazy
+            </h2>
+
+            <ul class="price-list">
+
+              <li>
+                Cenę pokazu ustalam indywidualnie.
+                Możesz również zapoznać się z cennikiem
+                na moim ShowUpie.
+              </li>
+
+              <li>
+                Zazwyczaj
+                <span class="price">
+                  1 minuta — 10 zł
+                </span>
+              </li>
+
+              <li>
+                Nie wykonuję pokazów krótszych niż
+                <strong>2 minuty.</strong>
+              </li>
+
+            </ul>
+
+          </article>
+
+
+
+          <!-- 02 -->
+
+          <article class="price-card">
+
+            <div class="number">
+              02
+            </div>
+
+            <h2>
+              Filmy na życzenie
+            </h2>
+
+            <ul class="price-list">
+
+              <li>
+                4-minutowy film na życzenie z twarzą
+                <span class="price">
+                  99 zł
+                </span>
+              </li>
+
+              <li>
+                10-minutowy film z twarzą
+                <span class="price">
+                  159 zł
+                </span>
+              </li>
+
+              <li>
+                15-minutowy film z twarzą
+                <span class="price">
+                  229 zł
+                </span>
+              </li>
+
+            </ul>
+
+            <p class="note">
+              Ceny obejmują proste scenariusze.
+              Średnie i bardziej skomplikowane scenariusze
+              wyceniam indywidualnie.
+              <br><br>
+              Dłuższe filmy — do ustalenia.
+            </p>
+
+          </article>
+
+
+
+          <!-- 03 -->
+
+          <article class="price-card">
+
+            <div class="number">
+              03
+            </div>
+
+            <h2>
+              Zdjęcia na życzenie
+            </h2>
+
+            <ul class="price-list">
+
+              <li>
+                10 zdjęć na życzenie z twarzą
+                <span class="price">
+                  129 zł
+                </span>
+              </li>
+
+              <li>
+                20 zdjęć na życzenie z twarzą
+                <span class="price">
+                  199 zł
+                </span>
+              </li>
+
+            </ul>
+
+            <p class="note">
+              Nie wykonuję napisów na ciele ani na kartce.
+            </p>
+
+          </article>
+
+
+
+          <!-- 04 -->
+
+          <article class="price-card">
+
+            <div class="number">
+              04
+            </div>
+
+            <h2>
+              Głosówki
+            </h2>
+
+            <ul class="price-list">
+
+              <li>
+                Możliwość zakupu głosówek na życzenie.
+              </li>
+
+              <li>
+                Cena zależy od scenariusza
+                i jest ustalana indywidualnie.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+
+          <!-- 05 -->
+
+          <article class="price-card shipping">
+
+            <div class="number">
+              05
+            </div>
+
+            <h2>
+              Majteczki
+            </h2>
+
+            <ul class="price-list">
+
+              <li>
+                1 dzień noszenia + 5 zdjęć
+                lub 2-minutowy filmik + wysyłka
+
+                <span class="price">
+                  119 zł
+                </span>
+              </li>
+
+              <li>
+                Możliwość opcji dodatkowych za opłatą,
+                takich jak orgazm, zmoczenie
+                czy kilka dni noszenia.
+              </li>
+
+            </ul>
+
+            <p class="note">
+              Wszystkie dodatki ustalane są indywidualnie.
+              <br><br>
+              Inne rzeczy wysyłkowe — ustalane
+              w wiadomości prywatnej.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- POWRÓT -->
+
+        <div class="back">
+
+          <a href="index.html">
+            ← Wróć na stronę główną
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- STOPKA -->
+
+  <footer>
+
+    <div class="container">
+
+      Wszelkie prawa zastrzeżone © 2026
+
+      <strong>
+        kocicadlaPana
+      </strong>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>

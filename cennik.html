@@ -119,7 +119,7 @@
       }
     }
 
-    /* RÓŻE */
+    /* DELIKATNE ŚWIETLNE PLAMKI */
 
     .flowers{
       position:fixed;
@@ -131,18 +131,19 @@
 
     .flower{
       position:absolute;
-      width:100px;
-      height:100px;
+      width:180px;
+      height:180px;
       border-radius:50%;
       background:
-        radial-gradient(circle at center,
-          var(--rose-light) 0 7%,
-          transparent 8% 15%,
-          var(--rose) 16% 26%,
-          transparent 27% 33%,
-          var(--rose-dark) 34% 45%,
-          transparent 46%);
-      filter:blur(.2px);
+        radial-gradient(
+          circle,
+          rgba(240,211,155,.16) 0%,
+          rgba(212,174,115,.08) 28%,
+          rgba(165,46,82,.06) 48%,
+          transparent 72%
+        );
+      filter:blur(18px);
+      opacity:.55;
     }
 
     .flower:nth-child(1){
@@ -169,7 +170,7 @@
       transform:rotate(-10deg) scale(.95);
     }
 
-    /* SERCA */
+    /* DELIKATNE SERDUSZKA */
 
     .hearts{
       position:fixed;
@@ -181,20 +182,23 @@
 
     .heart{
       position:absolute;
-      color:rgba(237,142,172,.16);
-      font-size:18px;
-      animation:rise 14s linear infinite;
+      color:rgba(240,211,155,.20);
+      font-size:11px;
+      font-weight:300;
+      opacity:.65;
+      text-shadow:0 0 10px rgba(240,211,155,.28);
+      animation:rise 18s ease-in-out infinite;
     }
 
     .heart:nth-child(1){left:8%;animation-delay:0s;}
-    .heart:nth-child(2){left:18%;animation-delay:2s;font-size:13px;}
-    .heart:nth-child(3){left:31%;animation-delay:5s;font-size:22px;}
-    .heart:nth-child(4){left:43%;animation-delay:1s;font-size:15px;}
-    .heart:nth-child(5){left:55%;animation-delay:7s;font-size:12px;}
-    .heart:nth-child(6){left:67%;animation-delay:3s;font-size:20px;}
-    .heart:nth-child(7){left:76%;animation-delay:9s;font-size:14px;}
-    .heart:nth-child(8){left:88%;animation-delay:4s;font-size:18px;}
-    .heart:nth-child(9){left:95%;animation-delay:11s;font-size:11px;}
+    .heart:nth-child(2){left:18%;animation-delay:2s;font-size:8px;}
+    .heart:nth-child(3){left:31%;animation-delay:5s;font-size:12px;}
+    .heart:nth-child(4){left:43%;animation-delay:1s;font-size:9px;}
+    .heart:nth-child(5){left:55%;animation-delay:7s;font-size:8px;}
+    .heart:nth-child(6){left:67%;animation-delay:3s;font-size:11px;}
+    .heart:nth-child(7){left:76%;animation-delay:9s;font-size:9px;}
+    .heart:nth-child(8){left:88%;animation-delay:4s;font-size:10px;}
+    .heart:nth-child(9){left:95%;animation-delay:11s;font-size:7px;}
 
     @keyframes rise{
       0%{
@@ -202,10 +206,10 @@
         opacity:0;
       }
       15%{
-        opacity:1;
+        opacity:.65;
       }
       85%{
-        opacity:1;
+        opacity:.65;
       }
       100%{
         transform:translateY(-15vh) rotate(25deg);

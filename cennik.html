@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -114,6 +114,7 @@
       from{
         transform:translate(0,0) scale(1);
       }
+
       to{
         transform:translate(50px,-30px) scale(1.15);
       }
@@ -205,12 +206,15 @@
         transform:translateY(110vh) rotate(0deg);
         opacity:0;
       }
+
       15%{
         opacity:.65;
       }
+
       85%{
         opacity:.65;
       }
+
       100%{
         transform:translateY(-15vh) rotate(25deg);
         opacity:0;
@@ -253,80 +257,106 @@
         opacity:.15;
         transform:scale(.7);
       }
+
       50%{
         opacity:1;
         transform:scale(1.4);
       }
     }
 
-    /* MENU */
+    /* =====================================================
+       MENU — WSPÓLNY DLA INDEX / CENNIK / REGULAMIN
+       ===================================================== */
+
+    .topbar{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
+      display:flex;
+      justify-content:flex-end;
+      padding:22px;
+    }
+
+    .menu{
+      position:relative;
+    }
 
     .menu-button{
-      position:fixed;
-      top:24px;
-      right:24px;
-      width:52px;
-      height:52px;
-      border:1px solid rgba(212,174,115,.45);
-      border-radius:50%;
-      background:rgba(5,3,6,.78);
-      backdrop-filter:blur(12px);
+      width:48px;
+      height:48px;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       gap:5px;
+      border:1px solid rgba(212,174,115,.28);
+      border-radius:50%;
+      background:rgba(10,3,7,.72);
+      backdrop-filter:blur(12px);
       cursor:pointer;
-      z-index:20;
-      box-shadow:0 10px 30px rgba(0,0,0,.3);
+      box-shadow:none;
+      position:relative;
+      top:auto;
+      right:auto;
+      z-index:50;
     }
 
     .menu-button span{
-      width:20px;
+      width:18px;
       height:1px;
       background:var(--gold-light);
-      transition:.3s;
+      transition:.3s ease;
     }
 
-    .menu{
-      position:fixed;
-      top:88px;
-      right:24px;
-      width:210px;
-      padding:14px;
-      border:1px solid var(--border);
+    .menu-content{
+      position:absolute;
+      top:58px;
+      right:0;
+      width:190px;
+      padding:10px;
+      border:1px solid rgba(212,174,115,.22);
       border-radius:18px;
-      background:rgba(13,5,9,.94);
+      background:rgba(12,3,8,.96);
       backdrop-filter:blur(18px);
-      box-shadow:0 20px 50px rgba(0,0,0,.45);
+      box-shadow:0 20px 50px rgba(0,0,0,.55);
       opacity:0;
       visibility:hidden;
-      transform:translateY(-10px);
-      transition:.3s;
-      z-index:19;
+      transform:translateY(-8px);
+      transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
     }
 
-    .menu.open{
+    .menu.open .menu-content,
+    .menu:hover .menu-content,
+    .menu:focus-within .menu-content{
       opacity:1;
       visibility:visible;
       transform:translateY(0);
     }
 
-    .menu a{
+    .menu-content a{
       display:block;
-      padding:13px 12px;
-      color:var(--muted);
+      padding:12px 14px;
+      color:var(--white);
       text-decoration:none;
-      font-size:.78rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
       border-radius:10px;
-      transition:.25s;
+      font-family:"Montserrat",sans-serif;
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:none;
+      transition:
+        background .25s ease,
+        color .25s ease;
     }
 
-    .menu a:hover{
+    .menu-content a:hover{
       color:var(--gold-light);
-      background:rgba(255,255,255,.05);
+      background:rgba(255,255,255,.055);
     }
 
     /* GŁÓWNA ZAWARTOŚĆ */
@@ -560,14 +590,17 @@
         width:min(100% - 28px,1080px);
       }
 
-      .menu-button{
-        top:16px;
-        right:16px;
+      .topbar{
+        padding:16px;
       }
 
-      .menu{
-        top:78px;
-        right:16px;
+      .menu-button{
+        width:44px;
+        height:44px;
+      }
+
+      .menu-content{
+        top:54px;
       }
 
       header{
@@ -632,17 +665,47 @@
 
   <!-- MENU -->
 
-  <button class="menu-button" id="menuButton" aria-label="Otwórz menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <div class="topbar">
+    <div class="menu">
 
-  <nav class="menu" id="menu">
-    <a href="index.html">Strona główna</a>
-    <a href="cennik.html">Cennik</a>
-    <a href="index.html#kontakt">Kontakt</a>
-  </nav>
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu-content" id="menu">
+
+        <a href="index.html">
+          Strona główna
+        </a>
+
+        <a href="index.html#oferta">
+          Oferta
+        </a>
+
+        <a href="cennik.html">
+          Cennik
+        </a>
+
+        <a href="regulamin.html">
+          Regulamin
+        </a>
+
+        <a href="index.html#kontakt">
+          Kontakt
+        </a>
+
+      </nav>
+
+    </div>
+  </div>
 
   <!-- TREŚĆ -->
 
@@ -839,25 +902,41 @@
   </footer>
 
 
+  <!-- MENU JS -->
+
   <script>
     const menuButton = document.getElementById("menuButton");
-    const menu = document.getElementById("menu");
+    const menu = document.querySelector(".menu");
 
     menuButton.addEventListener("click", function(event){
       event.stopPropagation();
-      menu.classList.toggle("open");
+
+      const isOpen = menu.classList.toggle("open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
     });
 
     document.addEventListener("click", function(event){
-      if(!menu.contains(event.target) && !menuButton.contains(event.target)){
+
+      if(
+        !menu.contains(event.target)
+      ){
         menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       }
+
     });
 
     menu.querySelectorAll("a").forEach(function(link){
+
       link.addEventListener("click", function(){
         menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       });
+
     });
   </script>
 

@@ -1259,8 +1259,11 @@
 
       display: flex;
 
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      gap: 7px;
 
       padding: 20px;
 
@@ -1347,6 +1350,31 @@
 
       background:
         rgba(212,174,115,.11);
+    }
+
+    .contact-hint {
+      position: relative;
+      z-index: 2;
+
+      color: rgba(240,211,155,.48);
+
+      font-size: .62rem;
+
+      font-weight: 500;
+
+      letter-spacing: .08em;
+
+      opacity: .72;
+
+      transition:
+        color .35s ease,
+        opacity .35s ease;
+    }
+
+    .contact-card:hover .contact-hint {
+      color: var(--gold-light);
+
+      opacity: .9;
     }
 
 
@@ -1557,6 +1585,51 @@
       font-size: .78rem;
 
       font-weight: 600;
+    }
+
+    .offer-hint {
+      position: relative;
+      z-index: 2;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      margin-top: 25px;
+
+      color: rgba(240,211,155,.48);
+
+      font-size: .62rem;
+
+      font-weight: 500;
+
+      letter-spacing: .08em;
+
+      opacity: .72;
+
+      transition:
+        color .35s ease,
+        opacity .35s ease;
+    }
+
+    .offer-hint .arrow {
+      display: inline-block;
+
+      margin-left: 5px;
+
+      transition:
+        transform .35s ease;
+    }
+
+    .offer-link:hover .offer-hint {
+      color: var(--gold-light);
+
+      opacity: .9;
+    }
+
+    .offer-link:hover .offer-hint .arrow {
+      transform:
+        translateX(3px);
     }
 
 
@@ -2125,7 +2198,13 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            WhatsApp
+            <span>
+              WhatsApp
+            </span>
+
+            <span class="contact-hint">
+              Napisz →
+            </span>
           </a>
 
 
@@ -2135,7 +2214,13 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Telegram
+            <span>
+              Telegram
+            </span>
+
+            <span class="contact-hint">
+              Napisz →
+            </span>
           </a>
 
 
@@ -2145,12 +2230,20 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            ShowUp
+            <span>
+              ShowUp
+            </span>
+
+            <span class="contact-hint">
+              Przejdź →
+            </span>
           </a>
 
 
           <div class="contact-card">
-            kocicadlapana@tutamail.com
+            <span>
+              kocicadlapana@tutamail.com
+            </span>
           </div>
 
 
@@ -2218,6 +2311,10 @@
 
               </p>
 
+              <span class="offer-hint">
+                Zobacz więcej <span class="arrow">→</span>
+              </span>
+
             </article>
 
           </a>
@@ -2254,6 +2351,10 @@
                 Cena filmu od 99 zł
               </span>
 
+              <span class="offer-hint">
+                Zobacz więcej <span class="arrow">→</span>
+              </span>
+
             </article>
 
           </a>
@@ -2284,6 +2385,10 @@
                 jest nazwa Twojego paczkomatu.
 
               </p>
+
+              <span class="offer-hint">
+                Zobacz więcej <span class="arrow">→</span>
+              </span>
 
             </article>
 
@@ -2319,4 +2424,3 @@
 
 </body>
 </html>
-

@@ -892,7 +892,7 @@
 
 
     /* =========================================================
-       KOTKA — JEDYNY NOWY ELEMENT
+       KOTKA — ZŁOTY GLOW
     ========================================================= */
 
     header::after {
@@ -925,12 +925,14 @@
       opacity: .55;
 
       filter:
-        drop-shadow(
-          0 0 18px rgba(240,211,155,.15)
-        )
-        drop-shadow(
-          0 0 48px rgba(103,19,46,.24)
-        );
+        drop-shadow(0 0 10px rgba(240,211,155,.20))
+        drop-shadow(0 0 28px rgba(212,174,115,.16))
+        drop-shadow(0 0 50px rgba(103,19,46,.20));
+
+      animation:
+        catGlow 4.5s ease-in-out infinite;
+
+      will-change: filter;
 
       -webkit-mask-image:
         linear-gradient(
@@ -1797,6 +1799,26 @@
     /* =========================================================
        ANIMACJE
     ========================================================= */
+
+    @keyframes catGlow {
+
+      0%,
+      100% {
+        filter:
+          drop-shadow(0 0 8px rgba(240,211,155,.16))
+          drop-shadow(0 0 22px rgba(212,174,115,.12))
+          drop-shadow(0 0 48px rgba(103,19,46,.18));
+      }
+
+      50% {
+        filter:
+          drop-shadow(0 0 13px rgba(255,226,173,.38))
+          drop-shadow(0 0 32px rgba(212,174,115,.25))
+          drop-shadow(0 0 58px rgba(103,19,46,.23));
+      }
+
+    }
+
 
     @keyframes heroAppear {
 

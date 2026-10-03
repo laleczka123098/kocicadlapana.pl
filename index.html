@@ -873,6 +873,7 @@
     ========================================================= */
 
     header {
+      position: relative;
       min-height: 86vh;
 
       display: flex;
@@ -884,6 +885,39 @@
         90px 0 70px;
 
       text-align: center;
+      overflow: hidden;
+    }
+
+    /* Dekoracyjna kotka — tylko w sekcji HERO */
+    header::after {
+      content: "";
+      position: absolute;
+      right: clamp(-115px, -5vw, -45px);
+      bottom: -7%;
+      width: clamp(390px, 40vw, 650px);
+      height: 92%;
+      z-index: 3;
+      pointer-events: none;
+
+      background-image: url("kotka.png");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: contain;
+
+      opacity: .48;
+      filter:
+        drop-shadow(0 0 16px rgba(240,211,155,.12))
+        drop-shadow(0 0 42px rgba(155,27,68,.20));
+
+      -webkit-mask-image:
+        linear-gradient(to left, #000 68%, rgba(0,0,0,.72) 82%, transparent 100%),
+        linear-gradient(to top, #000 78%, rgba(0,0,0,.88) 92%, transparent 100%);
+      -webkit-mask-composite: source-in;
+
+      mask-image:
+        linear-gradient(to left, #000 68%, rgba(0,0,0,.72) 82%, transparent 100%),
+        linear-gradient(to top, #000 78%, rgba(0,0,0,.88) 92%, transparent 100%);
+      mask-composite: intersect;
     }
 
     .hero {
@@ -896,6 +930,9 @@
 
       animation:
         heroAppear 1.2s ease both;
+
+      --hero-x: clamp(-105px, -6vw, -35px);
+      transform: translateX(var(--hero-x));
     }
 
     .hero::before {
@@ -1720,6 +1757,7 @@
         opacity: 0;
 
         transform:
+          translateX(var(--hero-x, 0px))
           translateY(28px)
           scale(.98);
       }
@@ -1728,6 +1766,7 @@
         opacity: 1;
 
         transform:
+          translateX(var(--hero-x, 0px))
           translateY(0)
           scale(1);
       }
@@ -1822,6 +1861,18 @@
         min-height: 75vh;
       }
 
+      header::after {
+        right: -145px;
+        bottom: -4%;
+        width: 470px;
+        height: 86%;
+        opacity: .34;
+      }
+
+      .hero {
+        --hero-x: -28px;
+      }
+
       .contact-grid {
         grid-template-columns:
           repeat(2, minmax(0,1fr));
@@ -1865,6 +1916,18 @@
       header {
         padding:
           70px 0 50px;
+      }
+
+      header::after {
+        right: -185px;
+        bottom: -2%;
+        width: 410px;
+        height: 78%;
+        opacity: .25;
+      }
+
+      .hero {
+        --hero-x: 0px;
       }
 
       .hero-frame {

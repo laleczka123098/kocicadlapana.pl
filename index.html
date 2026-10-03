@@ -892,7 +892,104 @@
 
 
     /* =========================================================
-       KOTKA — ZŁOTY GLOW
+       LEWY OBRAZEK — KOTKA + PAN
+    ========================================================= */
+
+    header::before {
+      content: "";
+
+      position: absolute;
+
+      left: 20px;
+      bottom: -10%;
+
+      width: clamp(620px, 55vw, 900px);
+      height: 108%;
+
+      z-index: 3;
+
+      pointer-events: none;
+
+      background-image:
+        url("Złota aura nocnego romansu.png");
+
+      background-repeat:
+        no-repeat;
+
+      background-position:
+        left bottom;
+
+      background-size:
+        contain;
+
+      opacity: .55;
+
+      /*
+        Screen sprawia, że bardzo ciemne fragmenty tła
+        nowego obrazka mniej odcinają się od strony.
+      */
+      mix-blend-mode: screen;
+
+      filter:
+        drop-shadow(0 0 10px rgba(240,211,155,.24))
+        drop-shadow(0 0 26px rgba(212,174,115,.18))
+        drop-shadow(0 0 52px rgba(103,19,46,.20));
+
+      animation:
+        catGlow 3.6s ease-in-out infinite;
+
+      animation-delay: -1.8s;
+
+      will-change: filter;
+
+      -webkit-mask-image:
+        linear-gradient(
+          to right,
+          #000 0%,
+          #000 62%,
+          rgba(0,0,0,.90) 76%,
+          rgba(0,0,0,.48) 89%,
+          transparent 100%
+        ),
+        linear-gradient(
+          to top,
+          transparent 0%,
+          rgba(0,0,0,.70) 9%,
+          #000 23%,
+          #000 91%,
+          rgba(0,0,0,.65) 97%,
+          transparent 100%
+        );
+
+      -webkit-mask-composite:
+        source-in;
+
+      mask-image:
+        linear-gradient(
+          to right,
+          #000 0%,
+          #000 62%,
+          rgba(0,0,0,.90) 76%,
+          rgba(0,0,0,.48) 89%,
+          transparent 100%
+        ),
+        linear-gradient(
+          to top,
+          transparent 0%,
+          rgba(0,0,0,.70) 9%,
+          #000 23%,
+          #000 91%,
+          rgba(0,0,0,.65) 97%,
+          transparent 100%
+        );
+
+      mask-composite:
+        intersect;
+    }
+
+
+    /* =========================================================
+       PRAWA KOTKA
     ========================================================= */
 
     header::after {
@@ -925,12 +1022,12 @@
       opacity: .55;
 
       filter:
-        drop-shadow(0 0 10px rgba(240,211,155,.20))
-        drop-shadow(0 0 28px rgba(212,174,115,.16))
-        drop-shadow(0 0 50px rgba(103,19,46,.20));
+        drop-shadow(0 0 10px rgba(240,211,155,.24))
+        drop-shadow(0 0 26px rgba(212,174,115,.18))
+        drop-shadow(0 0 52px rgba(103,19,46,.20));
 
       animation:
-        catGlow 4.5s ease-in-out infinite;
+        catGlow 3.6s ease-in-out infinite;
 
       will-change: filter;
 
@@ -1805,16 +1902,17 @@
       0%,
       100% {
         filter:
-          drop-shadow(0 0 8px rgba(240,211,155,.16))
-          drop-shadow(0 0 22px rgba(212,174,115,.12))
-          drop-shadow(0 0 48px rgba(103,19,46,.18));
+          drop-shadow(0 0 10px rgba(240,211,155,.24))
+          drop-shadow(0 0 26px rgba(212,174,115,.18))
+          drop-shadow(0 0 52px rgba(103,19,46,.20));
       }
 
       50% {
         filter:
-          drop-shadow(0 0 13px rgba(255,226,173,.38))
-          drop-shadow(0 0 32px rgba(212,174,115,.25))
-          drop-shadow(0 0 58px rgba(103,19,46,.23));
+          drop-shadow(0 0 18px rgba(255,226,173,.68))
+          drop-shadow(0 0 40px rgba(212,174,115,.42))
+          drop-shadow(0 0 72px rgba(212,174,115,.22))
+          drop-shadow(0 0 90px rgba(103,19,46,.26));
       }
 
     }
@@ -1928,6 +2026,16 @@
         min-height: 75vh;
       }
 
+      header::before {
+        left: -220px;
+        bottom: -5%;
+
+        width: 650px;
+        height: 95%;
+
+        opacity: .38;
+      }
+
       header::after {
         right: -220px;
         bottom: -5%;
@@ -1981,6 +2089,16 @@
       header {
         padding:
           70px 0 50px;
+      }
+
+      header::before {
+        left: -260px;
+        bottom: -2%;
+
+        width: 560px;
+        height: 82%;
+
+        opacity: .25;
       }
 
       header::after {

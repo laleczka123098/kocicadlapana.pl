@@ -208,21 +208,10 @@
       pointer-events: none;
     }
 
-    .lights {
-      z-index: 0;
-    }
-
-    .flowers {
-      z-index: 1;
-    }
-
-    .hearts {
-      z-index: 5;
-    }
-
-    .sparkles {
-      z-index: 6;
-    }
+    .lights { z-index: 0; }
+    .flowers { z-index: 1; }
+    .hearts { z-index: 5; }
+    .sparkles { z-index: 6; }
 
     /* ŚWIATŁA */
 
@@ -278,21 +267,14 @@
       from {
         transform: translate3d(0,0,0) scale(1);
       }
-
       to {
         transform: translate3d(35px,-25px,0) scale(1.10);
       }
     }
 
     @keyframes lightBreath {
-      0%,
-      100% {
-        opacity: .30;
-      }
-
-      50% {
-        opacity: .50;
-      }
+      0%, 100% { opacity: .30; }
+      50% { opacity: .50; }
     }
 
     /* KWIATY */
@@ -343,7 +325,6 @@
       from {
         transform: translate3d(0,0,0) scale(1);
       }
-
       to {
         transform: translate3d(25px,-20px,0) scale(1.08);
       }
@@ -363,13 +344,8 @@
       animation: heartFloat linear infinite;
     }
 
-    .heart.small {
-      font-size: 12px;
-    }
-
-    .heart.medium {
-      font-size: 18px;
-    }
+    .heart.small { font-size: 12px; }
+    .heart.medium { font-size: 18px; }
 
     .heart.large {
       font-size: 25px;
@@ -389,33 +365,20 @@
     @keyframes heartFloat {
       0% {
         opacity: 0;
-        transform:
-          translate3d(0,0,0)
-          rotate(-8deg)
-          scale(.65);
+        transform: translate3d(0,0,0) rotate(-8deg) scale(.65);
       }
-
       12% {
         opacity: .52;
       }
-
       50% {
-        transform:
-          translate3d(24px,-50vh,0)
-          rotate(7deg)
-          scale(.95);
+        transform: translate3d(24px,-50vh,0) rotate(7deg) scale(.95);
       }
-
       78% {
         opacity: .20;
       }
-
       100% {
         opacity: 0;
-        transform:
-          translate3d(-20px,-115vh,0)
-          rotate(-12deg)
-          scale(1.08);
+        transform: translate3d(-20px,-115vh,0) rotate(-12deg) scale(1.08);
       }
     }
 
@@ -465,12 +428,10 @@
     .s10 { left: 27%; top: 79%; animation-delay: 2.2s; }
 
     @keyframes sparkle {
-      0%,
-      100% {
+      0%, 100% {
         opacity: .08;
         transform: scale(.45) rotate(45deg);
       }
-
       50% {
         opacity: .90;
         transform: scale(1.25) rotate(45deg);
@@ -800,7 +761,7 @@
       text-shadow: 0 0 20px rgba(212,174,115,.12);
     }
 
-    /* GŁÓWNA CENA — używana przy głosówkach */
+    /* GŁOSÓWKI */
 
     .main-price {
       position: relative;
@@ -955,7 +916,7 @@
       white-space: nowrap;
     }
 
-    /* MAJTECZKI / SKARPETECZKI */
+    /* WYSYŁKA */
 
     .shipping-intro {
       max-width: 700px;
@@ -1183,80 +1144,47 @@
     @keyframes heroAppear {
       from {
         opacity: 0;
-        transform:
-          translateY(28px)
-          scale(.98);
+        transform: translateY(28px) scale(.98);
       }
-
       to {
         opacity: 1;
-        transform:
-          translateY(0)
-          scale(1);
+        transform: translateY(0) scale(1);
       }
     }
 
     @keyframes heroGlow {
-      0%,
-      100% {
+      0%, 100% {
         opacity: .72;
-        transform:
-          translate(-50%,-50%)
-          scale(.96);
+        transform: translate(-50%,-50%) scale(.96);
       }
-
       50% {
         opacity: 1;
-        transform:
-          translate(-50%,-50%)
-          scale(1.04);
+        transform: translate(-50%,-50%) scale(1.04);
       }
     }
 
     @keyframes frameBreath {
-      0%,
-      100% {
-        opacity: .65;
-      }
-
-      50% {
-        opacity: 1;
-      }
+      0%, 100% { opacity: .65; }
+      50% { opacity: 1; }
     }
 
     @keyframes goldBreath {
-      0%,
-      100% {
-        text-shadow:
-          0 0 12px rgba(240,211,155,.14);
+      0%, 100% {
+        text-shadow: 0 0 12px rgba(240,211,155,.14);
       }
-
       50% {
-        text-shadow:
-          0 0 25px rgba(240,211,155,.34);
+        text-shadow: 0 0 25px rgba(240,211,155,.34);
       }
     }
 
     @keyframes goldTextGlow {
-      0%,
-      100% {
-        filter: brightness(.94);
-      }
-
-      50% {
-        filter: brightness(1.10);
-      }
+      0%, 100% { filter: brightness(.94); }
+      50% { filter: brightness(1.10); }
     }
 
     @keyframes lineGlow {
-      0%,
-      100% {
-        opacity: .62;
-      }
-
-      50% {
-        opacity: 1;
-      }
+      0%, 100% { opacity: .62; }
+      50% { opacity: 1; }
     }
 
     /* TABLET */
@@ -1345,8 +1273,6 @@
         margin-bottom: 20px;
       }
 
-      /* POKAZY MOBILE */
-
       .show-price {
         margin-top: 17px;
         padding: 15px 0 14px;
@@ -1365,8 +1291,6 @@
         font-size: 1.65rem;
       }
 
-      /* FILMY MOBILE */
-
       .film-prices {
         margin-top: 17px;
         padding: 16px 0 15px;
@@ -1380,8 +1304,6 @@
       .film-value {
         font-size: 1.48rem;
       }
-
-      /* ZDJĘCIA MOBILE */
 
       .photo-list {
         margin-top: 16px;
@@ -1404,8 +1326,6 @@
         font-size: 1.48rem;
       }
 
-      /* GŁOSÓWKI */
-
       .main-price {
         align-items: center;
         padding: 18px;
@@ -1418,8 +1338,6 @@
       .main-price-number {
         font-size: 1.85rem;
       }
-
-      /* WYSYŁKA */
 
       .shipping-item {
         min-height: 205px;
@@ -1450,6 +1368,83 @@
         transition-duration: .01ms !important;
       }
     }
+
+    /* KONTAKT W CENNIKU */
+
+    .price-contact {
+      text-align: center;
+      padding: 0 0 46px;
+    }
+
+    .price-contact h2 {
+      margin-bottom: 12px;
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .price-contact p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .price-contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .price-contact-link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      min-width: 170px;
+      padding: 16px 28px;
+      border: 1px solid rgba(212,174,115,.38);
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.095),
+          rgba(255,255,255,.025)
+        );
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      color: var(--gold-light);
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .price-contact-link:hover {
+      border-color: var(--gold-light);
+      background: rgba(212,174,115,.12);
+    }
+
+    .price-contact-link:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 480px) {
+      .price-contact-links {
+        gap: 12px;
+      }
+
+      .price-contact-link {
+        min-width: 0;
+        flex: 1 1 140px;
+        padding: 16px 20px;
+      }
+    }
   </style>
 </head>
 
@@ -1459,7 +1454,6 @@
 
   <div class="topbar">
     <div class="menu">
-
       <button
         class="menu-button"
         id="menuButton"
@@ -1479,7 +1473,6 @@
         <a href="regulamin.html">Regulamin</a>
         <a href="index.html#kontakt">Kontakt</a>
       </nav>
-
     </div>
   </div>
 
@@ -1527,24 +1520,14 @@
   <!-- TREŚĆ -->
 
   <main>
-
     <header>
       <div class="container">
-
         <div class="header-content">
+          <div class="header-frame" aria-hidden="true"></div>
 
-          <div
-            class="header-frame"
-            aria-hidden="true"
-          ></div>
+          <span class="eyebrow">Moja oferta</span>
 
-          <span class="eyebrow">
-            Moja oferta
-          </span>
-
-          <h1>
-            <span>Cennik</span>
-          </h1>
+          <h1><span>Cennik</span></h1>
 
           <div class="heading-line"></div>
 
@@ -1553,9 +1536,7 @@
             W przypadku indywidualnych zamówień szczegóły
             ustalamy prywatnie.
           </p>
-
         </div>
-
       </div>
     </header>
 
@@ -1563,20 +1544,14 @@
 
     <section>
       <div class="container">
-
         <div class="offers">
 
           <!-- 01 POKAZY -->
 
           <article class="card">
+            <div class="number">01</div>
 
-            <div class="number">
-              01
-            </div>
-
-            <h2>
-              Pokazy
-            </h2>
+            <h2>Pokazy</h2>
 
             <p>
               Indywidualne pokazy na żywo.
@@ -1585,28 +1560,17 @@
             </p>
 
             <div class="show-price">
-
               <span class="show-price-label">
                 Klasyczne pokazy
               </span>
 
               <div class="show-price-line">
-
-                <span class="show-price-time">
-                  1 minuta
-                </span>
-
-                <span class="show-price-value">
-                  10 zł
-                </span>
-
+                <span class="show-price-time">1 minuta</span>
+                <span class="show-price-value">10 zł</span>
               </div>
-
             </div>
 
-            <p class="note">
-              Minimum 2 minuty.
-            </p>
+            <p class="note">Minimum 2 minuty.</p>
 
             <p class="note">
               Na stronie ShowUp, na moim profilu,
@@ -1614,20 +1578,14 @@
               sugerować, gdy chce się podobny pokaz
               na innej platformie.
             </p>
-
           </article>
 
           <!-- 02 FILMY -->
 
           <article class="card">
+            <div class="number">02</div>
 
-            <div class="number">
-              02
-            </div>
-
-            <h2>
-              Filmy
-            </h2>
+            <h2>Filmy</h2>
 
             <p>
               Indywidualne filmy przygotowywane
@@ -1636,37 +1594,20 @@
             </p>
 
             <div class="film-prices">
-
               <div class="film-price">
-                <span class="film-time">
-                  3 min
-                </span>
-
-                <span class="film-value">
-                  99 zł
-                </span>
+                <span class="film-time">3 min</span>
+                <span class="film-value">99 zł</span>
               </div>
 
               <div class="film-price">
-                <span class="film-time">
-                  10 min
-                </span>
-
-                <span class="film-value">
-                  199 zł
-                </span>
+                <span class="film-time">10 min</span>
+                <span class="film-value">199 zł</span>
               </div>
 
               <div class="film-price">
-                <span class="film-time">
-                  15 min
-                </span>
-
-                <span class="film-value">
-                  299 zł
-                </span>
+                <span class="film-time">15 min</span>
+                <span class="film-value">299 zł</span>
               </div>
-
             </div>
 
             <p class="note">
@@ -1678,91 +1619,57 @@
             <p class="note bold-text">
               Dłuższe filmy — do ustalenia.
             </p>
-
           </article>
 
           <!-- 03 ZDJĘCIA -->
 
           <article class="card">
+            <div class="number">03</div>
 
-            <div class="number">
-              03
-            </div>
-
-            <h2>
-              Zdjęcia
-            </h2>
+            <h2>Zdjęcia</h2>
 
             <p>
               Zestawy zdjęć przygotowywane indywidualnie.
             </p>
 
             <div class="photo-list">
-
               <div class="photo-section">
-
                 <div class="photo-type">
                   Z twarzą · z nagością
                 </div>
 
                 <div class="photo-row">
-                  <span class="photo-amount">
-                    10 zdjęć
-                  </span>
-
-                  <span class="photo-value">
-                    149 zł
-                  </span>
+                  <span class="photo-amount">10 zdjęć</span>
+                  <span class="photo-value">149 zł</span>
                 </div>
 
                 <div class="photo-row">
-                  <span class="photo-amount">
-                    20 zdjęć
-                  </span>
-
-                  <span class="photo-value">
-                    199 zł
-                  </span>
+                  <span class="photo-amount">20 zdjęć</span>
+                  <span class="photo-value">199 zł</span>
                 </div>
-
               </div>
 
               <div class="photo-section">
-
                 <div class="photo-type">
                   Stópki · bez twarzy
                 </div>
 
                 <div class="photo-row">
-                  <span class="photo-amount">
-                    5 zdjęć
-                  </span>
-
-                  <span class="photo-value">
-                    29 zł
-                  </span>
+                  <span class="photo-amount">5 zdjęć</span>
+                  <span class="photo-value">29 zł</span>
                 </div>
-
               </div>
 
               <div class="photo-section">
-
                 <div class="photo-type">
                   Części ciała · bez twarzy
                 </div>
 
                 <div class="photo-row">
-                  <span class="photo-amount">
-                    8 zdjęć
-                  </span>
-
-                  <span class="photo-value">
-                    59 zł
-                  </span>
+                  <span class="photo-amount">8 zdjęć</span>
+                  <span class="photo-value">59 zł</span>
                 </div>
-
               </div>
-
             </div>
 
             <p class="note">
@@ -1774,20 +1681,14 @@
               Nie wykonuję żadnych napisów na ciele
               ani na kartkach!
             </p>
-
           </article>
 
           <!-- 04 GŁOSÓWKI -->
 
           <article class="card">
+            <div class="number">04</div>
 
-            <div class="number">
-              04
-            </div>
-
-            <h2>
-              Głosówki
-            </h2>
+            <h2>Głosówki</h2>
 
             <p>
               Głosówki przygotowywane na Twoje życzenie.
@@ -1796,7 +1697,6 @@
             </p>
 
             <div class="main-price">
-
               <div class="main-price-text">
                 Cena zależy od długości
                 i scenariusza.
@@ -1804,25 +1704,17 @@
 
               <div
                 class="main-price-number"
-                style="
-                  font-size:1.45rem;
-                  text-align:right;
-                "
+                style="font-size:1.45rem; text-align:right;"
               >
                 Indywidualnie
               </div>
-
             </div>
-
           </article>
 
           <!-- 05 MAJTECZKI / SKARPETECZKI -->
 
           <article class="card full">
-
-            <div class="number">
-              05
-            </div>
+            <div class="number">05</div>
 
             <h2>
               Majteczki, skarpeteczki
@@ -1840,10 +1732,7 @@
               <!-- MAJTECZKI -->
 
               <div class="shipping-item">
-
-                <div class="shipping-name">
-                  Majteczki
-                </div>
+                <div class="shipping-name">Majteczki</div>
 
                 <div class="shipping-desc">
                   1 dzień noszenia
@@ -1852,7 +1741,6 @@
                 </div>
 
                 <div class="shipping-bottom">
-
                   <div class="shipping-price">
                     119 <span>zł</span>
                   </div>
@@ -1862,18 +1750,13 @@
                     <br>
                     w cenie
                   </div>
-
                 </div>
-
               </div>
 
               <!-- SKARPETECZKI -->
 
               <div class="shipping-item">
-
-                <div class="shipping-name">
-                  Skarpeteczki
-                </div>
+                <div class="shipping-name">Skarpeteczki</div>
 
                 <div class="shipping-desc">
                   1 dzień noszenia
@@ -1882,7 +1765,6 @@
                 </div>
 
                 <div class="shipping-bottom">
-
                   <div class="shipping-price">
                     99 <span>zł</span>
                   </div>
@@ -1892,18 +1774,13 @@
                     <br>
                     w cenie
                   </div>
-
                 </div>
-
               </div>
 
             </div>
 
             <div class="shipping-info">
-
-              <p>
-                Zdjęcia lub film bez buzi.
-              </p>
+              <p>Zdjęcia lub film bez buzi.</p>
 
               <p>
                 Dodatkowe opcje, takie jak dodatkowe dni
@@ -1915,108 +1792,100 @@
                 Inne rzeczy wysyłkowe — ustalmy szczegóły
                 w wiadomości prywatnej.
               </p>
-
             </div>
-
           </article>
 
         </div>
 
+        <!-- KONTAKT -->
+
+        <section
+          class="price-contact"
+          id="kontakt"
+          aria-labelledby="price-contact-title"
+        >
+          <h2 id="price-contact-title">
+            Skontaktuj się ze mną
+          </h2>
+
+          <p>
+            Wybierz wygodną dla siebie formę kontaktu.
+          </p>
+
+          <div class="price-contact-links">
+            <a
+              class="price-contact-link"
+              href="https://wa.me/420605512867"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+              <span aria-hidden="true">&nbsp;→</span>
+            </a>
+
+            <a
+              class="price-contact-link"
+              href="https://t.me/+420605512867"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Telegram
+              <span aria-hidden="true">&nbsp;→</span>
+            </a>
+          </div>
+        </section>
+
         <!-- POWRÓT -->
 
         <div class="back-wrap">
-
-          <a
-            class="back"
-            href="index.html"
-          >
+          <a class="back" href="index.html">
             ← Wróć na stronę główną
           </a>
-
         </div>
 
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
 
   <footer>
-
     <div class="container">
-
       Wszelkie prawa zastrzeżone © 2026
-
-      <strong>
-        kocicadlaPana
-      </strong>
-
+      <strong>kocicadlaPana</strong>
     </div>
-
   </footer>
 
   <!-- MENU JS -->
 
   <script>
-    const menuButton =
-      document.getElementById("menuButton");
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.querySelector(".menu");
 
-    const menu =
-      document.querySelector(".menu");
+    menuButton.addEventListener("click", function(event) {
+      event.stopPropagation();
 
-    menuButton.addEventListener(
-      "click",
-      function(event) {
+      const isOpen = menu.classList.toggle("open");
 
-        event.stopPropagation();
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+    });
 
-        const isOpen =
-          menu.classList.toggle("open");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
-        );
-
+    document.addEventListener("click", function(event) {
+      if (!menu.contains(event.target)) {
+        menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       }
-    );
+    });
 
-    document.addEventListener(
-      "click",
-      function(event) {
-
-        if (!menu.contains(event.target)) {
-
-          menu.classList.remove("open");
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        }
-
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       }
-    );
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (event.key === "Escape") {
-
-          menu.classList.remove("open");
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        }
-
-      }
-    );
+    });
   </script>
 
 </body>

@@ -2,27 +2,28 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#180b12">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#25040f">
   <meta name="description" content="kocicadlaPana — zapoznaj się z moją stroną i ofertą.">
   <title>kocicadlaPana — Witaj w moim świecie</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #180b12;
-      --deep: #11080d;
-      --text: #f8eee8;
-      --muted: #c7b0ba;
-      --gold: #e5c49e;
-      --rose: #d79caf;
-      --line: rgba(229, 196, 158, .19);
+      --background: #10050b;
+      --burgundy: #25040f;
+      --wine: #67132e;
+      --pink: #edb3c7;
+      --gold: #d4ae73;
+      --gold-light: #f0d39b;
+      --white: #fff8fb;
+      --muted: #e0c6d0;
+      --border: rgba(235, 179, 199, .18);
       --heading: "Cormorant Garamond", Georgia, serif;
-      --body: "DM Sans", Arial, sans-serif;
-      --width: 1120px;
+      --body: "Montserrat", Arial, sans-serif;
     }
 
     *, *::before, *::after {
@@ -31,16 +32,20 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 110px;
     }
 
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      color: var(--white);
       font-family: var(--body);
-      font-size: 16px;
-      line-height: 1.75;
+      font-size: 15px;
+      line-height: 1.8;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(142, 20, 57, .35), transparent 48%),
+        radial-gradient(ellipse at 0% 50%, rgba(110, 12, 43, .2), transparent 40%),
+        radial-gradient(ellipse at 100% 85%, rgba(110, 12, 43, .18), transparent 40%),
+        linear-gradient(135deg, #080307, #200610 45%, #0c0409);
       -webkit-font-smoothing: antialiased;
     }
 
@@ -53,27 +58,29 @@
       text-decoration: none;
     }
 
-    button {
-      font: inherit;
-    }
-
     img, svg {
       display: block;
       max-width: 100%;
     }
 
+    button, summary {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     ::selection {
-      background: var(--gold);
-      color: var(--deep);
+      background: var(--pink);
+      color: var(--burgundy);
     }
 
     :focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 6px;
+      outline: 2px solid var(--gold-light);
+      outline-offset: 5px;
     }
 
     .container {
-      width: min(var(--width), calc(100% - 64px));
+      position: relative;
+      z-index: 2;
+      width: min(1080px, calc(100% - 40px));
       margin-inline: auto;
     }
 
@@ -81,10 +88,11 @@
       position: fixed;
       top: 12px;
       left: 12px;
-      z-index: 300;
+      z-index: 200;
       padding: 10px 20px;
-      background: var(--gold);
-      color: var(--deep);
+      border-radius: 20px;
+      background: var(--gold-light);
+      color: var(--burgundy);
       transform: translateY(-160%);
     }
 
@@ -92,122 +100,221 @@
       transform: translateY(0);
     }
 
-    /* MENU */
+    /* MIĘKKI PASEK I ROZWIJANE MENU */
 
     .topbar {
-      position: sticky;
-      top: 0;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: rgba(24, 11, 18, .94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
     }
 
     .topbar-inner {
-      position: relative;
-      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 16px;
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+      padding: 10px 12px 10px 22px;
+      border: 1px solid rgba(212, 174, 115, .2);
+      border-radius: 999px;
+      background: rgba(24, 6, 15, .8);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .logo {
-      flex-shrink: 0;
+    .brand {
+      color: var(--gold-light);
       font-family: var(--heading);
-      font-size: 30px;
+      font-size: 27px;
       font-weight: 600;
-      letter-spacing: -.8px;
-      line-height: 1;
+      line-height: 1.1;
     }
 
-    .logo em {
-      color: var(--gold);
+    .brand em {
       font-weight: 500;
     }
 
-    .navigation {
+    .menu {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .menu summary {
       display: flex;
       align-items: center;
-      gap: 30px;
+      justify-content: center;
+      gap: 14px;
+      min-height: 42px;
+      padding: 9px 18px;
+      list-style: none;
+      border: 1px solid rgba(212, 174, 115, .24);
+      border-radius: 999px;
+      background: rgba(212, 174, 115, .065);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .25s ease;
     }
 
-    .navigation a {
-      position: relative;
-      padding-block: 10px;
+    .menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .menu summary:hover,
+    .menu[open] summary {
+      background: rgba(212, 174, 115, .14);
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 17px;
+    }
+
+    .menu-icon span {
+      width: 17px;
+      height: 1px;
+      background: currentColor;
+      transition: transform .25s ease;
+    }
+
+    .menu[open] .menu-icon span:first-child {
+      transform: translateY(3px) rotate(45deg);
+    }
+
+    .menu[open] .menu-icon span:last-child {
+      transform: translateY(-3px) rotate(-45deg);
+    }
+
+    .menu-content {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: 240px;
+      padding: 12px;
+      border: 1px solid rgba(212, 174, 115, .25);
+      border-radius: 24px;
+      background: #240b18;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .4);
+    }
+
+    .menu[open] .menu-content {
+      animation: menu-appear .25s ease;
+    }
+
+    .menu-content a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 16px;
+      border-radius: 15px;
       color: var(--muted);
-      font-size: 13px;
-      transition: color .2s ease;
+      font-size: 12px;
+      font-weight: 500;
+      transition: color .2s ease, background .2s ease;
     }
 
-    .navigation a::after {
+    .menu-content a span {
+      color: var(--gold);
+    }
+
+    .menu-content a:hover,
+    .menu-content a[aria-current="page"] {
+      color: var(--gold-light);
+      background: rgba(255, 225, 237, .07);
+    }
+
+    @keyframes menu-appear {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* DELIKATNE ŚWIATŁO W TLE */
+
+    .background-glow {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .background-glow::before,
+    .background-glow::after {
       content: "";
       position: absolute;
-      bottom: 4px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .2s ease;
-    }
-
-    .navigation a:hover,
-    .navigation a[aria-current="page"] {
-      color: var(--gold);
-    }
-
-    .navigation a:hover::after,
-    .navigation a[aria-current="page"]::after {
-      transform: scaleX(1);
-    }
-
-    .menu-toggle {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      padding: 0;
-      border: 1px solid var(--line);
+      width: 420px;
+      height: 420px;
       border-radius: 50%;
-      background: transparent;
-      color: var(--gold);
-      cursor: pointer;
+      filter: blur(90px);
+      background: rgba(139, 28, 67, .15);
+      animation: light-breathe 12s ease-in-out infinite;
     }
 
-    .menu-toggle svg {
-      width: 20px;
-      height: 20px;
+    .background-glow::before {
+      top: 10%;
+      left: -180px;
     }
 
-    /* PIERWSZY EKRAN */
+    .background-glow::after {
+      bottom: 5%;
+      right: -180px;
+      animation-delay: -6s;
+    }
 
-    .hero {
+    /* POWITANIE */
+
+    .hero-section {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 50% 45%, #49152b 0%, #2c1020 38%, transparent 72%),
-        var(--deep);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 3;
-      min-height: 740px;
-      display: flex;
+      min-height: 780px;
+      display: grid;
       align-items: center;
-      justify-content: center;
-      padding-block: 90px 100px;
+      padding: 165px 0 115px;
     }
 
-    .hero-copy {
+    .hero {
       position: relative;
-      width: min(100%, 760px);
+      max-width: 760px;
+      margin-inline: auto;
       text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -70px -80px;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(54, 9, 27, .9), transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-frame {
+      position: absolute;
+      inset: -42px -35px;
+      z-index: -1;
+      border: 1px solid rgba(237, 179, 199, .09);
+      border-radius: 50%;
+      transform: rotate(-4deg);
+      pointer-events: none;
+    }
+
+    .hero-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px -8px;
+      border: 1px solid rgba(212, 174, 115, .07);
+      border-radius: 50%;
+      transform: rotate(8deg);
     }
 
     .eyebrow {
@@ -215,7 +322,7 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
-      color: var(--gold);
+      color: var(--gold-light);
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 3px;
@@ -225,37 +332,48 @@
     .eyebrow::before,
     .eyebrow::after {
       content: "";
-      width: 32px;
+      width: 38px;
       height: 1px;
-      background: var(--line);
+      background: linear-gradient(90deg, transparent, var(--gold));
+      opacity: .6;
+    }
+
+    .eyebrow::after {
+      transform: rotate(180deg);
     }
 
     h1 {
-      margin-top: 28px;
+      margin-top: 26px;
       font-family: var(--heading);
-      font-size: clamp(56px, 7.5vw, 104px);
-      font-weight: 500;
-      line-height: .98;
-      letter-spacing: -3px;
-      text-wrap: balance;
+      font-size: clamp(52px, 6.4vw, 86px);
+      font-weight: 600;
+      line-height: .99;
+      letter-spacing: -1.8px;
     }
 
     h1 span {
       display: block;
     }
 
-    h1 .hero-name {
-      margin-block: 10px 12px;
-      color: var(--gold);
+    h1 .accent {
+      margin: 10px 0;
+      color: var(--gold-light);
       font-style: italic;
-      font-size: .92em;
-      letter-spacing: -3px;
+      font-weight: 500;
     }
 
-    .hero-intro {
-      max-width: 550px;
-      margin: 30px auto 0;
-      color: #decbd3;
+    .hero-line {
+      width: 190px;
+      height: 1px;
+      margin: 30px auto 24px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: .65;
+    }
+
+    .intro {
+      max-width: 610px;
+      margin-inline: auto;
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.95;
     }
@@ -263,666 +381,622 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: center;
-      gap: 24px;
-      margin-top: 32px;
+      gap: 12px;
+      margin-top: 30px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 26px;
-      min-height: 50px;
-      padding: 13px 24px;
-      border: 1px solid var(--gold);
-      border-radius: 3px;
-      background: var(--gold);
-      color: #28121c;
+      gap: 22px;
+      min-height: 48px;
+      padding: 12px 24px;
+      border: 1px solid rgba(212, 174, 115, .35);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(93, 23, 48, .35);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       transition:
-        background .2s ease,
-        transform .2s ease;
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
     .button:hover {
-      background: #f2d7b7;
       transform: translateY(-3px);
+      background: rgba(130, 39, 72, .45);
+      box-shadow: 0 8px 30px rgba(212, 174, 115, .1);
     }
 
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      min-height: 48px;
-      color: var(--gold);
-      border-bottom: 1px solid var(--line);
-      font-size: 12px;
+    .button-soft {
+      color: var(--muted);
+      background: rgba(255, 255, 255, .025);
+      border-color: var(--border);
     }
 
-    .text-link:hover {
-      border-color: var(--gold);
-    }
+    /* DWIE ANIMOWANE GRAFIKI Z ORYGINALNEJ STRONY */
 
-    /* KOTY — BEZ RAMKI */
-
-    .hero-art {
+    .cats {
       position: absolute;
       inset: 0;
-      z-index: 1;
+      z-index: -2;
       pointer-events: none;
     }
 
     .cat {
       position: absolute;
-      bottom: 5%;
-      width: clamp(350px, 42vw, 700px);
-      height: 88%;
-      animation: cat-float 8s ease-in-out infinite;
+      bottom: 0;
+      width: clamp(450px, 48vw, 800px);
+      height: 90%;
+      animation: cat-float 9s ease-in-out infinite;
     }
 
     .cat-left {
-      left: -13%;
+      left: -12%;
     }
 
     .cat-right {
-      right: -13%;
-      animation-delay: -4s;
+      right: -12%;
+      animation-delay: -4.5s;
     }
 
     .cat img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      opacity: .72;
+      opacity: .5;
       mix-blend-mode: screen;
-      filter: drop-shadow(0 0 18px rgba(229, 196, 158, .23));
-      animation: cat-glow 6s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(212, 174, 115, .3));
+      animation: cat-glow 5s ease-in-out infinite;
+      -webkit-mask-image: linear-gradient(to top, transparent, #000 18%, #000 88%, transparent);
+      mask-image: linear-gradient(to top, transparent, #000 18%, #000 88%, transparent);
     }
 
     .cat-right img {
-      animation-delay: -3s;
+      animation-delay: -2.5s;
     }
 
-    /* Czytelność tekstu niezależnie od tła grafik. */
-    .hero-shade {
+    .spark {
       position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        linear-gradient(to top, var(--deep), transparent 24%),
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(28, 9, 19, .7) 30%,
-          rgba(28, 9, 19, .82) 50%,
-          rgba(28, 9, 19, .7) 70%,
-          transparent
-        );
-    }
-
-    .hero-orbit {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      width: min(880px, 86%);
-      height: 76%;
-      border: 1px solid rgba(229, 196, 158, .1);
-      border-radius: 50%;
-      transform: translateX(-50%) rotate(-12deg);
+      z-index: -1;
+      color: var(--gold-light);
+      animation: sparkle 6s ease-in-out infinite;
       pointer-events: none;
     }
 
-    .hero-orbit::after {
-      content: "";
-      position: absolute;
-      inset: 22px -18px;
-      border: 1px solid rgba(229, 196, 158, .06);
-      border-radius: 50%;
-      transform: rotate(24deg);
-    }
-
-    .star {
-      position: absolute;
-      z-index: 4;
-      color: var(--gold);
-      animation: star-glow 6s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .star-one {
-      left: 18%;
-      top: 22%;
-      font-size: 18px;
-    }
-
-    .star-two {
-      right: 17%;
-      top: 67%;
-      font-size: 24px;
-      animation-delay: -3s;
-    }
-
-    .hero-bottom {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      z-index: 4;
-      transform: translateX(-50%);
-      color: var(--gold);
-      font-size: 19px;
-    }
+    .spark-one { top: 19%; left: 24%; font-size: 17px; }
+    .spark-two { top: 66%; right: 16%; font-size: 20px; animation-delay: -3s; }
+    .spark-three { bottom: 12%; left: 43%; font-size: 13px; animation-delay: -1.5s; }
 
     @keyframes cat-float {
-      0%, 100% {
-        transform: translateY(0) rotate(-1deg);
-      }
-      50% {
-        transform: translateY(-18px) rotate(1deg);
-      }
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-14px) rotate(1deg); }
     }
 
     @keyframes cat-glow {
       0%, 100% {
-        filter: drop-shadow(0 0 18px rgba(229, 196, 158, .23));
+        filter: drop-shadow(0 0 18px rgba(212, 174, 115, .3));
       }
       50% {
-        filter: drop-shadow(0 0 30px rgba(229, 196, 158, .48));
+        filter: drop-shadow(0 0 30px rgba(240, 211, 155, .48));
       }
     }
 
-    @keyframes star-glow {
-      0%, 100% { opacity: .3; }
-      50% { opacity: .9; }
+    @keyframes sparkle {
+      0%, 100% { opacity: .2; transform: scale(.8); }
+      50% { opacity: .75; transform: scale(1.1); }
     }
 
-    /* TYTUŁY SEKCJI */
+    @keyframes light-breathe {
+      0%, 100% { opacity: .5; transform: scale(.95); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    /* WSPÓLNY WYGLĄD SEKCJI */
 
     .section {
-      padding-block: 90px;
+      position: relative;
+      padding: 76px 0;
     }
 
     .section-heading {
-      margin-bottom: 42px;
+      max-width: 700px;
+      margin: 0 auto 34px;
       text-align: center;
     }
 
+    .section-kicker {
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
     h2 {
-      margin-top: 18px;
+      margin-top: 12px;
       font-family: var(--heading);
-      font-size: clamp(42px, 5vw, 66px);
-      font-weight: 500;
-      line-height: 1.08;
-      letter-spacing: -1.5px;
-      text-wrap: balance;
+      font-size: clamp(40px, 4.7vw, 58px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -.8px;
     }
 
     h2 em {
-      color: var(--gold);
+      color: var(--gold-light);
       font-weight: 500;
     }
 
-    .section-description {
-      max-width: 540px;
-      margin: 18px auto 0;
+    .heading-line {
+      width: 100px;
+      height: 1px;
+      margin: 22px auto 18px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .section-subtitle {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+      line-height: 1.85;
     }
 
     /* KONTAKT */
 
-    .contact-section {
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(90, 31, 57, .2), transparent 65%),
-        var(--bg);
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-links {
+    .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 14px;
       max-width: 900px;
       margin-inline: auto;
     }
 
-    .contact-link {
+    .contact-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      min-height: 84px;
+      min-width: 0;
+      min-height: 86px;
       padding: 20px 24px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: rgba(255, 255, 255, .018);
+      border: 1px solid var(--border);
+      border-radius: 23px;
+      background: linear-gradient(135deg, rgba(103, 19, 46, .24), rgba(255, 255, 255, .025));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
       transition:
-        background .25s ease,
+        transform .25s ease,
         border-color .25s ease,
-        transform .25s ease;
+        background .25s ease;
     }
 
-    .contact-link:hover {
-      background: rgba(229, 196, 158, .06);
-      border-color: rgba(229, 196, 158, .6);
-      transform: translateY(-3px);
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 174, 115, .45);
+      background: linear-gradient(135deg, rgba(128, 30, 62, .36), rgba(255, 255, 255, .04));
     }
 
     .contact-name {
       display: block;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
+      overflow-wrap: anywhere;
     }
 
     .contact-hint {
       display: block;
-      margin-top: 2px;
+      margin-top: 3px;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 10px;
     }
 
     .contact-arrow {
-      color: var(--gold);
-      font-size: 23px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: var(--gold-light);
+      background: rgba(212, 174, 115, .07);
+      font-size: 18px;
     }
 
-    .email-line {
-      margin-top: 28px;
+    .contact-email {
+      grid-column: 1 / -1;
+      justify-content: center;
+      min-height: 66px;
       text-align: center;
-      color: var(--gold);
-      font-size: 14px;
-      overflow-wrap: anywhere;
     }
 
-    .email-line a {
-      padding-block: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .email-line a:hover {
-      border-color: var(--gold);
+    .contact-email .contact-name {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .contact-note {
-      max-width: 630px;
-      margin: 26px auto 0;
-      color: var(--muted);
-      font-size: 12px;
+      max-width: 650px;
+      margin: 24px auto 0;
+      color: #c7a8b6;
+      font-size: 11px;
       line-height: 1.9;
       text-align: center;
     }
 
-    /* OFERTA — DUŻE WIERSZE ZAMIAST KAFELKÓW */
+    /* OFERTA */
 
-    .offer-section {
-      background:
-        radial-gradient(ellipse at 0% 50%, rgba(94, 27, 54, .16), transparent 60%),
-        var(--deep);
-      border-top: 1px solid var(--line);
+    .offer-section::before {
+      content: "";
+      display: block;
+      width: min(700px, 75%);
+      height: 1px;
+      margin: -76px auto 76px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
 
-    .offer-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .offer-row {
-      position: relative;
+    .offers {
       display: grid;
-      grid-template-columns: 60px 1fr 1fr 52px;
-      align-items: center;
-      gap: 34px;
-      padding: 38px 16px;
-      border-bottom: 1px solid var(--line);
-      transition: background .25s ease;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .offer-row:hover {
-      background: rgba(229, 196, 158, .035);
+    .offer-link {
+      display: flex;
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background:
+        radial-gradient(ellipse at 0% 0%, rgba(128, 28, 64, .19), transparent 70%),
+        rgba(255, 255, 255, .025);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .offer-link:nth-child(2) {
+      border-color: rgba(212, 174, 115, .3);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(140, 33, 71, .3), transparent 80%),
+        rgba(255, 255, 255, .035);
+    }
+
+    .offer-link:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 174, 115, .5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .2);
+    }
+
+    .offer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 30px 28px;
+    }
+
+    .offer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
     }
 
     .offer-number {
-      align-self: start;
-      padding-top: 10px;
       color: var(--gold);
       font-size: 11px;
+      font-weight: 500;
       letter-spacing: 2px;
     }
 
-    h3 {
-      font-family: var(--heading);
-      font-size: clamp(30px, 3vw, 42px);
-      font-weight: 500;
-      line-height: 1.12;
-      letter-spacing: -.5px;
+    .offer-decoration {
+      color: var(--gold);
+      font-size: 23px;
+      opacity: .7;
     }
 
-    .offer-description {
+    h3 {
+      margin-bottom: 16px;
+      font-family: var(--heading);
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.08;
+    }
+
+    .offer p {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.9;
+      font-size: 12px;
+      line-height: 1.95;
     }
 
     .price {
-      display: inline-block;
-      margin-top: 14px;
-      color: var(--gold);
-      font-size: 12px;
+      align-self: flex-start;
+      margin-top: 20px;
+      padding: 7px 14px;
+      border: 1px solid rgba(212, 174, 115, .28);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(212, 174, 115, .05);
+      font-size: 10px;
       font-weight: 500;
     }
 
-    .offer-arrow {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--gold);
-      font-size: 23px;
-      transition:
-        color .25s ease,
-        background .25s ease,
-        transform .25s ease;
+    .offer-bottom {
+      margin-top: auto;
+      padding-top: 28px;
     }
 
-    .offer-row:hover .offer-arrow {
-      color: var(--deep);
-      background: var(--gold);
-      transform: rotate(-35deg);
-    }
-
-    .offer-footer {
+    .offer-hint {
       display: flex;
-      justify-content: center;
-      margin-top: 32px;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(235, 179, 199, .12);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .offer-hint span {
+      font-size: 20px;
+      transition: transform .25s ease;
+    }
+
+    .offer-link:hover .offer-hint span {
+      transform: translateX(4px);
     }
 
     /* STOPKA */
 
     .footer {
-      padding-block: 36px;
-      border-top: 1px solid var(--line);
-      background: var(--deep);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      padding: 42px 0;
+      margin-top: 20px;
+      border-top: 1px solid rgba(235, 179, 199, .1);
+      text-align: center;
     }
 
     .footer-brand {
-      color: var(--gold);
+      display: inline-block;
+      color: var(--gold-light);
       font-family: var(--heading);
-      font-size: 25px;
-    }
-
-    .copyright {
-      color: var(--muted);
-      font-size: 11px;
+      font-size: 29px;
+      font-weight: 600;
     }
 
     .footer-nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 14px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .footer-nav a:hover {
-      color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      margin-top: 20px;
+      color: #b995a6;
+      font-size: 10px;
     }
 
     /* TABLET */
 
     @media (max-width: 900px) {
-      .navigation {
-        gap: 20px;
-      }
-
-      .hero-inner {
-        min-height: 680px;
+      .hero-section {
+        min-height: 730px;
       }
 
       .cat-left {
-        left: -24%;
+        left: -28%;
       }
 
       .cat-right {
-        right: -24%;
+        right: -28%;
       }
 
       .cat img {
-        opacity: .5;
+        opacity: .35;
       }
 
-      .offer-row {
-        grid-template-columns: 40px 1fr 1fr 44px;
-        gap: 20px;
+      .offers {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin-inline: auto;
       }
 
-      .offer-arrow {
-        width: 42px;
-        height: 42px;
+      .offer {
+        padding: 30px;
+      }
+
+      .offer-top {
+        margin-bottom: 18px;
+      }
+
+      .offer p {
+        font-size: 13px;
       }
     }
 
     /* TELEFON */
 
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
       .container {
-        width: calc(100% - 36px);
+        width: calc(100% - 32px);
+      }
+
+      .topbar {
+        top: 14px;
       }
 
       .topbar-inner {
-        min-height: 72px;
+        width: calc(100% - 28px);
+        padding: 8px 8px 8px 17px;
       }
 
-      .logo {
-        font-size: 27px;
+      .brand {
+        font-size: 24px;
       }
 
-      .menu-toggle:not([hidden]) {
-        display: inline-flex;
+      .menu summary {
+        min-height: 38px;
+        gap: 10px;
+        padding: 8px 14px;
+        font-size: 11px;
       }
 
-      .navigation {
-        flex-wrap: wrap;
-        gap: 8px 20px;
+      .menu-content {
+        width: min(250px, calc(100vw - 44px));
       }
 
-      .topbar.js-menu .navigation {
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 14px 24px;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        background: #23101b;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+      .hero-section {
+        min-height: 0;
+        padding: 142px 0 240px;
       }
 
-      .topbar.js-menu .navigation[hidden] {
-        display: none;
+      .hero-frame {
+        inset: -28px -8px;
       }
 
-      .topbar.js-menu .navigation a {
-        padding-block: 13px;
-      }
-
-      .hero-inner {
-        min-height: 750px;
-        align-items: flex-start;
-        padding-block: 62px 235px;
+      .hero::before {
+        inset: -45px -15px;
       }
 
       h1 {
-        font-size: clamp(47px, 10vw, 70px);
-        letter-spacing: -1.8px;
+        font-size: clamp(43px, 10.8vw, 64px);
+        letter-spacing: -1px;
       }
 
-      h1 .hero-name {
-        letter-spacing: -1.8px;
+      .eyebrow {
+        gap: 10px;
+        font-size: 9px;
+        letter-spacing: 2px;
       }
 
-      .hero-intro {
-        max-width: 460px;
-        margin-top: 24px;
-        font-size: 13px;
+      .eyebrow::before,
+      .eyebrow::after {
+        width: 24px;
+      }
+
+      .intro {
+        font-size: 12px;
+        line-height: 1.95;
+      }
+
+      .hero-line {
+        margin: 24px auto 20px;
       }
 
       .hero-actions {
-        gap: 20px;
-        margin-top: 26px;
+        margin-top: 24px;
+        gap: 10px;
       }
 
-      .hero-art {
+      .button {
+        min-height: 44px;
+        padding: 10px 18px;
+        gap: 16px;
+        font-size: 11px;
+      }
+
+      .cats {
         top: auto;
-        height: 270px;
+        height: 240px;
         bottom: 0;
       }
 
       .cat {
         bottom: 0;
-        width: 65%;
+        width: 70%;
         height: 100%;
       }
 
       .cat-left {
-        left: -7%;
+        left: -10%;
       }
 
       .cat-right {
-        right: -7%;
+        right: -10%;
       }
 
       .cat img {
-        opacity: .75;
+        opacity: .62;
       }
 
-      .hero-shade {
-        background:
-          linear-gradient(to top, var(--deep), transparent 12%),
-          linear-gradient(
-            to bottom,
-            rgba(28, 9, 19, .3),
-            transparent 60%,
-            rgba(17, 8, 13, .1)
-          );
-      }
-
-      .hero-orbit {
-        top: 8%;
-        width: 100%;
-        height: 76%;
-      }
-
-      .star-one {
-        left: 7%;
+      .spark-one {
         top: 15%;
-        font-size: 12px;
+        left: 13%;
       }
 
-      .star-two {
-        right: 8%;
-        top: 60%;
-        font-size: 16px;
+      .spark-two {
+        top: auto;
+        bottom: 18%;
+        right: 15%;
+      }
+
+      .spark-three {
+        bottom: 5%;
       }
 
       .section {
-        padding-block: 60px;
+        padding: 52px 0;
       }
 
-      .section-heading {
-        margin-bottom: 30px;
+      h2 {
+        font-size: 42px;
       }
 
-      .contact-links {
+      .section-subtitle {
+        font-size: 12px;
+      }
+
+      .contact-grid {
         grid-template-columns: 1fr;
         gap: 10px;
       }
 
-      .contact-link {
-        min-height: 72px;
-        padding: 15px 20px;
+      .contact-card {
+        min-height: 74px;
+        padding: 16px 20px;
+        border-radius: 22px;
       }
 
-      .offer-row {
-        grid-template-columns: 30px 1fr 42px;
-        gap: 12px;
-        padding: 28px 0;
+      .contact-email {
+        grid-column: auto;
       }
 
-      .offer-number {
-        padding-top: 8px;
+      .contact-note {
+        padding-inline: 6px;
       }
 
-      .offer-title {
-        grid-column: 2;
+      .offer-section::before {
+        margin: -52px auto 52px;
       }
 
-      .offer-copy {
-        grid-column: 2;
-        grid-row: 2;
-        margin-top: 4px;
+      .offers {
+        gap: 16px;
       }
 
-      .offer-arrow {
-        grid-column: 3;
-        grid-row: 1;
+      .offer-link {
+        border-radius: 27px;
+      }
+
+      .offer {
+        padding: 26px 24px;
       }
 
       h3 {
         font-size: 33px;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-nav {
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .hero-inner {
-        padding-top: 48px;
-      }
-
-      h1 {
-        font-size: 45px;
-      }
-
-      .eyebrow {
-        gap: 10px;
-        letter-spacing: 2px;
-      }
-
-      .eyebrow::before,
-      .eyebrow::after {
-        width: 20px;
-      }
-
-      .hero-actions {
-        gap: 16px;
-      }
-
-      .button {
-        padding-inline: 18px;
-        gap: 18px;
+      .footer {
+        margin-top: 0;
+        padding: 34px 0;
       }
     }
 
@@ -942,38 +1016,47 @@
 <body>
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
+  <div class="background-glow" aria-hidden="true"></div>
+
   <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="logo" href="index.html" aria-label="kocicadlaPana — strona główna">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="kocicadlaPana — strona główna">
         kocica<em>dlaPana</em>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Otwórz menu"
-        aria-expanded="false"
-        aria-controls="navigation"
-        hidden
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 8h16M4 16h16"/>
-        </svg>
-      </button>
+      <details class="menu">
+        <summary>
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </summary>
 
-      <nav class="navigation" id="navigation" aria-label="Menu główne">
-        <a href="index.html" aria-current="page">Strona główna</a>
-        <a href="#oferta">Oferta</a>
-        <a href="cennik.html">Cennik</a>
-        <a href="regulamin.html">Regulamin</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+        <nav class="menu-content" aria-label="Menu główne">
+          <a href="index.html" aria-current="page">
+            Strona główna <span aria-hidden="true">♡</span>
+          </a>
+          <a href="#oferta">
+            Oferta <span aria-hidden="true">→</span>
+          </a>
+          <a href="cennik.html">
+            Cennik <span aria-hidden="true">→</span>
+          </a>
+          <a href="regulamin.html">
+            Regulamin <span aria-hidden="true">→</span>
+          </a>
+          <a href="#kontakt">
+            Kontakt <span aria-hidden="true">→</span>
+          </a>
+        </nav>
+      </details>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art" aria-hidden="true">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="cats" aria-hidden="true">
         <div class="cat cat-left">
           <img
             src="Złota aura nocnego romansu.png"
@@ -981,28 +1064,30 @@
             fetchpriority="high"
           >
         </div>
-
         <div class="cat cat-right">
           <img src="kotka.png" alt="">
         </div>
       </div>
 
-      <div class="hero-shade"></div>
-      <div class="hero-orbit" aria-hidden="true"></div>
-      <span class="star star-one" aria-hidden="true">✦</span>
-      <span class="star star-two" aria-hidden="true">✦</span>
+      <span class="spark spark-one" aria-hidden="true">✦</span>
+      <span class="spark spark-two" aria-hidden="true">✦</span>
+      <span class="spark spark-three" aria-hidden="true">✧</span>
 
-      <div class="container hero-inner">
-        <div class="hero-copy">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-frame" aria-hidden="true"></div>
+
           <span class="eyebrow">Witaj u mnie</span>
 
           <h1 id="hero-title">
             <span>Witaj w świecie</span>
-            <span class="hero-name">kocicydlaPana,</span>
+            <span class="accent">kocicydlaPana,</span>
             <span>rozgość się.</span>
           </h1>
 
-          <p class="hero-intro">
+          <div class="hero-line" aria-hidden="true"></div>
+
+          <p class="intro">
             Jestem młodą, seksowną Polką. Uwielbiam świntuszyć!
             Lubię zarówno delikatne i subtelne klimaty,
             jak i te nieco ostrzejsze...
@@ -1011,36 +1096,35 @@
 
           <div class="hero-actions">
             <a class="button" href="#oferta">
-              Moja oferta <span aria-hidden="true">↗</span>
+              Moja oferta <span aria-hidden="true">→</span>
             </a>
-
-            <a class="text-link" href="#kontakt">
-              Kontakt <span aria-hidden="true">→</span>
+            <a class="button button-soft" href="#kontakt">
+              Kontakt <span aria-hidden="true">♡</span>
             </a>
           </div>
         </div>
       </div>
-
-      <a class="hero-bottom" href="#kontakt" aria-label="Przejdź do kontaktu">↓</a>
     </section>
 
-    <section class="section contact-section" id="kontakt" aria-labelledby="contact-title">
+    <section class="section" id="kontakt" aria-labelledby="contact-title">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Kontakt</span>
+          <span class="section-kicker">Kontakt</span>
 
           <h2 id="contact-title">
             Skontaktuj się <em>ze mną</em>
           </h2>
 
-          <p class="section-description">
+          <div class="heading-line" aria-hidden="true"></div>
+
+          <p class="section-subtitle">
             Wybierz wygodną dla siebie formę kontaktu.
           </p>
         </div>
 
-        <div class="contact-links">
+        <div class="contact-grid">
           <a
-            class="contact-link"
+            class="contact-card"
             href="https://wa.me/420605512867"
             target="_blank"
             rel="noopener noreferrer"
@@ -1053,7 +1137,7 @@
           </a>
 
           <a
-            class="contact-link"
+            class="contact-card"
             href="https://t.me/+420605512867"
             target="_blank"
             rel="noopener noreferrer"
@@ -1066,7 +1150,7 @@
           </a>
 
           <a
-            class="contact-link"
+            class="contact-card"
             href="https://showup.tv/kocicadlaPana"
             target="_blank"
             rel="noopener noreferrer"
@@ -1077,13 +1161,14 @@
             </span>
             <span class="contact-arrow" aria-hidden="true">↗</span>
           </a>
-        </div>
 
-        <p class="email-line">
-          <a href="mailto:kocicadlapana@tutamail.com">
-            kocicadlapana@tutamail.com
+          <a
+            class="contact-card contact-email"
+            href="mailto:kocicadlapana@tutamail.com"
+          >
+            <span class="contact-name">kocicadlapana@tutamail.com</span>
           </a>
-        </p>
+        </div>
 
         <p class="contact-note">
           Moje kanały kontaktowe służą wyłącznie do ustaleń dotyczących
@@ -1096,82 +1181,94 @@
     <section class="section offer-section" id="oferta" aria-labelledby="offer-title">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Oferta</span>
+          <span class="section-kicker">Oferta</span>
 
           <h2 id="offer-title">
             <a href="cennik.html">Moja <em>oferta</em></a>
           </h2>
 
-          <p class="section-description">
+          <div class="heading-line" aria-hidden="true"></div>
+
+          <p class="section-subtitle">
             Wszystko ustalamy indywidualnie —
             napisz do mnie, a omówimy szczegóły.
           </p>
         </div>
 
-        <div class="offer-list">
-          <a class="offer-row" href="cennik.html">
-            <span class="offer-number" aria-hidden="true">01</span>
+        <div class="offers">
+          <a class="offer-link" href="cennik.html">
+            <article class="offer">
+              <div class="offer-top">
+                <span class="offer-number">01</span>
+                <span class="offer-decoration" aria-hidden="true">✧</span>
+              </div>
 
-            <div class="offer-title">
               <h3>Pokazy online</h3>
-            </div>
 
-            <div class="offer-copy">
-              <p class="offer-description">
+              <p>
                 Kamerka — tylko Ty i ja.
                 Skontaktuj się ze mną na ShowUp,
                 Telegramie bądź WhatsAppie,
                 aby ustalić szczegóły.
               </p>
-            </div>
 
-            <span class="offer-arrow" aria-hidden="true">→</span>
+              <div class="offer-bottom">
+                <span class="offer-hint">
+                  Zobacz więcej <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </article>
           </a>
 
-          <a class="offer-row" href="cennik.html">
-            <span class="offer-number" aria-hidden="true">02</span>
+          <a class="offer-link" href="cennik.html">
+            <article class="offer">
+              <div class="offer-top">
+                <span class="offer-number">02</span>
+                <span class="offer-decoration" aria-hidden="true">♡</span>
+              </div>
 
-            <div class="offer-title">
               <h3>Filmy oraz zdjęcia na życzenie</h3>
-            </div>
 
-            <div class="offer-copy">
-              <p class="offer-description">
+              <p>
                 Przygotuję dla Ciebie materiały
                 na życzenie — nagrywam z widoczną
                 twarzą i w bardzo dobrej jakości.
                 Napisz mi o swojej fantazji
                 na e-mailu, Telegramie bądź WhatsAppie.
               </p>
-              <span class="price">Cena filmu od 99 zł</span>
-            </div>
 
-            <span class="offer-arrow" aria-hidden="true">→</span>
+              <span class="price">Cena filmu od 99 zł</span>
+
+              <div class="offer-bottom">
+                <span class="offer-hint">
+                  Zobacz więcej <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </article>
           </a>
 
-          <a class="offer-row" href="cennik.html">
-            <span class="offer-number" aria-hidden="true">03</span>
+          <a class="offer-link" href="cennik.html">
+            <article class="offer">
+              <div class="offer-top">
+                <span class="offer-number">03</span>
+                <span class="offer-decoration" aria-hidden="true">✧</span>
+              </div>
 
-            <div class="offer-title">
               <h3>Używana bielizna i rzeczy na zamówienie</h3>
-            </div>
 
-            <div class="offer-copy">
-              <p class="offer-description">
+              <p>
                 Przygotuję dla Ciebie spersonalizowaną
                 przesyłkę. Wysyłka jest bezpieczna —
                 jedyną informacją, której będę potrzebować,
                 jest nazwa Twojego paczkomatu.
               </p>
-            </div>
 
-            <span class="offer-arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
-
-        <div class="offer-footer">
-          <a class="text-link" href="cennik.html">
-            Zobacz cennik <span aria-hidden="true">↗</span>
+              <div class="offer-bottom">
+                <span class="offer-hint">
+                  Zobacz więcej <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </article>
           </a>
         </div>
       </div>
@@ -1179,11 +1276,8 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="footer-brand" href="index.html">kocicadlaPana</a>
-        <p class="copyright">Wszelkie prawa zastrzeżone © 2026</p>
-      </div>
+    <div class="container">
+      <a class="footer-brand" href="index.html">kocicadlaPana</a>
 
       <nav class="footer-nav" aria-label="Menu w stopce">
         <a href="cennik.html">Cennik</a>
@@ -1191,57 +1285,34 @@
         <a href="#kontakt">Kontakt</a>
         <a href="#main">Do góry ↑</a>
       </nav>
+
+      <p class="copyright">Wszelkie prawa zastrzeżone © 2026</p>
     </div>
   </footer>
 
   <script>
     (() => {
-      const header = document.querySelector(".topbar");
-      const button = document.querySelector(".menu-toggle");
-      const navigation = document.getElementById("navigation");
-      const mobile = window.matchMedia("(max-width: 700px)");
+      const menu = document.querySelector(".menu");
+      const summary = menu.querySelector("summary");
 
-      header.classList.add("js-menu");
-      button.hidden = false;
-
-      function setOpen(open) {
-        navigation.hidden = mobile.matches && !open;
-        button.setAttribute("aria-expanded", String(open));
-        button.setAttribute(
-          "aria-label",
-          open ? "Zamknij menu" : "Otwórz menu"
-        );
-      }
-
-      button.addEventListener("click", () => {
-        setOpen(button.getAttribute("aria-expanded") !== "true");
-      });
-
-      navigation.addEventListener("click", (event) => {
-        if (mobile.matches && event.target.closest("a")) {
-          setOpen(false);
+      document.addEventListener("click", (event) => {
+        if (menu.open && !menu.contains(event.target)) {
+          menu.open = false;
         }
       });
 
-      document.addEventListener("click", (event) => {
-        if (mobile.matches && !header.contains(event.target)) {
-          setOpen(false);
+      menu.querySelector("nav").addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          menu.open = false;
         }
       });
 
       document.addEventListener("keydown", (event) => {
-        if (
-          event.key === "Escape" &&
-          mobile.matches &&
-          button.getAttribute("aria-expanded") === "true"
-        ) {
-          setOpen(false);
-          button.focus();
+        if (event.key === "Escape" && menu.open) {
+          menu.open = false;
+          summary.focus();
         }
       });
-
-      mobile.addEventListener("change", () => setOpen(false));
-      setOpen(false);
     })();
   </script>
 </body>

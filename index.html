@@ -1439,116 +1439,65 @@
       }
     }
 
-    /* OKIENKO PREZENTÓW */
+    /* SUBTELNA LISTA ŻYCZEŃ */
     .gift-section {
-      padding: 35px 0 20px;
+      padding: 12px 0 8px;
     }
 
     .gift-card {
-      max-width: 760px;
+      max-width: 540px;
       margin: 0 auto;
-      padding: clamp(30px, 6vw, 56px) clamp(22px, 5vw, 52px);
+      padding: 22px 24px;
       text-align: center;
-      border: 1px solid rgba(212,174,115,.38);
-      border-radius: 28px;
-      background:
-        radial-gradient(
-          ellipse at top,
-          rgba(165,46,82,.22),
-          transparent 70%
-        ),
-        linear-gradient(
-          135deg,
-          rgba(72,9,29,.75),
-          rgba(13,5,9,.92)
-        );
-      box-shadow:
-        0 18px 55px rgba(0,0,0,.28),
-        inset 0 0 35px rgba(212,174,115,.04);
-    }
-
-    .gift-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 62px;
-      height: 62px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(212,174,115,.3);
-      border-radius: 50%;
-      color: var(--gold-light);
-      background: rgba(212,174,115,.06);
+      border: 1px solid rgba(212,174,115,.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+      box-shadow: none;
     }
 
     .gift-card h2 {
-      margin-bottom: 18px;
+      margin-bottom: 8px;
       color: var(--gold-light);
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 600;
-      line-height: 1.15;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.25;
     }
 
     .gift-card p {
-      max-width: 550px;
       margin: 0 auto;
       color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.85;
-    }
-
-    .gift-card .gift-thanks {
-      margin-top: 12px;
-      color: var(--pink);
+      font-size: .78rem;
+      line-height: 1.75;
     }
 
     .gift-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      max-width: 100%;
-      min-height: 48px;
-      margin-top: 28px;
-      padding: 15px 26px;
-      border: 1px solid var(--gold);
-      border-radius: 999px;
-      background:
-        linear-gradient(
-          120deg,
-          var(--gold),
-          var(--gold-light)
-        );
-      color: var(--black-2);
-      font-size: .8rem;
-      font-weight: 700;
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 0;
+      color: var(--gold-light);
+      font-size: .76rem;
+      font-weight: 500;
       line-height: 1.5;
       text-decoration: none;
-      transition: box-shadow .25s ease, transform .25s ease;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .gift-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(212,174,115,.22);
+      text-decoration: underline;
     }
 
     .gift-button:focus-visible {
-      outline: 3px solid var(--pink);
-      outline-offset: 5px;
+      outline: 2px solid var(--pink);
+      outline-offset: 4px;
     }
 
     @media (max-width: 480px) {
-      .gift-section {
-        padding: 20px 0;
-      }
-
       .gift-card {
-        border-radius: 23px;
-      }
-
-      .gift-button {
-        width: 100%;
-        padding: 14px 16px;
+        padding: 20px 18px;
       }
     }
   </style>
@@ -1796,7 +1745,7 @@
       </div>
     </section>
 
-    <!-- OKIENKO PREZENTÓW -->
+    <!-- SUBTELNA LISTA ŻYCZEŃ -->
     <section
       id="prezenty"
       class="gift-section"
@@ -1805,34 +1754,14 @@
       <div class="container">
         <div class="gift-card">
 
-          <span class="gift-icon" aria-hidden="true">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M5 14h22v14H5zM3 9h26v5H3zM16 9v19"/>
-              <path d="M16 9H11a3.5 3.5 0 1 1 3.5-3.5L16 9ZM16 9h5a3.5 3.5 0 1 0-3.5-3.5L16 9Z"/>
-            </svg>
-          </span>
-
           <h2 id="gift-title">
-            Chcesz podarować mi odrobinę radości?
+            Mały gest, dużo radości ♡
           </h2>
 
           <p>
-            Jeśli masz ochotę sprawić mi miłą niespodziankę,
-            zajrzyj do mojej listy życzeń. Znajdziesz tam drobiazgi
-            i marzenia, które wywołałyby uśmiech na mojej twarzy.
-          </p>
-
-          <p class="gift-thanks">
-            Dziękuję za każdy prezent i za pamięć o mnie ♡
+            Jeśli chcesz sprawić mi niespodziankę,
+            zajrzyj do mojej listy życzeń.
+            Dziękuję za pamięć!
           </p>
 
           <a
@@ -1840,10 +1769,9 @@
             href="https://throne.com/kocicadlapana"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Zobacz moją listę życzeń na Throne (otwiera się w nowej karcie)"
+            aria-label="Moja lista życzeń na Throne (otwiera się w nowej karcie)"
           >
-            Zobacz moją listę życzeń
-            <span aria-hidden="true">↗</span>
+            Moja lista życzeń <span aria-hidden="true">↗</span>
           </a>
 
         </div>
